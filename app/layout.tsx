@@ -22,9 +22,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'RL26 - Rocket League World Championship',
-  description: 'The ultimate Rocket League E-Sports tournament. 10 teams, 20 players, one champion. June 10, 2026.',
-  keywords: ['Rocket League', 'E-Sports', 'Tournament', 'RL26', 'Gaming', 'Championship'],
+  title: 'RL26 - Marker | La Tabla Renovada',
+  description: 'La Tabla ahora renovada muestra estadisticas, ofertas y premios',
+  keywords: ['Rocket League', 'E-Sports', 'Market', 'RL26', 'Gaming'],
 }
 
 export const viewport: Viewport = {
