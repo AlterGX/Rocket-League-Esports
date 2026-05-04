@@ -10,6 +10,7 @@ const getTeamLogo = (team: string) => {
     "Arsenali": "AR.png",
     "Chicorid": "CD.png",
     "Mashine City": "MC.png",
+    "Mashine United": "MU.png",
     "Ajajax": "AJ.png",
     "Berserk Dortmund": "BD.png",
     "Ubers": "UB.png",
@@ -69,7 +70,7 @@ const top9Players = [
   {
     rank: 7,
     name: "Drakrad404",
-    team: "Ubers",
+    team: "Bastard Munchen",
     dorsal: "6",
     stats: { goals: 1891, assists: 572, saves: 927, mvp: 234 },
     marketValue: "125.000.000M",
@@ -85,7 +86,7 @@ const top9Players = [
   {
     rank: 9,
     name: "JosuaSCA",
-    team: "PXG",
+    team: "Mashine United",
     dorsal: "20",
     stats: { goals: 1217, assists: 425, saves: 312, mvp: 135 },
     marketValue: "45.000.000M",
