@@ -5,7 +5,11 @@ import { TournamentInfo } from "@/components/tournament-info"
 import { TeamsSection } from "@/components/teams-section"
 
 import { Top8Section } from "@/components/top8-section"
+import { ForwardsSection } from "@/components/forwards-section"
+import { MidfieldersSection } from "@/components/midfielders-section"
+import { DefendersSection } from "@/components/defenders-section"
 import { AwardsSection } from "@/components/awards-section"
+
 
 import { StadiumsSection } from "@/components/stadiums-section"
 import { MerchandiseSection } from "@/components/merchandise-section"
@@ -42,10 +46,50 @@ export default function HomePage() {
         <Top8Section />
       </AnimatedSection>
 
+      {/* FACE TO FACE Title */}
+      <div className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.02]">
+          <span className="text-[180px] font-[family-name:var(--font-bebas)] tracking-tighter whitespace-nowrap select-none">
+            VS VS VS VS VS VS VS VS VS VS
+          </span>
+        </div>
+        <div className="relative text-center px-6">
+          <div className="inline-flex items-center gap-4 mb-6">
+            <div className="w-2 h-2 rounded-full bg-foreground/40 animate-pulse" />
+            <span className="text-[10px] tracking-[0.5em] text-muted-foreground uppercase font-mono">TECHNICAL_COMPARISON</span>
+            <div className="w-2 h-2 rounded-full bg-foreground/40 animate-pulse" />
+          </div>
+          <h2 className="text-7xl sm:text-8xl lg:text-9xl font-[family-name:var(--font-bebas)] tracking-tighter text-foreground leading-none">
+            FACE <span className="text-foreground/20">TO</span> FACE
+          </h2>
+          <p className="mt-6 text-[10px] sm:text-xs text-muted-foreground max-w-2xl mx-auto tracking-[0.4em] uppercase opacity-60">
+            Análisis posicional detallado y métricas de rendimiento comparadas.
+          </p>
+        </div>
+      </div>
+
+
+      {/* Forwards Section */}
+      <AnimatedSection animation="fade-up">
+        <ForwardsSection />
+      </AnimatedSection>
+
+      {/* Midfielders Section */}
+      <AnimatedSection animation="fade-up">
+        <MidfieldersSection />
+      </AnimatedSection>
+
+      {/* Defenders Section */}
+      <AnimatedSection animation="fade-up">
+        <DefendersSection />
+      </AnimatedSection>
+
+
       {/* Awards Section */}
       <AnimatedSection animation="fade-up">
         <AwardsSection />
       </AnimatedSection>
+
 
       {/* Stadiums Section */}
       <AnimatedSection animation="fade-up">

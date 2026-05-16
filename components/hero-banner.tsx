@@ -7,19 +7,19 @@ const slides = [
   {
     id: 1,
     subtitle: "Rocket Market Transfers",
-    title: "DESCUBRE TU\nVALOR",
+    title: "DESCUBRE LA\nNUEVA TABLA",
     description: "Ofertas De Clubes y Valores.",
   },
   {
     id: 2,
     subtitle: "Checa las estadisticas mensuales",
-    title: "LA NUEVA TABLA\nDE VALORES",
+    title: "UNA NUEVA\nINTERFAZ",
     description: "Nuevo Diseño, Nuevas Novedades.",
   },
   {
     id: 3,
     subtitle: "10 Jugadores De Rocket",
-    title: "JUGADORES DE\nALTO NIVEL ",
+    title: "JUGADORES\nDE ROCKET LEAGUE",
     description: "Actualizaciones de Mes a Mes.",
   },
 ]

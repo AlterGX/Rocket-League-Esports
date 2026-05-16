@@ -1,21 +1,12 @@
-# Task: Improve Awards Section Cards - COMPLETE
+# TODO
 
-## Plan Steps
-- [x] Step 1: Create and confirm TODO.md
-- [x] Step 2: User approved plan
-- [x] Step 3: Edit components/awards-section.tsx (standardize heights, stats grid, spacing, text fixes)
-- [x] Step 4: Verify changes (review responsive layout)
-- [x] Step 5: Update TODO.md with completion
-- [x] Step 6: Attempt task completion
-
-**Progress**: Task completed successfully.
-
-**Changes Summary**:
-- Cards now use fixed responsive heights `h-80 md:h-96` with `items-stretch` for uniform sizing.
-- Stats grid: `grid-cols-1 md:grid-cols-3 gap-4 md:gap-3 px-6 py-6` for better mobile organization.
-- Increased padding `p-6 lg:p-8`, grid gaps `gap-6 lg:gap-8`, max-w `6xl`.
-- Text labels updated to `text-xs` for consistency/readability.
-- All original design, styles, gradients, hovers preserved.
-
-View changes in `components/awards-section.tsx`. Run `pnpm dev` to test responsiveness.
+- [ ] Revisar el botón “NUEVA PAGINA” en `components/navbar.tsx` y convertirlo en un enlace funcional a la sub-página `RL Natiosn`.
+- [ ] Crear la sub-ruta en Next.js: `app/rl-natiosn/page.tsx` (página de torneo con el estilo existente).
+- [ ] Implementar secciones en la página del torneo:
+  - [ ] Hero banner al inicio.
+  - [ ] Lista de 5 selecciones participantes.
+  - [ ] Tabla de posiciones moderna.
+  - [ ] Formato de semifinales (4 primeros) luego de todos contra todos.
+  - [ ] Plantillas: 2 jugadores por selección.
+- [ ] Ejecutar build/lint (si aplica) y verificar que el enlace del navbar navega correctamente.
 

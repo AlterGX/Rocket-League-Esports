@@ -49,59 +49,77 @@ const awards = [
 
 function AwardCard({ award }: { award: typeof awards[0] }) {
   return (
-    <div className="relative w-full overflow-hidden rounded-none border border-border/20 bg-background/80 shadow-lg shadow-black/5 h-[24rem] lg:h-[22rem]">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.14),transparent_23%)]" />
-      <div className="absolute -right-14 top-6 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
-      <div className="absolute -left-14 bottom-8 h-36 w-36 rounded-full bg-white/20 blur-3xl" />
+    <div className="group relative w-full overflow-hidden border border-border/10 bg-card/10 transition-all duration-500 hover:border-foreground/30 h-auto lg:h-[26rem] flex flex-col">
+      {/* Technical Background Grid */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity duration-700 pointer-events-none"
+        style={{ backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)`, backgroundSize: '30px 30px' }} 
+      />
+      
+      {/* Top Accent Line */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-foreground/20 via-foreground/5 to-transparent" />
 
-      <div className="relative z-10 flex min-h-0 flex-col p-4 lg:p-5">
-        <div className="flex items-center justify-start gap-2 mb-4">
-          <span className="inline-flex rounded-none border border-foreground/10 bg-foreground/5 px-2.5 py-1 text-[9px] uppercase tracking-[0.35em] text-foreground/90">
-            {award.award}
-          </span>
+      <div className="relative z-10 p-6 lg:p-10 flex flex-col h-full">
+        {/* Header Metadata */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 bg-foreground/40 rounded-full animate-pulse" />
+            <span className="text-[10px] tracking-[0.5em] text-foreground/70 uppercase font-mono">
+              RL26_METRICS
+            </span>
+          </div>
+          <span className="text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono">REF_M01_AWARD</span>
         </div>
 
-        <div className="flex-1 flex flex-col items-center justify-center text-center">
-          <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] text-muted-foreground/80 mb-2">
-            {award.position}
-          </p>
-          <h3 className="text-3xl sm:text-4xl font-[family-name:var(--font-bebas)] uppercase tracking-[0.08em] text-foreground leading-tight">
-            {award.player}
-          </h3>
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col">
+          <div className="mb-8">
+            <span className="inline-block border border-foreground/20 bg-foreground/5 px-3 py-1 text-[9px] uppercase tracking-[0.4em] text-foreground/80 mb-6 transition-transform group-hover:-translate-y-1">
+              {award.award}
+            </span>
+            <h3 className="text-5xl lg:text-7xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-[0.8] mb-4 transition-transform duration-500 group-hover:translate-x-2">
+              {award.player}
+            </h3>
+            <p className="text-[10px] tracking-[0.5em] text-muted-foreground uppercase opacity-60">
+              {award.position}
+            </p>
+          </div>
 
-          <div className="mt-4 grid w-full grid-cols-1 md:grid-cols-3 gap-3 border border-border/30 bg-background/80 px-5 py-5 text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]">
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Dorsal</span>
-              <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground mt-1">{award.dorsal}</span>
+          {/* Stats Readout */}
+          <div className="grid grid-cols-3 gap-px bg-border/10 border border-border/10 mt-auto">
+            <div className="bg-background/40 p-4 transition-colors group-hover:bg-white/[0.02]">
+              <span className="text-[8px] tracking-[0.4em] text-muted-foreground block mb-2 uppercase">Dorsal</span>
+              <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground/90">{award.dorsal}</span>
             </div>
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Estadística</span>
-              <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground mt-1">{award.value}</span>
+            <div className="bg-background/40 p-4 transition-colors group-hover:bg-white/[0.02]">
+              <span className="text-[8px] tracking-[0.4em] text-muted-foreground block mb-2 uppercase">{award.stat}</span>
+              <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground/90">{award.value}</span>
             </div>
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Porcentaje</span>
-              <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground mt-1">{award.percentage}</span>
+            <div className="bg-background/40 p-4 transition-colors group-hover:bg-white/[0.02]">
+              <span className="text-[8px] tracking-[0.4em] text-muted-foreground block mb-2 uppercase">Delta %</span>
+              <span className="text-2xl font-[family-name:var(--font-bebas)] text-green-500/80">{award.percentage}</span>
             </div>
           </div>
         </div>
 
-        <div className="mt-2 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <div className="flex h-12 w-12 items-center justify-center border border-border/30 bg-background/80 shadow-sm">
+        {/* Footer Info */}
+        <div className="mt-10 pt-6 border-t border-border/10 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 border border-border/20 bg-secondary/10 flex items-center justify-center p-1.5 transition-transform group-hover:scale-110">
               <img
                 src={`/acces/${award.logo}`}
                 alt={`${award.team} logo`}
-                className="h-7 w-7 object-contain"
+                className="w-full h-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
               />
             </div>
             <div>
-              <p className="text-[8px] uppercase tracking-[0.35em] text-muted-foreground">Equipo</p>
-              <p className="text-sm font-semibold text-foreground">{award.team}</p>
+              <p className="text-[8px] tracking-[0.3em] text-muted-foreground uppercase mb-0.5">Club Oficial</p>
+              <p className="text-xs font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{award.team}</p>
             </div>
           </div>
-          <div className="text-right">
-            <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Medida</p>
-            <p className="text-sm font-semibold text-foreground">{award.stat}</p>
+          <div className="flex flex-col items-end">
+            <div className="h-px w-8 bg-foreground/20 mb-2 group-hover:w-12 transition-all duration-500" />
+            <span className="text-[8px] tracking-[0.4em] text-muted-foreground uppercase">Verified By RL26_AI</span>
           </div>
         </div>
       </div>
@@ -147,4 +165,3 @@ export function AwardsSection() {
     </section>
   )
 }
-

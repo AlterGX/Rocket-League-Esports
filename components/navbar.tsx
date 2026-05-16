@@ -57,10 +57,10 @@ export function Navbar() {
           {/* CTA */}
           <div className="hidden lg:block">
             <a
-              href="#NewMarket"
+              href="/rl-natiosn"
               className="text-[13px] tracking-[0.2em] px-6 py-3 border border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-400"
             >
-              NUEVA PAGINA
+              RL NATIONS
             </a>
           </div>
 
