@@ -99,10 +99,10 @@ export function HeroBanner() {
               <span className="w-4 h-px bg-background/50 transition-all duration-300 group-hover:w-6" />
             </a>
             <a
-              href="#calendario"
+              href="/rl-natiosn"
               className="inline-flex items-center justify-center px-8 py-4 border border-foreground/20 text-foreground text-[13px] tracking-[0.2em] transition-all duration-400 hover:border-foreground/40"
             >
-              JUGADORES
+              RL NATIONS
             </a>
           </div>
         </div>
