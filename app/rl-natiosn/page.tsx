@@ -171,10 +171,10 @@ const stadiums = [
   { id: "1", name: "DFH STADIUM", type: "CIRCUITO CENTRAL", tag: "MAIN ARENA", image: "DFH.png" },
   { id: "2", name: "MANNFIELD", type: "PARQUE PÚBLICO", tag: "PRO FIELD", image: "Mannfield.png" },
   { id: "3", name: "CHAMPIONS FIELD", type: "ESTADIO ELITE", tag: "GLOBAL", image: "ChampionsField.png" },
-  { id: "4", name: "PARC DE PARIS", type: "DISTRITO URBANO", tag: "STREET", image: "/public/PARIS.png" },
-  { id: "5", name: "BECKWITH PARK", type: "CAMPO DE ENTRENAMIENTO", tag: "LOCAL", image: "BECKWITH.PNG" },
-  { id: "6", name: "VIVA LA VIDA", type: "PLAYA CALIDA", tag: "BEACH", image: "VIVA.PNG" },
-  { id: "7", name: "BOOSTFIELD MALL", type: "CENTRO MODERNO", tag: "FUTURE", image: "BOOST.PNG" },
+  { id: "4", name: "PARC DE PARIS", type: "DISTRITO URBANO", tag: "STREET", image: "PARIS.png" },
+  { id: "5", name: "BECKWITH PARK", type: "CAMPO DE ENTRENAMIENTO", tag: "LOCAL", image: "BECKWITH.png" },
+  { id: "6", name: "VIVA LA VIDA", type: "PLAYA CALIDA", tag: "BEACH", image: "VIVA.png" },
+  { id: "7", name: "BOOSTFIELD MALL", type: "CENTRO MODERNO", tag: "FUTURE", image: "BOOST.png" },
   { id: "8", name: "NEO TOKYO", type: "SECTOR CYBERPUNK", tag: "FUTURE", image: "NEO.png" },
 ]
 
