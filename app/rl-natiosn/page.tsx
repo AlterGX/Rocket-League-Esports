@@ -433,7 +433,7 @@ function TemplatesTwoPlayers() {
           <div className="relative">
             {/* Header section */}
             <div className="bg-secondary/10 p-6 sm:p-10 border-b border-border/10">
-              <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
+              <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left relative">
                 <div className="w-20 h-20 border border-border/20 bg-background flex items-center justify-center p-4 shadow-xl">
                   <img src={`/acces/${player.countryLogo}`} alt={player.country} className="w-full h-full object-contain" />
                 </div>
@@ -443,6 +443,12 @@ function TemplatesTwoPlayers() {
                     {player.name.toUpperCase()}
                   </h2>
                 </div>
+                <button 
+                  onClick={() => onOpenChange(false)}
+                  className="absolute -top-2 -right-2 sm:top-0 sm:right-0 w-8 h-8 flex items-center justify-center border border-border/20 bg-background hover:bg-foreground hover:text-background transition-colors z-50"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
               </div>
             </div>
 
@@ -624,7 +630,7 @@ const getSelectionLogo = (teamName: string) => {
 function MatchSchedule() {
   const fixtures = [
     {
-      date: "Sábado 16 Mayo",
+      date: "Sábado 23 Mayo",
       period: "Noche",
       matches: [
         { time: "20:00", home: "Argentina", away: "Marruecos", stadium: "DFH STADIUM", group: "A" },
@@ -632,7 +638,7 @@ function MatchSchedule() {
       ]
     },
     {
-      date: "Domingo 17 Mayo",
+      date: "Domingo 24 Mayo",
       period: "Mañana",
       matches: [
         { time: "10:00", home: "Alemania", away: "Portugal", stadium: "CHAMPIONS FIELD", group: "A" },
@@ -640,7 +646,7 @@ function MatchSchedule() {
       ]
     },
     {
-      date: "Sábado 23 Mayo",
+      date: "Sábado 30 Mayo",
       period: "Noche",
       matches: [
         { time: "20:00", home: "Argentina", away: "Alemania", stadium: "NEO TOKYO", group: "A" },
@@ -648,7 +654,7 @@ function MatchSchedule() {
       ]
     },
     {
-      date: "Domingo 24 Mayo",
+      date: "Domingo 31 Mayo",
       period: "Mañana",
       matches: [
         { time: "10:00", home: "Marruecos", away: "Portugal", stadium: "VIVA LA VIDA", group: "A" },
@@ -656,7 +662,7 @@ function MatchSchedule() {
       ]
     },
     {
-      date: "Sábado 30 Mayo",
+      date: "Sábado 6 Junio",
       period: "Noche",
       matches: [
         { time: "20:00", home: "Argentina", away: "Portugal", stadium: "DFH STADIUM", group: "A" },
@@ -664,7 +670,7 @@ function MatchSchedule() {
       ]
     },
     {
-      date: "Domingo 31 Mayo",
+      date: "Domingo 7 Junio",
       period: "Mañana",
       matches: [
         { time: "10:00", home: "Marruecos", away: "Alemania", stadium: "CHAMPIONS FIELD", group: "A" },

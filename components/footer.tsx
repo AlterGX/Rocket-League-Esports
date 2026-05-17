@@ -12,9 +12,9 @@ export function Footer() {
     <footer className="bg-card/30 border-t border-border/10">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Main Footer */}
-        <div className="py-20 grid grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="py-12 lg:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
-          <div className="col-span-2">
+          <div className="col-span-1 lg:col-span-2">
             <a href="#" className="inline-block mb-8">
               <span className="text-3xl font-[family-name:var(--font-bebas)] tracking-[0.3em] text-foreground">
                 RL26

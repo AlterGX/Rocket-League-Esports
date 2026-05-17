@@ -23,7 +23,7 @@ const phases = [
 
 export function TournamentInfo() {
   return (
-    <section id="torneo" className="py-32 px-6 lg:px-12">
+    <section id="torneo" className="py-16 lg:py-32 px-6 lg:px-12">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-16 mb-24">
@@ -32,7 +32,7 @@ export function TournamentInfo() {
               <div className="w-16 h-px bg-foreground/20" />
               <span className="text-[10px] tracking-[0.5em] text-muted-foreground">FORMATO DE VALORES</span>
             </div>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-[0.9]">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-[0.9]">
               HORA DE SUBIR<br />TU NIVEL
             </h2>
           </div>
@@ -54,7 +54,7 @@ export function TournamentInfo() {
             { value: "1:1", label: "ACTUALIZACIÓN MENSUAL" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <span className="text-5xl sm:text-6xl lg:text-7xl font-[family-name:var(--font-bebas)] text-foreground">
+              <span className="text-4xl sm:text-6xl lg:text-7xl font-[family-name:var(--font-bebas)] text-foreground">
                 {stat.value}
               </span>
               <p className="text-[10px] tracking-[0.4em] text-muted-foreground mt-2">{stat.label}</p>
@@ -67,9 +67,9 @@ export function TournamentInfo() {
           {phases.map((phase, index) => (
             <div 
               key={phase.number}
-              className="group grid lg:grid-cols-[100px_1fr_1fr] gap-8 py-12 border-b border-border/20 hover:bg-secondary/10 transition-colors duration-500 -mx-6 px-6 lg:-mx-12 lg:px-12"
+              className="group grid grid-cols-1 lg:grid-cols-[100px_1fr_1fr] gap-4 lg:gap-8 py-8 lg:py-12 border-b border-border/20 hover:bg-secondary/10 transition-colors duration-500 lg:-mx-12 px-0 lg:px-12"
             >
-              <div className="text-6xl font-[family-name:var(--font-bebas)] text-foreground/10 group-hover:text-foreground/20 transition-colors">
+              <div className="text-5xl lg:text-6xl font-[family-name:var(--font-bebas)] text-foreground/10 group-hover:text-foreground/20 transition-colors">
                 {phase.number}
               </div>
               <div>

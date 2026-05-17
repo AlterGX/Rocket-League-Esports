@@ -23,7 +23,7 @@ export function StadiumsSection() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <section id="sedes" className="py-32 px-6 lg:px-12 bg-secondary/5 overflow-hidden">
+    <section id="sedes" className="py-16 lg:py-32 px-6 lg:px-12 bg-secondary/5 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="flex items-center gap-6 mb-8">
@@ -32,7 +32,7 @@ export function StadiumsSection() {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-16 mb-20">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-[0.85]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-[0.85]">
             NOTICIAS DEL<br />MERCADO
           </h2>
           <div className="flex items-end">
@@ -43,11 +43,11 @@ export function StadiumsSection() {
         </div>
 
         {/* Featured Stadiums */}
-        <div className="grid lg:grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
 {news.filter(s => s.featured).map((newsItem) => (
             <div
               key={newsItem.id}
-              className="group relative aspect-[16/9] border border-border/10 bg-card/10 overflow-hidden cursor-pointer transition-all duration-700 hover:border-foreground/40"
+              className="group relative aspect-square sm:aspect-[16/9] border border-border/10 bg-card/10 overflow-hidden cursor-pointer transition-all duration-700 hover:border-foreground/40"
               onClick={() => { setSelectedNews(newsItem); setIsOpen(true) }}
             >
               {/* Background placeholder */}
@@ -121,11 +121,11 @@ export function StadiumsSection() {
         </div>
 
         {/* Other Stadiums */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 {news.filter(s => !s.featured).map((newsItem) => (
             <div
               key={newsItem.id}
-              className="group relative border border-border/10 bg-card/5 p-8 transition-all duration-500 cursor-pointer hover:bg-card/10 hover:border-foreground/20"
+              className="group relative border border-border/10 bg-card/5 p-6 lg:p-8 transition-all duration-500 cursor-pointer hover:bg-card/10 hover:border-foreground/20"
               onClick={() => { setSelectedNews(newsItem); setIsOpen(true) }}
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
@@ -186,7 +186,15 @@ export function StadiumsSection() {
                   <div className="w-2 h-2 rounded-full bg-foreground/40 animate-pulse" />
                   <span className="text-[10px] tracking-[0.5em] text-muted-foreground font-mono">Reporte De Noticias // ID_{String(selectedNews.id).padStart(3, '0')}</span>
                 </div>
-                <span className="text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono uppercase">{selectedNews.tag}</span>
+                <div className="flex items-center gap-4">
+                  <span className="text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono uppercase hidden sm:inline">{selectedNews.tag}</span>
+                  <button 
+                    onClick={() => setIsOpen(false)}
+                    className="w-6 h-6 flex items-center justify-center border border-border/20 hover:bg-foreground hover:text-background transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  </button>
+                </div>
               </div>
 
               <div className="relative z-10 grid gap-0 lg:grid-cols-[1fr_350px]">
