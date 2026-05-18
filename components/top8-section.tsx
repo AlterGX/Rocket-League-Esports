@@ -71,7 +71,9 @@ const top9Players = [
     position: "Midfielder Offensive",
     statsIncrease: { goals: { percent: "+12.5%", total: "+1014" }, assists: { percent: "+15.3%", total: "+572" }, saves: { percent: "+8.7%", total: "+389" }, mvp: { percent: "+22.1%", total: "+341" } },
     percentage: "98.5%",
-    palmares: ["Campeon 2024, Campeon 2025, Campeon 2026, MVP Campeon 2026"]
+    country: "Inglaterra",
+    countryLogo: "EN.png",
+    palmares: ["Campeon 2024, Campeon 2025, MVP Campeon 2026"]
   },
   {
     rank: 2,
@@ -83,7 +85,9 @@ const top9Players = [
     position: "Center Forward",
     statsIncrease: { goals: { percent: "+18.2%", total: "+1122" }, assists: { percent: "+9.4%", total: "+334" }, saves: { percent: "+11.6%", total: "+506" }, mvp: { percent: "+14.8%", total: "+205" } },
     percentage: "95.2%",
-    palmares: ["Campeon 2024, Campeon 2025, Campeon 2026, MVP Campeon 2025"]
+    country: "Francia",
+    countryLogo: "FR.png",
+    palmares: ["Campeon 2024, MVP Campeon 2025, Campeon 2026"]
   },
   {
     rank: 3,
@@ -95,6 +99,8 @@ const top9Players = [
     position: "Left Winger",
     statsIncrease: { goals: { percent: "+25.1%", total: "+2118" }, assists: { percent: "+6.8%", total: "+116" }, saves: { percent: "+7.2%", total: "+245" }, mvp: { percent: "+9.3%", total: "+43" } },
     percentage: "92.8%",
+    country: "Alemania",
+    countryLogo: "GR.png",
     palmares: ["Campeon 2024, Campeon 2025, MVP Campeon 2024"]
   },
   {
@@ -107,6 +113,8 @@ const top9Players = [
     position: "Right Winger",
     statsIncrease: { goals: { percent: "+14.7%", total: "+778" }, assists: { percent: "+12.1%", total: "+227" }, saves: { percent: "+5.9%", total: "+112" }, mvp: { percent: "+16.4%", total: "+75" } },
     percentage: "89.6%",
+    country: "Japon",
+    countryLogo: "JP.png",
     palmares: ["Campeon 2025, Campeon 2026"]
   },
   {
@@ -119,6 +127,8 @@ const top9Players = [
     position: "Midfielder Defensive",
     statsIncrease: { goals: { percent: "+9.3%", total: "+434" }, assists: { percent: "+18.7%", total: "+127" }, saves: { percent: "+13.2%", total: "+141" }, mvp: { percent: "+11.5%", total: "+63" } },
     percentage: "87.4%",
+    country: "Inglaterra",
+    countryLogo: "EN.png",
     palmares: [""]
   },
   {
@@ -131,6 +141,8 @@ const top9Players = [
     position: "Center Back",
     statsIncrease: { goals: { percent: "+11.8%", total: "+279" }, assists: { percent: "+7.6%", total: "+29" }, saves: { percent: "+19.4%", total: "+252" }, mvp: { percent: "+8.9%", total: "+19" } },
     percentage: "84.1%",
+    country: "Francia",
+    countryLogo: "FR.png",
     palmares: [""]
   },
   {
@@ -143,6 +155,8 @@ const top9Players = [
     position: "Midfielder Box-to-Box",
     statsIncrease: { goals: { percent: "+13.4%", total: "+253" }, assists: { percent: "+15.9%", total: "+91" }, saves: { percent: "+10.7%", total: "+99" }, mvp: { percent: "+12.3%", total: "+30" } },
     percentage: "81.7%",
+    country: "Japon",
+    countryLogo: "JP.png",
     palmares: [""]
   },
   {
@@ -155,6 +169,8 @@ const top9Players = [
     position: "Center Forward",
     statsIncrease: { goals: { percent: "+16.2%", total: "+219" }, assists: { percent: "+9.1%", total: "+42" }, saves: { percent: "+6.4%", total: "+27" }, mvp: { percent: "+14.7%", total: "+19" } },
     percentage: "78.3%",
+    country: "Brasil",
+    countryLogo: "BR.png",
     palmares: [""]
   },
   {
@@ -167,6 +183,8 @@ const top9Players = [
     position: "Right Back",
     statsIncrease: { goals: { percent: "+8.9%", total: "+107" }, assists: { percent: "+11.3%", total: "+57" }, saves: { percent: "+7.8%", total: "+24" }, mvp: { percent: "+9.6%", total: "+15" } },
     percentage: "75.9%",
+    country: "Francia",
+    countryLogo: "FR.png",
     palmares: [""]
   },
   {
@@ -179,6 +197,8 @@ const top9Players = [
     position: "Center Back",
     statsIncrease: { goals: { percent: "+5.2%", total: "+13" }, assists: { percent: "+8.4%", total: "+17" }, saves: { percent: "+12.1%", total: "+23" }, mvp: { percent: "+6.7%", total: "+0" } },
     percentage: "72.5%",
+    country: "Alemania",
+    countryLogo: "GR.png",
     palmares: [""]
   },
 ]
@@ -228,16 +248,26 @@ function PlayerCard({ player, onClick }: { player: typeof top9Players[0], onClic
             <span className="text-[11px] tracking-[0.15em] text-muted-foreground/70">#{player.dorsal}</span>
             <div className="w-4 h-px bg-border/40" />
             <span className="text-[10px] tracking-[0.2em] text-muted-foreground/70">{player.team.toUpperCase()}</span>
-            <div className="flex items-center gap-1.5">
-              <div className={`w-8 h-8 border border-border/30 flex items-center justify-center ${getTeamCardBg(player.team)}`}>
+            <div className="flex items-center gap-2">
+              {/* Selección */}
+              <div className="w-8 h-8 border border-border/30 flex items-center justify-center bg-background/50 shadow-sm relative z-10">
+                <img
+                  src={`/acces/${player.countryLogo}`}
+                  alt={`${player.country} logo`}
+                  className="w-full h-full object-contain p-1.5"
+                />
+              </div>
+              {/* Club */}
+              <div className={`w-8 h-8 border border-border/30 flex items-center justify-center relative ${getTeamCardBg(player.team)}`}>
                 <img
                   src={`/acces/${getTeamLogo(player.team)}`}
                   alt={`${player.team} logo`}
-                  className="w-8 h-8 object-contain p-0.5"
+                  className="w-full h-full object-contain p-1"
                 />
               </div>
+              {/* Liga */}
               {getLeagueLogo(player.team) && (
-                <div className="w-8 h-8 border border-border/10 flex items-center justify-center bg-secondary/10">
+                <div className="w-8 h-8 border border-border/30 flex items-center justify-center bg-secondary/10">
                   <img
                     src={`/acces/${getLeagueLogo(player.team)}`}
                     alt="League logo"
@@ -250,8 +280,8 @@ function PlayerCard({ player, onClick }: { player: typeof top9Players[0], onClic
           <h3 className="flex items-center gap-2 text-2xl sm:text-3xl font-[family-name:var(--font-bebas)] tracking-wide text-foreground">
             {player.name.toUpperCase()}
           </h3>
-          <p className="text-[10px] tracking-[0.2em] text-muted-foreground/70 font-[family-name:var(--font-bebas)]">
-            {player.rank === 1 ? 'Midfielder Offensive' : player.rank === 2 ? 'Center Forward' : player.rank === 3 ? 'Left Winger' : player.rank === 4 ? 'Right Winger' : player.rank === 5 ? 'Midfielder Defensive' : player.rank === 6 ? 'Forward' : player.rank === 7 ? 'Midfielder' : player.rank === 8 ? 'Center Forward' : player.rank === 9 ? 'Right Back' : 'Center Back'}
+          <p className="text-[10px] tracking-[0.2em] text-muted-foreground/70 font-[family-name:var(--font-bebas)] uppercase">
+            {player.position}
           </p>
           <div className="h-px w-0 group-hover:w-full bg-foreground/20 mt-4 transition-all duration-700" />
         </div>
@@ -259,15 +289,16 @@ function PlayerCard({ player, onClick }: { player: typeof top9Players[0], onClic
         {/* Stats Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
           {[
-            { label: "GOLES", value: player.stats.goals },
-            { label: "ASISTENCIAS", value: player.stats.assists },
-            { label: "SALVADAS", value: player.stats.saves },
-            { label: "MVP", value: player.stats.mvp },
+            { label: "GOLES", value: player.stats.goals, percent: player.statsIncrease.goals.percent },
+            { label: "ASISTENCIAS", value: player.stats.assists, percent: player.statsIncrease.assists.percent },
+            { label: "SALVADAS", value: player.stats.saves, percent: player.statsIncrease.saves.percent },
+            { label: "MVP", value: player.stats.mvp, percent: player.statsIncrease.mvp.percent },
           ].map((stat) => (
-            <div key={stat.label} className="text-center py-3 border border-border/10 bg-secondary/10">
+            <div key={stat.label} className="text-center py-2.5 border border-border/10 bg-secondary/10">
               <span className="text-xl sm:text-2xl font-[family-name:var(--font-bebas)] text-foreground block">
                 {stat.value}
               </span>
+              <span className="text-[8px] text-green-500 font-mono font-bold leading-none">{stat.percent}</span>
               <p className="text-[7px] tracking-[0.15em] text-muted-foreground mt-1">
                 {stat.label}
               </p>
@@ -317,7 +348,7 @@ export function Top8Section() {
           </div>
           <div className="flex items-end">
             <p className="text-muted-foreground text-base lg:text-lg leading-relaxed max-w-lg border-l border-border/20 pl-8">
-              Metricas, estadísticas y valor de mercado de todos los jugadores.
+              Este es el Ranking Oficial realizado por la IA, en el se muestran Estadisticsa, Porcentajes de Rendimiento, Valores de Mercado junto a los Palmarés del Top 10 jugadores de Rocket League Esports en la actualidad. Haz click en cada jugador para ver su reporte detallado de rendimiento.
             </p>
           </div>
         </div>
@@ -377,14 +408,21 @@ export function Top8Section() {
                 <div className="p-6 sm:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-border/10">
                   <div className="space-y-8 sm:space-y-10">
                     {/* Profile Header */}
-                    <div className="flex flex-col md:flex-row md:items-center gap-8">
-                      <div className="w-32 h-32 border border-border/20 flex items-center justify-center p-4 bg-secondary/5 relative group overflow-hidden">
-                         <div className={`absolute inset-0 opacity-10 ${getTeamCardBg(selectedPlayer.team)}`} />
-                         <img src={`/acces/${getTeamLogo(selectedPlayer.team)}`} alt="" className="w-full h-full object-contain relative z-10" />
+                    <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-10">
+                      <div className="relative flex-shrink-0">
+                        {/* Club Logo Main Container */}
+                        <div className="w-28 h-28 sm:w-32 sm:h-32 border border-border/20 flex items-center justify-center p-6 bg-secondary/5 relative overflow-hidden shadow-xl">
+                          <div className={`absolute inset-0 opacity-10 ${getTeamCardBg(selectedPlayer.team)}`} />
+                          <img src={`/acces/${getTeamLogo(selectedPlayer.team)}`} alt="" className="w-full h-full object-contain relative z-10" />
+                        </div>
+                        {/* Country Flag Badge Overlay */}
+                        <div className="absolute -bottom-2 -right-2 w-10 h-10 sm:w-12 sm:h-12 border border-border/20 bg-background flex items-center justify-center p-2 shadow-2xl z-20">
+                          <img src={`/acces/${selectedPlayer.countryLogo}`} alt={selectedPlayer.country} className="w-full h-full object-contain" />
+                        </div>
                       </div>
                       <div>
                         <div className="flex items-center gap-3 mb-2">
-                          <span className="text-[11px] tracking-[0.4em] text-muted-foreground uppercase">{selectedPlayer.team}</span>
+                          <span className="text-[10px] sm:text-[11px] tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground uppercase font-mono">{selectedPlayer.country.toUpperCase()} // {selectedPlayer.team}</span>
                           <div className="w-1 h-1 bg-foreground/20 rounded-full" />
                           <span className="text-[11px] tracking-[0.4em] text-foreground/40 font-mono">DORSAL #{selectedPlayer.dorsal}</span>
                         </div>
@@ -409,7 +447,7 @@ export function Top8Section() {
                         <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground mb-3">Rendimiento Global</p>
                         <div className="flex items-baseline gap-3">
                           <p className="text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-foreground">{selectedPlayer.percentage}</p>
-                          <span className="text-[10px] text-green-500/80 font-mono">+2.4% <span className="text-[8px] opacity-40">INDEX</span></span>
+                          <span className="text-[10px] text-green-500 font-bold font-mono">+2.4% <span className="text-[8px] text-muted-foreground/40 uppercase">INDEX</span></span>
                         </div>
                       </div>
                     </div>
@@ -432,9 +470,9 @@ export function Top8Section() {
                             <span className="text-xl sm:text-2xl lg:text-3xl font-[family-name:var(--font-bebas)] text-foreground block group-hover/stat:translate-x-1 transition-transform">
                               {stat.value}
                             </span>
-                            <div className="mt-3 pt-3 border-t border-border/5 flex items-center justify-between">
-                              <span className="text-[9px] text-green-500/70 font-mono">{stat.delta.percent}</span>
-                              <span className="text-[8px] text-muted-foreground/30 font-mono">{stat.delta.total}</span>
+                            <div className="mt-4 pt-3 border-t border-border/10 flex items-center justify-between">
+                              <span className="text-[10px] text-green-500 font-bold font-mono">{stat.delta.percent}</span>
+                              <span className="text-[9px] text-muted-foreground/60 font-mono">{stat.delta.total}</span>
                             </div>
                           </div>
                         ))}
@@ -461,28 +499,6 @@ export function Top8Section() {
                         </div>
                       ))}
                     </div>
-                  </div>
-
-                  {/* AI Analysis Logs */}
-                  <div className="space-y-6">
-                     <div className="flex items-center justify-between">
-                      <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground font-mono">ANALYSIS_LOGS</p>
-                      <span className="text-[8px] text-foreground/20 font-mono">v2.0.4</span>
-                    </div>
-                    <ul className="space-y-4 text-[10px] font-mono text-muted-foreground/60 leading-relaxed">
-                      <li className="flex gap-3">
-                        <span className="text-foreground/30">[OK]</span>
-                        <span>Verificación de integridad de datos completada.</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-foreground/30">[UP]</span>
-                        <span>Proyección de valor de mercado: Tendencia alcista.</span>
-                      </li>
-                      <li className="flex gap-3 text-foreground/40">
-                        <span className="text-foreground/30">[AI]</span>
-                        <span>Sinergia táctica con el equipo actual: Optima (89%).</span>
-                      </li>
-                    </ul>
                   </div>
 
                   {/* League Info */}
