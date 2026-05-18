@@ -192,6 +192,57 @@ const standingsB = [
   { pos: 4, team: "Japon", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 }, // Reset points
 ]
 
+const fixtures = [
+  {
+    date: "Sábado 23 Mayo",
+    period: "Noche",
+    matches: [
+      { time: "20:00", home: "Argentina", away: "Marruecos", stadium: "DFH STADIUM", group: "A" },
+      { time: "21:30", home: "Brasil", away: "Japon", stadium: "MANNFIELD", group: "B" },
+    ]
+  },
+  {
+    date: "Domingo 24 Mayo",
+    period: "Mañana",
+    matches: [
+      { time: "10:00", home: "Alemania", away: "Portugal", stadium: "CHAMPIONS FIELD", group: "A" },
+      { time: "11:30", home: "Francia", away: "Inglaterra", stadium: "PARC DE PARIS", group: "B" },
+    ]
+  },
+  {
+    date: "Sábado 30 Mayo",
+    period: "Noche",
+    matches: [
+      { time: "20:00", home: "Argentina", away: "Alemania", stadium: "NEO TOKYO", group: "A" },
+      { time: "21:30", home: "Brasil", away: "Francia", stadium: "BECKWITH PARK", group: "B" },
+    ]
+  },
+  {
+    date: "Domingo 31 Mayo",
+    period: "Mañana",
+    matches: [
+      { time: "10:00", home: "Marruecos", away: "Portugal", stadium: "VIVA LA VIDA", group: "A" },
+      { time: "11:30", home: "Japon", away: "Inglaterra", stadium: "BOOSTFIELD MALL", group: "B" },
+    ]
+  },
+  {
+    date: "Sábado 6 Junio",
+    period: "Noche",
+    matches: [
+      { time: "20:00", home: "Argentina", away: "Portugal", stadium: "DFH STADIUM", group: "A" },
+      { time: "21:30", home: "Brasil", away: "Inglaterra", stadium: "MANNFIELD", group: "B" },
+    ]
+  },
+  {
+    date: "Domingo 7 Junio",
+    period: "Mañana",
+    matches: [
+      { time: "10:00", home: "Marruecos", away: "Alemania", stadium: "CHAMPIONS FIELD", group: "A" },
+      { time: "11:30", home: "Japon", away: "Francia", stadium: "NEO TOKYO", group: "B" },
+    ]
+  }
+];
+
 function SelectionsGrid() {
   return (
     <section id="participantes" className="py-24 px-6 lg:px-12 bg-secondary/5">
@@ -661,57 +712,6 @@ function MatchSchedule() {
   const [selectedMatch, setSelectedMatch] = useState<any>(null);
   const [isMatchDialogOpen, setIsMatchDialogOpen] = useState(false);
 
-  const fixtures = [
-    {
-      date: "Sábado 23 Mayo",
-      period: "Noche",
-      matches: [
-        { time: "20:00", home: "Argentina", away: "Marruecos", stadium: "DFH STADIUM", group: "A" },
-        { time: "21:30", home: "Brasil", away: "Japon", stadium: "MANNFIELD", group: "B" },
-      ]
-    },
-    {
-      date: "Domingo 24 Mayo",
-      period: "Mañana",
-      matches: [
-        { time: "10:00", home: "Alemania", away: "Portugal", stadium: "CHAMPIONS FIELD", group: "A" },
-        { time: "11:30", home: "Francia", away: "Inglaterra", stadium: "PARC DE PARIS", group: "B" },
-      ]
-    },
-    {
-      date: "Sábado 30 Mayo",
-      period: "Noche",
-      matches: [
-        { time: "20:00", home: "Argentina", away: "Alemania", stadium: "NEO TOKYO", group: "A" },
-        { time: "21:30", home: "Brasil", away: "Francia", stadium: "BECKWITH PARK", group: "B" },
-      ]
-    },
-    {
-      date: "Domingo 31 Mayo",
-      period: "Mañana",
-      matches: [
-        { time: "10:00", home: "Marruecos", away: "Portugal", stadium: "VIVA LA VIDA", group: "A" },
-        { time: "11:30", home: "Japon", away: "Inglaterra", stadium: "BOOSTFIELD MALL", group: "B" },
-      ]
-    },
-    {
-      date: "Sábado 6 Junio",
-      period: "Noche",
-      matches: [
-        { time: "20:00", home: "Argentina", away: "Portugal", stadium: "DFH STADIUM", group: "A" },
-        { time: "21:30", home: "Brasil", away: "Inglaterra", stadium: "MANNFIELD", group: "B" },
-      ]
-    },
-    {
-      date: "Domingo 7 Junio",
-      period: "Mañana",
-      matches: [
-        { time: "10:00", home: "Marruecos", away: "Alemania", stadium: "CHAMPIONS FIELD", group: "A" },
-        { time: "11:30", home: "Japon", away: "Francia", stadium: "NEO TOKYO", group: "B" },
-      ]
-    }
-  ];
-
   // Componente de cuenta regresiva simplificado
   const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -984,6 +984,14 @@ function TournamentBracket() {
 }
 
 function StadiumsGrid() {
+  const [selectedStadium, setSelectedStadium] = useState<typeof stadiums[0] | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
+
+  // Obtener los partidos que se juegan en este estadio
+  const stadiumMatches = selectedStadium ? fixtures.flatMap(day => 
+    day.matches.filter(m => m.stadium === selectedStadium.name).map(m => ({ ...m, date: day.date }))
+  ) : []
+
   return (
     <section id="estadios" className="py-32 px-6 lg:px-12 bg-secondary/5">
       <div className="max-w-[1400px] mx-auto">
@@ -998,7 +1006,11 @@ function StadiumsGrid() {
           {stadiums.map((s) => (
             <div
               key={s.id}
-              className="group relative aspect-[16/10] border border-border/10 bg-card/10 overflow-hidden transition-all duration-500 hover:border-foreground/20"
+              className="group relative aspect-[16/10] border border-border/10 bg-card/10 overflow-hidden transition-all duration-500 hover:border-foreground/20 cursor-pointer"
+              onClick={() => {
+                setSelectedStadium(s)
+                setIsOpen(true)
+              }}
             >
               {/* Imagen de fondo vertical */}
               <div className="absolute inset-0 z-0">
@@ -1037,6 +1049,91 @@ function StadiumsGrid() {
           ))}
         </div>
       </div>
+
+      {/* Modal de Detalle de Estadio */}
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="max-w-4xl border border-border/20 bg-background/95 backdrop-blur-xl p-0 overflow-hidden shadow-2xl rounded-none">
+          <DialogTitle className="sr-only">Detalle del Estadio</DialogTitle>
+          {selectedStadium && (
+            <div className="relative">
+              {/* Header Técnico */}
+              <div className="relative z-10 border-b border-border/10 bg-secondary/10 px-8 py-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-foreground/40 animate-pulse" />
+                  <span className="text-[10px] tracking-[0.5em] text-muted-foreground font-mono uppercase">Info de Sede // ID_{selectedStadium.id.padStart(3, '0')}</span>
+                </div>
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  className="w-6 h-6 flex items-center justify-center border border-border/20 hover:bg-foreground hover:text-background transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+              </div>
+
+              <div className="grid lg:grid-cols-2">
+                {/* Visual Area */}
+                <div className="relative h-64 lg:h-full border-b lg:border-b-0 lg:border-r border-border/10 overflow-hidden bg-black">
+                  <img 
+                    src={`/acces/${selectedStadium.image}`} 
+                    alt={selectedStadium.name} 
+                    className="w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8">
+                    <span className="text-[10px] tracking-[0.4em] text-muted-foreground mb-2 block uppercase">{selectedStadium.tag}</span>
+                    <h2 className="text-5xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-[0.8]">{selectedStadium.name}</h2>
+                    <p className="text-[10px] tracking-[0.2em] text-muted-foreground mt-4 uppercase">{selectedStadium.type}</p>
+                  </div>
+                </div>
+
+                {/* Matches Area */}
+                <div className="p-8 lg:p-12 space-y-8 bg-secondary/5">
+                  <div>
+                    <div className="flex items-center gap-4 mb-6">
+                      <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground">Partidos en esta Sede</p>
+                      <div className="flex-1 h-px bg-border/10" />
+                    </div>
+                    
+                    <div className="space-y-4">
+                      {stadiumMatches.length > 0 ? (
+                        stadiumMatches.map((m, idx) => (
+                          <div key={idx} className="border border-border/10 bg-background/40 p-4 transition-colors hover:bg-white/[0.02]">
+                            <div className="flex justify-between items-center mb-3">
+                                <span className="text-[9px] font-mono text-muted-foreground/60">{m.date.toUpperCase()} — {m.time} HRS</span>
+                                <span className="text-[8px] tracking-[0.2em] text-foreground/40 bg-foreground/5 px-2">GRUPO {m.group}</span>
+                            </div>
+                            <div className="flex items-center justify-between gap-4">
+                              <div className="flex items-center gap-2">
+                                <img src={getSelectionLogo(m.home)} alt="" className="w-4 h-4 object-contain" />
+                                <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{m.home.toUpperCase()}</span>
+                              </div>
+                              <span className="text-[10px] font-mono text-foreground/20">VS</span>
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{m.away.toUpperCase()}</span>
+                                <img src={getSelectionLogo(m.away)} alt="" className="w-4 h-4 object-contain" />
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div className="text-center py-12 border border-dashed border-border/20">
+                          <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-widest">Sin partidos programados</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground font-mono">Detalles Técnicos</p>
+                    <div className="h-px bg-border/10 w-full" />
+                    <p className="text-xs text-muted-foreground leading-relaxed">Esta sede ha sido seleccionada por su infraestructura de vanguardia y capacidad para albergar partidos de alto rendimiento bajo estándares de la RL26_AI.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }
