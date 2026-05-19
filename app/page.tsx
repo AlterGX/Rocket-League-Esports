@@ -33,11 +33,6 @@ export default function HomePage() {
         <TournamentInfo />
       </AnimatedSection>
 
-      {/* AI Core Analysis Section */}
-      <AnimatedSection animation="fade-up">
-        <AIInsightsSection />
-      </AnimatedSection>
-
       {/* Teams Section */}
       <AnimatedSection animation="fade-up">
         <TeamsSection />
