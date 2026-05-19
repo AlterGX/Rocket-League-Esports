@@ -3,6 +3,7 @@ import { HeroBanner } from "@/components/hero-banner"
 
 import { TournamentInfo } from "@/components/tournament-info"
 import { TeamsSection } from "@/components/teams-section"
+import { MarketOffersSection } from "@/components/market-offers-section"
 
 import { Top8Section } from "@/components/top8-section"
 import { ForwardsSection } from "@/components/forwards-section"
@@ -32,9 +33,19 @@ export default function HomePage() {
         <TournamentInfo />
       </AnimatedSection>
 
+      {/* AI Core Analysis Section */}
+      <AnimatedSection animation="fade-up">
+        <AIInsightsSection />
+      </AnimatedSection>
+
       {/* Teams Section */}
       <AnimatedSection animation="fade-up">
         <TeamsSection />
+      </AnimatedSection>
+
+      {/* Market Offers Section */}
+      <AnimatedSection animation="fade-up">
+        <MarketOffersSection />
       </AnimatedSection>
 
 

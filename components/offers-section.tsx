@@ -9,7 +9,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 
-const offers = [
+export const offers = [ // Export the offers array
   { 
     id: 1, 
     player: "ReAl | AlterGX", 
@@ -18,8 +18,14 @@ const offers = [
     dorsal: "#10", 
     position: "Midfielder Ofensive", 
     price: "€220.000.000M", 
-    offeringTeam: "ReAl", 
-    offeringLogo: "RA.png"
+    offeringTeam: "ReAl",
+    offeringLogo: "RA.png",
+    countryName: "Inglaterra",
+    countryLogo: "EN.png",
+    biddingHistory: [
+      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€200.000.000M" },
+      { teamName: "Barcha FC", teamLogo: "BF.png", bidAmount: "€210.000.000M" },
+    ]
   },
   { 
     id: 2, 
@@ -29,8 +35,14 @@ const offers = [
     dorsal: "#9", 
     position: "Center Forward", 
     price: "€200.000.000M", 
-    offeringTeam: "Barcha", 
-    offeringLogo: "BF.png"
+    offeringTeam: "Barcha FC",
+    offeringLogo: "BF.png",
+    countryName: "Francia",
+    countryLogo: "FR.png",
+    biddingHistory: [
+      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€180.000.000M" },
+      { teamName: "ReAl", teamLogo: "RA.png", bidAmount: "€195.000.000M" },
+    ]
   },
   { 
     id: 3, 
@@ -40,8 +52,14 @@ const offers = [
     dorsal: "#7", 
     position: "Right Winger", 
     price: "€185.000.000M", 
-    offeringTeam: "PXG", 
-    offeringLogo: "PX.png"
+    offeringTeam: "PXG",
+    offeringLogo: "PX.png",
+    countryName: "Alemania",
+    countryLogo: "GR.png",
+    biddingHistory: [
+      { teamName: "Chicorid", teamLogo: "CD.png", bidAmount: "€170.000.000M" },
+      { teamName: "Arsenali", teamLogo: "AR.png", bidAmount: "€175.000.000M" },
+    ]
   },
   { 
     id: 4, 
@@ -51,8 +69,14 @@ const offers = [
     dorsal: "#11", 
     position: "Left Winger", 
     price: "€160.000.000M", 
-    offeringTeam: "Chicorid", 
-    offeringLogo: "CD.png"
+    offeringTeam: "Chicorid",
+    offeringLogo: "CD.png",
+    countryName: "Japon",
+    countryLogo: "JP.png",
+    biddingHistory: [
+      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€140.000.000M" },
+      { teamName: "Berserk Dortmund", teamLogo: "BD.png", bidAmount: "€150.000.000M" },
+    ]
   },
   { 
     id: 5, 
@@ -62,8 +86,14 @@ const offers = [
     dorsal: "#8", 
     position: "Right Defense", 
     price: "€120.000.000M", 
-    offeringTeam: "Arsenali", 
-    offeringLogo: "AR.png"
+    offeringTeam: "Arsenali",
+    offeringLogo: "AR.png",
+    countryName: "Inglaterra",
+    countryLogo: "EN.png",
+    biddingHistory: [
+      { teamName: "Chelsky", teamLogo: "CH.png", bidAmount: "€100.000.000M" },
+      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€110.000.000M" },
+    ]
   },
   { 
     id: 6, 
@@ -73,8 +103,14 @@ const offers = [
     dorsal: "#20", 
     position: "Defensive Midfielder", 
     price: "€100.000.000M", 
-    offeringTeam: "Bastard Munchen", 
-    offeringLogo: "BM.png"
+    offeringTeam: "Bastard Munchen",
+    offeringLogo: "BM.png",
+    countryName: "Japon",
+    countryLogo: "JP.png",
+    biddingHistory: [
+      { teamName: "Ajajax", teamLogo: "AJ.png", bidAmount: "€80.000.000M" },
+      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€90.000.000M" },
+    ]
   },
   { 
     id: 7, 
@@ -84,8 +120,14 @@ const offers = [
     dorsal: "#15", 
     position: "Defense Center", 
     price: "€70.000.000M", 
-    offeringTeam: "Chelsky", 
-    offeringLogo: "CH.png"
+    offeringTeam: "Chelsky",
+    offeringLogo: "CH.png",
+    countryName: "Francia",
+    countryLogo: "FR.png",
+    biddingHistory: [
+      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€60.000.000M" },
+      { teamName: "Berserk Dortmund", teamLogo: "BD.png", bidAmount: "€65.000.000M" },
+    ]
   },
   { 
     id: 8, 
@@ -95,8 +137,14 @@ const offers = [
     dorsal: "#15", 
     position: "Center Forward", 
     price: "€40.000.000M", 
-    offeringTeam: "Berserk Dortmund", 
-    offeringLogo: "BD.png"
+    offeringTeam: "Berserk Dortmund",
+    offeringLogo: "BD.png",
+    countryName: "Brasil",
+    countryLogo: "BR.png",
+    biddingHistory: [
+      { teamName: "Ajajax", teamLogo: "AJ.png", bidAmount: "€30.000.000M" },
+      { teamName: "Chicorid", teamLogo: "CD.png", bidAmount: "€35.000.000M" },
+    ]
   },
   { 
     id: 9, 
@@ -106,8 +154,14 @@ const offers = [
     dorsal: "#25", 
     position: "Center Forward", 
     price: "30.000.000M", 
-    offeringTeam: "Mashine United", 
-    offeringLogo: "MU.png"
+    offeringTeam: "Mashine United",
+    offeringLogo: "MU.png",
+    countryName: "Francia",
+    countryLogo: "FR.png",
+    biddingHistory: [
+      { teamName: "Arsenali", teamLogo: "AR.png", bidAmount: "€25.000.000M" },
+      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€28.000.000M" },
+    ]
   },
   { 
     id: 10, 
@@ -117,8 +171,14 @@ const offers = [
     dorsal: "#4", 
     position: "Defense", 
     price: "€25.000.000M", 
-    offeringTeam: "Ajajax", 
-    offeringLogo: "AJ.png"
+    offeringTeam: "Ajajax",
+    offeringLogo: "AJ.png",
+    countryName: "Alemania",
+    countryLogo: "GR.png",
+    biddingHistory: [
+      { teamName: "Chelsky", teamLogo: "CH.png", bidAmount: "€20.000.000M" },
+      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€22.000.000M" },
+    ]
   },
 ]
 
