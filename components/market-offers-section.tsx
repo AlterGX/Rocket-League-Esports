@@ -38,7 +38,7 @@ export function MarketOffersSection() {
     setAnimatedPrice(currentAnimatedValue);
 
     const increment = Math.max(1_000_000, Math.floor(targetPrice / 100)); // Increment by 1M or 1% of target
-    const durationPerIncrement = 90; // ms
+    const durationPerIncrement = 40; // ms
 
     animationIntervalRef.current = setInterval(() => {
       currentAnimatedValue += increment;
