@@ -249,14 +249,6 @@ function PlayerCard({ player, onClick }: { player: typeof top9Players[0], onClic
             <div className="w-4 h-px bg-border/40" />
             <span className="text-[10px] tracking-[0.2em] text-muted-foreground/70">{player.team.toUpperCase()}</span>
             <div className="flex items-center gap-2">
-              {/* Selección */}
-              <div className="w-8 h-8 border border-border/30 flex items-center justify-center bg-background/50 shadow-sm relative z-10">
-                <img
-                  src={`/acces/${player.countryLogo}`}
-                  alt={`${player.country} logo`}
-                  className="w-full h-full object-contain p-1.5"
-                />
-              </div>
               {/* Club */}
               <div className={`w-8 h-8 border border-border/30 flex items-center justify-center relative ${getTeamCardBg(player.team)}`}>
                 <img
@@ -415,14 +407,10 @@ export function Top8Section() {
                           <div className={`absolute inset-0 opacity-10 ${getTeamCardBg(selectedPlayer.team)}`} />
                           <img src={`/acces/${getTeamLogo(selectedPlayer.team)}`} alt="" className="w-full h-full object-contain relative z-10" />
                         </div>
-                        {/* Country Flag Badge Overlay */}
-                        <div className="absolute -bottom-2 -right-2 w-10 h-10 sm:w-12 sm:h-12 border border-border/20 bg-background flex items-center justify-center p-2 shadow-2xl z-20">
-                          <img src={`/acces/${selectedPlayer.countryLogo}`} alt={selectedPlayer.country} className="w-full h-full object-contain" />
-                        </div>
                       </div>
                       <div>
                         <div className="flex items-center gap-3 mb-2">
-                          <span className="text-[10px] sm:text-[11px] tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground uppercase font-mono">{selectedPlayer.country.toUpperCase()} // {selectedPlayer.team}</span>
+                          <span className="text-[10px] sm:text-[11px] tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground uppercase font-mono">{selectedPlayer.team}</span>
                           <div className="w-1 h-1 bg-foreground/20 rounded-full" />
                           <span className="text-[11px] tracking-[0.4em] text-foreground/40 font-mono">DORSAL #{selectedPlayer.dorsal}</span>
                         </div>

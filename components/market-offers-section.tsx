@@ -80,12 +80,6 @@ export function MarketOffersSection() {
         {/* Header de la Sección */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-20">
           <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-[1px] bg-foreground/30" />
-              <span className="text-[10px] tracking-[0.6em] text-muted-foreground uppercase font-mono">
-                Market_Live // Realtime_Bids
-              </span>
-            </div>
             <h2 className="text-6xl sm:text-7xl lg:text-9xl font-[family-name:var(--font-bebas)] tracking-tighter text-foreground leading-[0.8] animate-reveal-up">
               MERCADO <br />
               <span className="text-foreground/30 italic">EN VIVO</span>
@@ -102,18 +96,7 @@ export function MarketOffersSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Player Card (Left) */}
           <div className="group relative border border-border/10 bg-secondary/5 p-10 overflow-hidden">
-            <div className="absolute top-0 right-0 p-4">
-              <span className="text-[9px] font-mono text-foreground/20">PLAYER_ID_{currentOffer.id.toString().padStart(3, '0')}</span>
-            </div>
             
-            {/* Selection/Country Badge */}
-            <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 border border-border/20 bg-background flex items-center justify-center p-1">
-                <img src={`/acces/${currentOffer.countryLogo}`} alt={currentOffer.countryName} className="w-full h-full object-contain" />
-              </div>
-              <span className="text-[10px] tracking-[0.4em] text-muted-foreground uppercase font-mono">{currentOffer.countryName}</span>
-            </div>
-
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 border border-border/20 bg-background flex items-center justify-center p-4 shadow-xl">
                 <img src={`/acces/${currentOffer.clubLogo}`} alt={`${currentOffer.club} logo`} className="w-full h-full object-contain" />
@@ -140,6 +123,25 @@ export function MarketOffersSection() {
               <span className="text-5xl font-[family-name:var(--font-bebas)] text-foreground">
                 {formatPriceDisplay(parsePrice(currentOffer.price))}
               </span>
+
+              {/* Transfer Probability Index */}
+              <div className="mt-8 space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-[9px] tracking-[0.4em] text-muted-foreground uppercase font-mono">Probabilidad_Acuerdo</span>
+                  <span className={cn("text-xs font-mono font-bold", offerStatus === 'closed' ? "text-green-500" : "text-blue-500")}>
+                    {offerStatus === 'closed' ? '100%' : `${Math.floor((animatedPrice / targetPrice) * 100)}%`}
+                  </span>
+                </div>
+                <div className="h-1 w-full bg-foreground/5 rounded-full overflow-hidden border border-border/5">
+                  <div 
+                    className={cn(
+                      "h-full transition-all duration-500 ease-out",
+                      offerStatus === 'closed' ? "bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.3)]" : "bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.3)]"
+                    )}
+                    style={{ width: `${(animatedPrice / targetPrice) * 100}%` }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -151,16 +153,6 @@ export function MarketOffersSection() {
               }} 
             />
 
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-4">
-              <div className="w-12 h-[1px] bg-foreground/30" />
-              <span className="text-[10px] tracking-[0.6em] text-muted-foreground uppercase font-mono">
-                Oferta_Activa // {offerStatus === 'bidding' ? 'NEGOCIANDO' : 'CERRADO'}
-              </span>
-            </div>
-              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-            </div>
-
             <div className="flex-1 flex flex-col justify-center items-center text-center py-2">
               {/* Escudo Gigante de la Puja Principal */}
               <div className="relative mb-8 group/bid">
@@ -168,7 +160,7 @@ export function MarketOffersSection() {
                 <img 
                   src={`/acces/${currentOffer.offeringLogo}`} 
                   alt={currentOffer.offeringTeam} 
-                  className="w-48 h-48 lg:w-56 lg:h-56 object-contain relative z-10 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-transform duration-700 group-hover/bid:scale-105"
+                  className="w-32 h-32 lg:w-40 lg:h-40 object-contain relative z-10 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-transform duration-700 group-hover/bid:scale-105"
                 />
               </div>
 
@@ -218,8 +210,7 @@ export function MarketOffersSection() {
               </div>
             </div>
 
-            <div className="mt-auto pt-8 border-t border-border/10 flex items-center justify-between">
-              <span className="text-[9px] font-mono text-muted-foreground/30 uppercase tracking-[0.2em]">Data_Transmission_Active</span>
+            <div className="mt-auto pt-8 border-t border-border/10 flex items-center justify-end">
               <button 
                 onClick={() => setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % offers.length)}
                 className="group/btn inline-flex items-center gap-3 text-[10px] tracking-[0.3em] text-muted-foreground hover:text-foreground transition-all duration-300"

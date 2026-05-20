@@ -24,7 +24,7 @@ export const offers = [ // Export the offers array
     countryLogo: "EN.png",
     biddingHistory: [
       { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€200.000.000M" },
-      { teamName: "Barcha FC", teamLogo: "BF.png", bidAmount: "€210.000.000M" },
+      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€210.000.000M" },
     ]
   },
   { 
@@ -40,8 +40,8 @@ export const offers = [ // Export the offers array
     countryName: "Francia",
     countryLogo: "FR.png",
     biddingHistory: [
-      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€180.000.000M" },
-      { teamName: "ReAl", teamLogo: "RA.png", bidAmount: "€195.000.000M" },
+      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€195.000.000M" },
+      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€185.000.000M" },
     ]
   },
   { 
@@ -57,7 +57,7 @@ export const offers = [ // Export the offers array
     countryName: "Alemania",
     countryLogo: "GR.png",
     biddingHistory: [
-      { teamName: "Chicorid", teamLogo: "CD.png", bidAmount: "€170.000.000M" },
+      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€170.000.000M" },
       { teamName: "Arsenali", teamLogo: "AR.png", bidAmount: "€175.000.000M" },
     ]
   },
@@ -74,8 +74,8 @@ export const offers = [ // Export the offers array
     countryName: "Japon",
     countryLogo: "JP.png",
     biddingHistory: [
-      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€140.000.000M" },
-      { teamName: "Berserk Dortmund", teamLogo: "BD.png", bidAmount: "€150.000.000M" },
+      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€150.000.000M" },
+      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€130.000.000M" },
     ]
   },
   { 
@@ -108,7 +108,7 @@ export const offers = [ // Export the offers array
     countryName: "Japon",
     countryLogo: "JP.png",
     biddingHistory: [
-      { teamName: "Ajajax", teamLogo: "AJ.png", bidAmount: "€80.000.000M" },
+      { teamName: "Ubers", teamLogo: "UB.png", bidAmount: "€80.000.000M" },
       { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€90.000.000M" },
     ]
   },
@@ -159,7 +159,7 @@ export const offers = [ // Export the offers array
     countryName: "Francia",
     countryLogo: "FR.png",
     biddingHistory: [
-      { teamName: "Arsenali", teamLogo: "AR.png", bidAmount: "€25.000.000M" },
+      { teamName: "Miranoia", teamLogo: "MI.png", bidAmount: "€25.000.000M" },
       { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€28.000.000M" },
     ]
   },
@@ -176,8 +176,8 @@ export const offers = [ // Export the offers array
     countryName: "Alemania",
     countryLogo: "GR.png",
     biddingHistory: [
-      { teamName: "Chelsky", teamLogo: "CH.png", bidAmount: "€20.000.000M" },
-      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€22.000.000M" },
+      { teamName: "RPB", teamLogo: "RBP.png", bidAmount: "€20.000.000M" },
+      { teamName: "Marseille", teamLogo: "MS.png", bidAmount: "€22.000.000M" },
     ]
   },
 ]

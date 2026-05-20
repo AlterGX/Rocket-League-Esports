@@ -4,6 +4,7 @@ import { HeroBanner } from "@/components/hero-banner"
 import { TournamentInfo } from "@/components/tournament-info"
 import { TeamsSection } from "@/components/teams-section"
 import { MarketOffersSection } from "@/components/market-offers-section"
+// import { MarketRumorsSection } from "@/components/market-rumors-section"
 
 import { Top8Section } from "@/components/top8-section"
 import { ForwardsSection } from "@/components/forwards-section"
@@ -42,6 +43,11 @@ export default function HomePage() {
       <AnimatedSection animation="fade-up">
         <MarketOffersSection />
       </AnimatedSection>
+
+      {/* Market Rumors Section - Desactivada temporalmente */}
+      {/* <AnimatedSection animation="fade-up">
+        <MarketRumorsSection />
+      </AnimatedSection> */}
 
 
 
