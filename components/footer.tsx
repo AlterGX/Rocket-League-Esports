@@ -17,7 +17,7 @@ export function Footer() {
           <div className="col-span-1 lg:col-span-2">
             <a href="#" className="inline-block mb-8">
               <span className="text-3xl font-[family-name:var(--font-bebas)] tracking-[0.3em] text-foreground">
-                RL26
+                RL26®
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-8">
@@ -66,7 +66,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-border/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] tracking-[0.1em] text-muted-foreground">
-            &copy; 2026 RL26 MARKET. ALL RIGHTS RESERVED.
+            &copy; 2026 RL26® MARKET. ALL RIGHTS RESERVED.
           </p>
           <div className="flex items-center gap-8">
             {["Privacy", "Terms", "Cookies"].map((link) => (
