@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState, useRef, useCallback } from "react"
-import { offers } from "@/components/offers-section" // Import the offers data
 import { ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -17,6 +16,84 @@ const formatPriceDisplay = (priceNum: number): string => {
   return `€${formattedMillions}M `;
 };
 
+const liveOffers = [
+  {
+    id: 1,
+    player: "Chicorid | Dan1615",
+    club: "Chicorid",
+    clubLogo: "CD.png",
+    dorsal: "#11",
+    position: "Right Winger",
+    price: "€170.000.000M",
+    offeringTeam: "Mashine City",
+    offeringLogo: "MC.png",
+    biddingHistory: [
+      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€165.000.000M" },
+      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€160.000.000M" },
+    ]
+  },
+  {
+    id: 2,
+    player: "Berserk | ZEsteban",
+    club: "Berserk",
+    clubLogo: "BD.png",
+    dorsal: "#15",
+    position: "Center Forward",
+    price: "€100.000.000M",
+    offeringTeam: "Bastard Munchen",
+    offeringLogo: "BM.png",
+    biddingHistory: [
+      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€95.000.000M" },
+      { teamName: "Ubers", teamLogo: "UB.png", bidAmount: "€90.000.000M" },
+    ]
+  },
+  {
+    id: 3,
+    player: "Bastard | Drakkard",
+    club: "Bastard",
+    clubLogo: "BM.png",
+    dorsal: "#6",
+    position: "Midfielder Box-to-Box",
+    price: "€70.000.000M",
+    offeringTeam: "Ubers",
+    offeringLogo: "UB.png",
+    biddingHistory: [
+      { teamName: "Ubers", teamLogo: "UB.png", bidAmount: "€65.000.000M" },
+      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€60.000.000M" },
+    ]
+  },
+  {
+    id: 4,
+    player: "Ajajax | Pamtita",
+    club: "Ajajax",
+    clubLogo: "AJ.png",
+    dorsal: "#4",
+    position: "Center Back",
+    price: "€50.000.000M",
+    offeringTeam: "Mashine United",
+    offeringLogo: "MU.png",
+    biddingHistory: [
+      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€45.000.000M" },
+      { teamName: "Arsenali", teamLogo: "AR.png", bidAmount: "€40.000.000M" },
+    ]
+  },
+  {
+    id: 5,
+    player: "Mashine U | Josua",
+    club: "Mashine U",
+    clubLogo: "MU.png",
+    dorsal: "#20",
+    position: "Right Back",
+    price: "€10.000.000M",
+    offeringTeam: "Marseille",
+    offeringLogo: "MS.png",
+    biddingHistory: [
+      { teamName: "Marseille", teamLogo: "MS.png", bidAmount: "€8.000.000M" },
+      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€5.000.000M" },
+    ]
+  }
+];
+
 export function MarketOffersSection() {
   const [currentOfferIndex, setCurrentOfferIndex] = useState(0)
   const [animatedPrice, setAnimatedPrice] = useState(0)
@@ -24,7 +101,7 @@ export function MarketOffersSection() {
   const animationIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const nextPlayerTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const currentOffer = offers[currentOfferIndex]
+  const currentOffer = liveOffers[currentOfferIndex]
   const targetPrice = parsePrice(currentOffer.price)
 
   const startAnimation = useCallback(() => {
@@ -49,7 +126,7 @@ export function MarketOffersSection() {
         setOfferStatus('closed');
 
         nextPlayerTimeoutRef.current = setTimeout(() => {
-          setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % offers.length);
+          setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % liveOffers.length);
         }, 3000); // Wait 3 seconds before moving to next player
       } else {
         setAnimatedPrice(currentAnimatedValue);
@@ -212,7 +289,7 @@ export function MarketOffersSection() {
 
             <div className="mt-auto pt-8 border-t border-border/10 flex items-center justify-end">
               <button 
-                onClick={() => setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % offers.length)}
+                onClick={() => setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % liveOffers.length)}
                 className="group/btn inline-flex items-center gap-3 text-[10px] tracking-[0.3em] text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 SIGUIENTE OFERTA <ArrowRight size={14} strokeWidth={1.5} />
