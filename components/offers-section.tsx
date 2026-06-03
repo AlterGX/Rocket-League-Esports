@@ -12,176 +12,93 @@ import {
 export const offers = [ // Export the offers array
   { 
     id: 1, 
-    player: "ReAl | AlterGX", 
-    club: "ReAl", 
-    clubLogo: "RA.png", 
-    dorsal: "#10", 
-    position: "Midfielder Ofensive", 
-    price: "€220.000.000M", 
-    offeringTeam: "ReAl",
-    offeringLogo: "RA.png",
-    countryName: "Inglaterra",
-    countryLogo: "EN.png",
-    biddingHistory: [
-      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€200.000.000M" },
-      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€210.000.000M" },
-    ]
-  },
-  { 
-    id: 2, 
-    player: "Barcha | TheRealbracho", 
-    club: "Barcha", 
-    clubLogo: "BF.png", 
-    dorsal: "#9", 
-    position: "Center Forward", 
-    price: "€200.000.000M", 
-    offeringTeam: "Barcha FC",
-    offeringLogo: "BF.png",
-    countryName: "Francia",
-    countryLogo: "FR.png",
-    biddingHistory: [
-      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€195.000.000M" },
-      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€185.000.000M" },
-    ]
-  },
-  { 
-    id: 3, 
-    player: "PXG | ElGangsta_07", 
-    club: "PXG", 
-    clubLogo: "PX.png", 
-    dorsal: "#7", 
-    position: "Right Winger", 
-    price: "€185.000.000M", 
-    offeringTeam: "PXG",
-    offeringLogo: "PX.png",
-    countryName: "Alemania",
-    countryLogo: "GR.png",
-    biddingHistory: [
-      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€170.000.000M" },
-      { teamName: "Arsenali", teamLogo: "AR.png", bidAmount: "€175.000.000M" },
-    ]
-  },
-  { 
-    id: 4, 
     player: "Chicorid | Dan1615", 
     club: "Chicorid", 
     clubLogo: "CD.png", 
     dorsal: "#11", 
     position: "Left Winger", 
-    price: "€160.000.000M", 
-    offeringTeam: "Chicorid",
-    offeringLogo: "CD.png",
+    price: "€170.000.000M", 
+    offeringTeam: "Mashine City",
+    offeringLogo: "MC.png",
     countryName: "Japon",
     countryLogo: "JP.png",
     biddingHistory: [
-      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€150.000.000M" },
+      { teamName: "PXG", teamLogo: "MC.png", bidAmount: "€150.000.000M" },
       { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€130.000.000M" },
     ]
   },
   { 
-    id: 5, 
-    player: "Arsenali | Willicraft400", 
-    club: "Arsenali", 
-    clubLogo: "AR.png", 
-    dorsal: "#8", 
-    position: "Right Defense", 
-    price: "€120.000.000M", 
-    offeringTeam: "Arsenali",
-    offeringLogo: "AR.png",
-    countryName: "Inglaterra",
-    countryLogo: "EN.png",
-    biddingHistory: [
-      { teamName: "Chelsky", teamLogo: "CH.png", bidAmount: "€100.000.000M" },
-      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€110.000.000M" },
-    ]
-  },
-  { 
-    id: 6, 
-    player: "Bastard Munchen | Drakkrad", 
-    club: "Bastard Munchen", 
-    clubLogo: "BM.png", 
-    dorsal: "#20", 
-    position: "Defensive Midfielder", 
-    price: "€100.000.000M", 
-    offeringTeam: "Bastard Munchen",
-    offeringLogo: "BM.png",
-    countryName: "Japon",
-    countryLogo: "JP.png",
-    biddingHistory: [
-      { teamName: "Ubers", teamLogo: "UB.png", bidAmount: "€80.000.000M" },
-      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€90.000.000M" },
-    ]
-  },
-  { 
-    id: 7, 
-    player: "Chelsky | Skartt01", 
-    club: "Chelsky", 
-    clubLogo: "CH.png", 
-    dorsal: "#15", 
-    position: "Defense Center", 
-    price: "€70.000.000M", 
-    offeringTeam: "Chelsky",
-    offeringLogo: "CH.png",
-    countryName: "Francia",
-    countryLogo: "FR.png",
-    biddingHistory: [
-      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€60.000.000M" },
-      { teamName: "Berserk Dortmund", teamLogo: "BD.png", bidAmount: "€65.000.000M" },
-    ]
-  },
-  { 
-    id: 8, 
+    id: 2, 
     player: "Berserk Dortmund| ZEstebanPVP", 
     club: "Berserk Dortmund", 
     clubLogo: "BD.png", 
     dorsal: "#15", 
     position: "Center Forward", 
-    price: "€40.000.000M", 
-    offeringTeam: "Berserk Dortmund",
-    offeringLogo: "BD.png",
+    price: "€100.000.000M", 
+    offeringTeam: "Bastard Munchen",
+    offeringLogo: "BM.png",
     countryName: "Brasil",
     countryLogo: "BR.png",
     biddingHistory: [
-      { teamName: "Ajajax", teamLogo: "AJ.png", bidAmount: "€30.000.000M" },
-      { teamName: "Chicorid", teamLogo: "CD.png", bidAmount: "€35.000.000M" },
+      { teamName: "Barcha", teamLogo: "BA.png", bidAmount: "€80.000.000M" },
+      { teamName: "Chelsky", teamLogo: "CH.png", bidAmount: "€75.000.000M" },
     ]
   },
   { 
-    id: 9, 
-    player: "Mashine United | JosuaSCA", 
-    club: "Mashine United", 
-    clubLogo: "MU.png", 
-    dorsal: "#25", 
-    position: "Center Forward", 
-    price: "30.000.000M", 
-    offeringTeam: "Mashine United",
-    offeringLogo: "MU.png",
-    countryName: "Francia",
-    countryLogo: "FR.png",
+    id: 3, 
+    player: "Bastard Munchen | Drakkrad", 
+    club: "Bastard Munchen", 
+    clubLogo: "BM.png", 
+    dorsal: "#20", 
+    position: "Defensive Midfielder", 
+    price: "€70.000.000M", 
+    offeringTeam: "Ubers",
+    offeringLogo: "UB.png",
+    countryName: "Japon",
+    countryLogo: "JP.png",
     biddingHistory: [
-      { teamName: "Miranoia", teamLogo: "MI.png", bidAmount: "€25.000.000M" },
-      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€28.000.000M" },
+      { teamName: "Ubers", teamLogo: "UB.png", bidAmount: "€60.000.000M" },
+      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€50.000.000M" },
     ]
   },
   { 
-    id: 10, 
+    id: 4, 
     player: "Ajajax | Pamtita", 
     club: "Ajajax", 
     clubLogo: "AJ.png", 
     dorsal: "#4", 
     position: "Defense", 
-    price: "€25.000.000M", 
-    offeringTeam: "Ajajax",
-    offeringLogo: "AJ.png",
+    price: "€50.000.000M", 
+    offeringTeam: "Mashine United",
+    offeringLogo: "MU.png",
     countryName: "Alemania",
     countryLogo: "GR.png",
     biddingHistory: [
-      { teamName: "RPB", teamLogo: "RBP.png", bidAmount: "€20.000.000M" },
-      { teamName: "Marseille", teamLogo: "MS.png", bidAmount: "€22.000.000M" },
+      { teamName: "Berserk Dortmund", teamLogo: "BD.png", bidAmount: "€40.000.000M" },
+      { teamName: "Marseille", teamLogo: "MS.png", bidAmount: "€30.000.000M" },
+    ]
+  },
+  { 
+    id: 5, 
+    player: "Mashine United | JosuaSCA", 
+    club: "Mashine United", 
+    clubLogo: "MU.png", 
+    dorsal: "#25", 
+    position: "Center Forward", 
+    price: "10.000.000M", 
+    offeringTeam: "Marseille",
+    offeringLogo: "MS.png",
+    countryName: "Francia",
+    countryLogo: "FR.png",
+    biddingHistory: [
+      { teamName: "Miranoia", teamLogo: "MI.png", bidAmount: "€8.000.000M" },
+      { teamName: "Ajajax", teamLogo: "AJ.png", bidAmount: "€5.000.000M" },
     ]
   },
 ]
 
+// Use the locally defined offers array
+const filteredOffers = offers;
 export function OffersSection() {
   const [selectedOffer, setSelectedOffer] = useState<typeof offers[0] | null>(null)
   const [isOpen, setIsOpen] = useState(false)
@@ -196,17 +113,17 @@ export function OffersSection() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h3 className="text-4xl md:text-5xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-none">
-              Ofertas De Clubes - Fichajes Concretados De MAYO
+              Ofertas De Clubes - Fichajes Concretados Para El Mes De Junio
             </h3>
-            <span className="text-[10px] tracking-[0.4em] text-muted-foreground font-mono bg-secondary/20 px-4 py-2 border border-border/10">
-              TOTAL: 10 OFERTAS
+            <span className="text-[10px] tracking-[0.4em] text-muted-foreground font-mono bg-secondary/20 px-4 py-2 border border-border/10 uppercase">
+              TOTAL: {filteredOffers.length} OFERTAS // EN VIVO
             </span>
           </div>
         </div>
 
         <div className="border-y border-border/10 bg-card/5">
           <div className="divide-y divide-border/5">
-            {offers.map((offer) => (
+            {filteredOffers.map((offer) => (
               <div
                 key={offer.id}
                 className="group relative px-6 lg:px-12 py-8 flex flex-wrap md:flex-nowrap items-center gap-8 hover:bg-white/[0.02] transition-all duration-500 cursor-pointer overflow-hidden"

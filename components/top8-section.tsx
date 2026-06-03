@@ -5,7 +5,8 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
-} from '@/components/ui/dialog'
+} from '@/components/ui/dialog';
+import { cn } from "@/lib/utils";
 
 const getTeamLogo = (team: string) => {
   const logoMap: Record<string, string> = {
@@ -76,7 +77,7 @@ const top9Players = [
     rankChange: 0,
     position: "Midfielder Offensive",
     statsIncrease: { goals: { percent: "+5.8%", total: "+472" }, assists: { percent: "+5.9%", total: "+199" }, saves: { percent: "+6.0%", total: "+281" }, mvp: { percent: "+8.5%", total: "+132" } },
-    percentage: "98.5%",
+    percentage: "96",
     country: "Inglaterra",
     countryLogo: "EN.png",
     palmares: ["Campeon 2024, Campeon 2025, MVP Campeon 2026"]
@@ -92,7 +93,7 @@ const top9Players = [
     rankChange: 0,
     position: "Center Forward",
     statsIncrease: { goals: { percent: "+6.4%", total: "+405" }, assists: { percent: "+5.8%", total: "+136" }, saves: { percent: "+7.5%", total: "+279" }, mvp: { percent: "+6.9%", total: "+79" } },
-    percentage: "95.2%",
+    percentage: "94",
     country: "Francia",
     countryLogo: "FR.png",
     palmares: ["Campeon 2024, MVP Campeon 2025, Campeon 2026"]
@@ -108,7 +109,7 @@ const top9Players = [
     rankChange: 0,
     position: "Left Winger",
     statsIncrease: { goals: { percent: "+6.9%", total: "+729" }, assists: { percent: "+6.1%", total: "+84" }, saves: { percent: "+10.3%", total: "+358" }, mvp: { percent: "+6.7%", total: "+38" } },
-    percentage: "92.8%",
+    percentage: "92",
     country: "Alemania",
     countryLogo: "GR.png",
     palmares: ["Campeon 2024, Campeon 2025, MVP Campeon 2024"]
@@ -119,12 +120,12 @@ const top9Players = [
     team: "Mashine City",
     dorsal: "11",
     stats: { goals: 6085, assists: 1851, saves: 1799, mvp: 596 },
-    marketValue: "270.000.000M",
-    valueChange: "+€45.000.000M",
+    marketValue: "265.000.000M",
+    valueChange: "+€40.000.000M",
     rankChange: 0,
     position: "Right Winger",
     statsIncrease: { goals: { percent: "+9.4%", total: "+522" }, assists: { percent: "+10.4%", total: "+174" }, saves: { percent: "+12.9%", total: "+206" }, mvp: { percent: "+9.8%", total: "+53" } },
-    percentage: "89.6%",
+    percentage: "89",
     country: "Japon",
     countryLogo: "JP.png",
     palmares: ["Campeon 2025, Campeon 2026"]
@@ -137,10 +138,10 @@ const top9Players = [
     stats: { goals: 3739, assists: 901, saves: 1410, mvp: 615 },
     marketValue: "210.000.000M",
     valueChange: "+€55.000.000M",
-    rankChange: 0,
+    rankChange: 1,
     position: "Midfielder Defensive",
     statsIncrease: { goals: { percent: "+30.9%", total: "+883" }, assists: { percent: "+24.6%", total: "+178" }, saves: { percent: "+39.1%", total: "+396" }, mvp: { percent: "+38.2%", total: "+170" } },
-    percentage: "87.4%",
+    percentage: "86",
     country: "Inglaterra",
     countryLogo: "EN.png",
     palmares: [""]
@@ -153,10 +154,10 @@ const top9Players = [
     stats: { goals: 2481, assists: 411, saves: 1327, mvp: 267 },
     marketValue: "135.000.000M",
     valueChange: "-€25.000.000M",
-    rankChange: 0,
+    rankChange: -1,
     position: "Center Back",
     statsIncrease: { goals: { percent: "+11.8%", total: "+279" }, assists: { percent: "+7.6%", total: "+29" }, saves: { percent: "+19.4%", total: "+252" }, mvp: { percent: "+8.9%", total: "+19" } },
-    percentage: "84.1%",
+    percentage: "84",
     country: "Francia",
     countryLogo: "FR.png",
     palmares: [""]
@@ -172,7 +173,7 @@ const top9Players = [
     rankChange: 1,
     position: "Center Forward",
     statsIncrease: { goals: { percent: "+54.2%", total: "+733" }, assists: { percent: "+61.4%", total: "+224" }, saves: { percent: "+84.7%", total: "+353" }, mvp: { percent: "+61.5%", total: "+83" } },
-    percentage: "78.3%",
+    percentage: "83",
     country: "Brasil",
     countryLogo: "BR.png",
     palmares: [""]
@@ -184,11 +185,11 @@ const top9Players = [
     dorsal: "6",
     stats: { goals: 1959, assists: 589, saves: 942, mvp: 242 },
     marketValue: "100.000.000M",
-    valueChange: "+€2.000.000M",
+    valueChange: "-€20.000.000M",
     rankChange: -1,
     position: "Midfielder Box-to-Box",
     statsIncrease: { goals: { percent: "+3.6%", total: "+68" }, assists: { percent: "+3.0%", total: "+17" }, saves: { percent: "+1.6%", total: "15" }, mvp: { percent: "+3.4%", total: "+8" } },
-    percentage: "81.7%",
+    percentage: "80",
     country: "Japon",
     countryLogo: "JP.png",
     palmares: [""]
@@ -200,11 +201,11 @@ const top9Players = [
     dorsal: "4",
     stats: { goals: 434, assists: 300, saves: 296, mvp: 13 },
     marketValue: "65.000.000M",
-    valueChange: "+€15.000.000M",
+    valueChange: "+€25.000.000M",
     rankChange: 1,
     position: "Center Back",
     statsIncrease: { goals: { percent: "+81.6%", total: "+195" }, assists: { percent: "+49.3%", total: "+99" }, saves: { percent: "+54.2%", total: "+104" }, mvp: { percent: "+18.2%", total: "+2" } },
-    percentage: "72.5%",
+    percentage: "78",
     country: "Alemania",
     countryLogo: "GR.png",
     palmares: [""]
@@ -216,11 +217,11 @@ const top9Players = [
     dorsal: "20",
     stats: { goals: 1220, assists: 426, saves: 314, mvp: 135 },
     marketValue: "25.000.000M",
-    valueChange: "+€1.000.000M",
+    valueChange: "-€25.000.000M",
     rankChange: -1,
     position: "Right Back",
     statsIncrease: { goals: { percent: "+1.1%", total: "+3" }, assists: { percent: "+1.0%", total: "+1" }, saves: { percent: "+1.0%", total: "+2" }, mvp: { percent: "0%", total: "+0" } },
-    percentage: "75.9%",
+    percentage: "72",
     country: "Francia",
     countryLogo: "FR.png",
     palmares: [""]
@@ -332,9 +333,13 @@ function PlayerCard({ player, onClick }: { player: typeof top9Players[0], onClic
         {/* Market Value - Bottom */}
         <div className="mt-auto pt-4 border-t border-border/10 flex items-center justify-between">
           <span className="text-[9px] tracking-[0.2em] text-muted-foreground">Net Worth €</span>
-          <div className="flex flex-col items-end">
-            <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground">€{player.marketValue}</span>
-            <span className="text-[9px] font-mono text-green-500/70 font-bold leading-none">{player.valueChange}</span>
+          <div className="flex flex-col items-end text-right">
+            <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground leading-none">€{player.marketValue}</span>
+            <span className={cn("text-[9px] font-mono font-bold leading-none",
+              player.valueChange.startsWith('-') ? "text-red-500/70" : "text-green-500/70"
+            )}>
+              {player.valueChange}
+            </span>
           </div>
         </div>
       </div>
@@ -374,7 +379,7 @@ export function Top8Section() {
           </div>
           <div className="flex items-end">
             <p className="text-muted-foreground text-base lg:text-lg leading-relaxed max-w-lg border-l border-border/20 pl-8">
-              Este es el Ranking Oficial realizado por la IA, en el se muestran Estadisticsa, Porcentajes de Rendimiento, Valores de Mercado junto a los Palmarés del Top 10 jugadores de Rocket League Esports en la actualidad. Haz click en cada jugador para ver su reporte detallado de rendimiento.
+              Este es el Ranking Oficial realizado por la IA, en el se muestran Estadisticsa, Porcentajes de Rendimiento, Valores de Mercado del Top 10 jugadores de Rocket League. Haz click en cada jugador para ver su reporte detallado de rendimiento.
             </p>
           </div>
         </div>
@@ -410,7 +415,7 @@ export function Top8Section() {
 
       {/* Player Detail Modal */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl w-[95vw] sm:w-full border border-border/20 bg-background/95 backdrop-blur-xl p-0 overflow-y-auto max-h-[90vh] lg:overflow-hidden shadow-2xl animate-pop-open rounded-none">
+        <DialogContent className="max-w-5xl w-[95vw] sm:w-full border border-border/20 bg-background/95 backdrop-blur-xl p-0 overflow-y-auto max-h-[85vh] shadow-2xl animate-pop-open rounded-none [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-white/10 hover:[&::-webkit-scrollbar-thumb]:bg-white/20">
           <DialogTitle className="sr-only">Detalle del Jugador</DialogTitle>
           {selectedPlayer && (
             <div className="relative">
@@ -421,17 +426,25 @@ export function Top8Section() {
               />
               
               {/* Header Técnico */}
-              <div className="relative z-10 border-b border-border/10 bg-secondary/10 px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-between">
+              <div className="relative z-10 border-b border-border/10 bg-secondary/10 px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-between sticky top-0 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-foreground/40 animate-pulse" />
                   <span className="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.5em] text-muted-foreground font-mono">Reporte De Rendimiento // ID_{String(selectedPlayer.rank).padStart(3, '0')}</span>
                 </div>
-                <span className="text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono uppercase">RANK_{selectedPlayer.rank}</span>
+                <div className="flex items-center gap-4">
+                  <span className="text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono uppercase hidden sm:inline">RANK_{selectedPlayer.rank}</span>
+                  <button 
+                    onClick={() => setIsOpen(false)}
+                    className="w-6 h-6 flex items-center justify-center border border-border/20 hover:bg-foreground hover:text-background transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  </button>
+                </div>
               </div>
 
               <div className="relative z-10 grid gap-0 lg:grid-cols-[1fr_350px]">
                 {/* Main Content Area */}
-                <div className="p-6 sm:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-border/10">
+                <div className="p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-border/10">
                   <div className="space-y-8 sm:space-y-10">
                     {/* Profile Header */}
                     <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-10">
@@ -460,19 +473,23 @@ export function Top8Section() {
                       <div className="border border-border/10 bg-secondary/5 p-5 sm:p-6 relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-2 opacity-10 font-mono text-[8px]">VAL_REF_01</div>
                         <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground mb-3">Valor de Mercado</p>
-                        <div className="flex items-baseline gap-3">
-                          <p className="text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-foreground">
+                        <div className="flex flex-col">
+                          <p className="text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-foreground leading-none">
                             €{selectedPlayer.marketValue}
                           </p>
-                          <span className="text-[11px] text-green-500 font-bold font-mono">{selectedPlayer.valueChange}</span>
+                          <span className={cn("text-[9px] font-bold font-mono mt-1",
+                            selectedPlayer.valueChange.startsWith('-') ? "text-red-500" : "text-green-500"
+                          )}>
+                            {selectedPlayer.valueChange}
+                          </span>
                         </div>
                       </div>
                       <div className="border border-border/10 bg-secondary/5 p-5 sm:p-6 relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-2 opacity-10 font-mono text-[8px]">PERF_IDX_A</div>
-                        <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground mb-3">Rendimiento Global</p>
+                        <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground mb-3">Medida Global</p>
                         <div className="flex items-baseline gap-3">
                           <p className="text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-foreground">{selectedPlayer.percentage}</p>
-                          <span className="text-[10px] text-green-500 font-bold font-mono">+2.4% <span className="text-[8px] text-muted-foreground/40 uppercase">INDEX</span></span>
+                          <span className="text-[10px] text-green-500 font-bold font-mono"><span className="text-[8px] text-muted-foreground/40 uppercase"></span></span>
                         </div>
                       </div>
                     </div>
@@ -492,7 +509,7 @@ export function Top8Section() {
                         ].map((stat) => (
                           <div key={stat.label} className="group/stat border border-border/10 bg-card/5 p-5 transition-colors hover:bg-card/10">
                             <span className="text-[8px] tracking-[0.3em] text-muted-foreground block mb-3 uppercase font-mono">{stat.label}</span>
-                            <span className="text-xl sm:text-2xl lg:text-3xl font-[family-name:var(--font-bebas)] text-foreground block group-hover/stat:translate-x-1 transition-transform">
+                            <span className="text-2xl lg:text-3xl font-[family-name:var(--font-bebas)] text-foreground block group-hover/stat:translate-x-1 transition-transform">
                               {stat.value}
                             </span>
                             <div className="mt-4 pt-3 border-t border-border/10 flex items-center justify-between">
@@ -507,7 +524,7 @@ export function Top8Section() {
                 </div>
 
                 {/* Sidebar Area */}
-                <div className="p-6 sm:p-10 lg:p-12 space-y-8 sm:space-y-10 bg-secondary/5">
+                <div className="p-6 sm:p-8 lg:p-10 space-y-8 sm:space-y-10 bg-secondary/5">
                   {/* Palmares Section */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">

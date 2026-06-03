@@ -7,9 +7,9 @@ import { MarketOffersSection } from "@/components/market-offers-section"
 // import { MarketRumorsSection } from "@/components/market-rumors-section"
 
 import { Top8Section } from "@/components/top8-section"
-import { ForwardsSection } from "@/components/forwards-section"
-import { MidfieldersSection } from "@/components/midfielders-section"
-import { DefendersSection } from "@/components/defenders-section"
+// import { ForwardsSection } from "@/components/forwards-section"
+// import { MidfieldersSection } from "@/components/midfielders-section"
+// import { DefendersSection } from "@/components/defenders-section"
 import { AwardsSection } from "@/components/awards-section"
 
 
@@ -59,7 +59,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* FACE TO FACE Title */}
-      <div className="relative py-24 overflow-hidden">
+      {/* <div className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.02]">
           <span className="text-[180px] font-[family-name:var(--font-bebas)] tracking-tighter whitespace-nowrap select-none">
             VS VS VS VS VS VS VS VS VS VS
@@ -78,23 +78,23 @@ export default function HomePage() {
             Análisis posicional detallado y métricas de rendimiento comparadas.
           </p>
         </div>
-      </div>
+      </div> */}
 
 
       {/* Forwards Section */}
-      <AnimatedSection animation="fade-up">
+      {/* <AnimatedSection animation="fade-up">
         <ForwardsSection />
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       {/* Midfielders Section */}
-      <AnimatedSection animation="fade-up">
+      {/* <AnimatedSection animation="fade-up">
         <MidfieldersSection />
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       {/* Defenders Section */}
-      <AnimatedSection animation="fade-up">
+      {/* <AnimatedSection animation="fade-up">
         <DefendersSection />
-      </AnimatedSection>
+      </AnimatedSection> */}
 
 
       {/* Awards Section */}
