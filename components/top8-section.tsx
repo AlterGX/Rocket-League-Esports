@@ -151,6 +151,20 @@ const top9Players = [
   },
   {
     rank: 7,
+    name: "zEstebanPVP",
+    team: "Barcha FC",
+    dorsal: "15",
+    stats: { goals: 2034, assists: 589, saves: 770, mvp: 218 },
+    marketValue: "110.000.000M",
+    position: "Center Forward",
+    statsIncrease: { goals: { percent: "+54.2%", total: "+715" }, assists: { percent: "+61.4%", total: "+224" }, saves: { percent: "+84.7%", total: "+353" }, mvp: { percent: "+61.5%", total: "+83" } },
+    percentage: "78.3%",
+    country: "Brasil",
+    countryLogo: "BR.png",
+    palmares: [""]
+  },
+  {
+    rank: 8,
     name: "Drakrad404",
     team: "Ubers",
     dorsal: "6",
@@ -161,20 +175,6 @@ const top9Players = [
     percentage: "81.7%",
     country: "Japon",
     countryLogo: "JP.png",
-    palmares: [""]
-  },
-  {
-    rank: 8,
-    name: "zEstebanPVP",
-    team: "Berserk Dortmund",
-    dorsal: "15",
-    stats: { goals: 1319, assists: 365, saves: 417, mvp: 135 },
-    marketValue: "50.000.000M",
-    position: "Center Forward",
-    statsIncrease: { goals: { percent: "+16.2%", total: "+219" }, assists: { percent: "+9.1%", total: "+42" }, saves: { percent: "+6.4%", total: "+27" }, mvp: { percent: "+14.7%", total: "+19" } },
-    percentage: "78.3%",
-    country: "Brasil",
-    countryLogo: "BR.png",
     palmares: [""]
   },
   {
