@@ -71,7 +71,9 @@ const top9Players = [
     team: "ReAl",
     dorsal: "10",
     stats: { goals: 8588, assists: 3600, saves: 4966, mvp: 1677 },
-    marketValue: "370.000.00M",
+    marketValue: "340.000.000M",
+    valueChange: "+€30.000.000M",
+    rankChange: 0,
     position: "Midfielder Offensive",
     statsIncrease: { goals: { percent: "+5.8%", total: "+472" }, assists: { percent: "+5.9%", total: "+199" }, saves: { percent: "+6.0%", total: "+281" }, mvp: { percent: "+8.5%", total: "+132" } },
     percentage: "98.5%",
@@ -84,10 +86,12 @@ const top9Players = [
     name: "TheRealbracho",
     team: "Barcha FC",
     dorsal: "9",
-    stats: { goals: 6310, assists: 2358, saves: 3732, mvp: 1145 },
-    marketValue: "300.000.000M",
+    stats: { goals: 6715, assists: 2494, saves: 4011, mvp: 1224 },
+    marketValue: "335.000.000M",
+    valueChange: "+€35.000.000M",
+    rankChange: 0,
     position: "Center Forward",
-    statsIncrease: { goals: { percent: "+18.2%", total: "+1122" }, assists: { percent: "+9.4%", total: "+334" }, saves: { percent: "+11.6%", total: "+506" }, mvp: { percent: "+14.8%", total: "+205" } },
+    statsIncrease: { goals: { percent: "+6.4%", total: "+405" }, assists: { percent: "+5.8%", total: "+136" }, saves: { percent: "+7.5%", total: "+279" }, mvp: { percent: "+6.9%", total: "+79" } },
     percentage: "95.2%",
     country: "Francia",
     countryLogo: "FR.png",
@@ -98,10 +102,12 @@ const top9Players = [
     name: "ElGangsta_07",
     team: "PXG",
     dorsal: "7",
-    stats: { goals: 10575, assists: 1377, saves: 3481, mvp: 565 },
-    marketValue: "255.000.000M",
+    stats: { goals: 11304, assists: 1461, saves: 3839, mvp: 603 },
+    marketValue: "295.000.000M",
+    valueChange: "+€40.000.000M",
+    rankChange: 0,
     position: "Left Winger",
-    statsIncrease: { goals: { percent: "+25.1%", total: "+2118" }, assists: { percent: "+6.8%", total: "+116" }, saves: { percent: "+7.2%", total: "+245" }, mvp: { percent: "+9.3%", total: "+43" } },
+    statsIncrease: { goals: { percent: "+6.9%", total: "+729" }, assists: { percent: "+6.1%", total: "+84" }, saves: { percent: "+10.3%", total: "+358" }, mvp: { percent: "+6.7%", total: "+38" } },
     percentage: "92.8%",
     country: "Alemania",
     countryLogo: "GR.png",
@@ -113,7 +119,9 @@ const top9Players = [
     team: "Mashine City",
     dorsal: "11",
     stats: { goals: 6085, assists: 1851, saves: 1799, mvp: 596 },
-    marketValue: "255.000.000M",
+    marketValue: "270.000.000M",
+    valueChange: "+€45.000.000M",
+    rankChange: 0,
     position: "Right Winger",
     statsIncrease: { goals: { percent: "+9.4%", total: "+522" }, assists: { percent: "+10.4%", total: "+174" }, saves: { percent: "+12.9%", total: "+206" }, mvp: { percent: "+9.8%", total: "+53" } },
     percentage: "89.6%",
@@ -128,6 +136,8 @@ const top9Players = [
     dorsal: "40",
     stats: { goals: 3739, assists: 901, saves: 1410, mvp: 615 },
     marketValue: "210.000.000M",
+    valueChange: "+€55.000.000M",
+    rankChange: 0,
     position: "Midfielder Defensive",
     statsIncrease: { goals: { percent: "+30.9%", total: "+883" }, assists: { percent: "+24.6%", total: "+178" }, saves: { percent: "+39.1%", total: "+396" }, mvp: { percent: "+38.2%", total: "+170" } },
     percentage: "87.4%",
@@ -141,7 +151,9 @@ const top9Players = [
     team: "Chelsky",
     dorsal: "8",
     stats: { goals: 2481, assists: 411, saves: 1327, mvp: 267 },
-    marketValue: "155.000.000M",
+    marketValue: "135.000.000M",
+    valueChange: "-€25.000.000M",
+    rankChange: 0,
     position: "Center Back",
     statsIncrease: { goals: { percent: "+11.8%", total: "+279" }, assists: { percent: "+7.6%", total: "+29" }, saves: { percent: "+19.4%", total: "+252" }, mvp: { percent: "+8.9%", total: "+19" } },
     percentage: "84.1%",
@@ -152,12 +164,14 @@ const top9Players = [
   {
     rank: 7,
     name: "zEstebanPVP",
-    team: "Barcha FC",
+    team: "Bastard Munchen",
     dorsal: "15",
     stats: { goals: 2034, assists: 589, saves: 770, mvp: 218 },
     marketValue: "110.000.000M",
+    valueChange: "+€40.000.000M",
+    rankChange: 1,
     position: "Center Forward",
-    statsIncrease: { goals: { percent: "+54.2%", total: "+715" }, assists: { percent: "+61.4%", total: "+224" }, saves: { percent: "+84.7%", total: "+353" }, mvp: { percent: "+61.5%", total: "+83" } },
+    statsIncrease: { goals: { percent: "+54.2%", total: "+733" }, assists: { percent: "+61.4%", total: "+224" }, saves: { percent: "+84.7%", total: "+353" }, mvp: { percent: "+61.5%", total: "+83" } },
     percentage: "78.3%",
     country: "Brasil",
     countryLogo: "BR.png",
@@ -170,6 +184,8 @@ const top9Players = [
     dorsal: "6",
     stats: { goals: 1959, assists: 589, saves: 942, mvp: 242 },
     marketValue: "100.000.000M",
+    valueChange: "+€2.000.000M",
+    rankChange: -1,
     position: "Midfielder Box-to-Box",
     statsIncrease: { goals: { percent: "+3.6%", total: "+68" }, assists: { percent: "+3.0%", total: "+17" }, saves: { percent: "+1.6%", total: "15" }, mvp: { percent: "+3.4%", total: "+8" } },
     percentage: "81.7%",
@@ -184,6 +200,8 @@ const top9Players = [
     dorsal: "4",
     stats: { goals: 434, assists: 300, saves: 296, mvp: 13 },
     marketValue: "65.000.000M",
+    valueChange: "+€15.000.000M",
+    rankChange: 1,
     position: "Center Back",
     statsIncrease: { goals: { percent: "+81.6%", total: "+195" }, assists: { percent: "+49.3%", total: "+99" }, saves: { percent: "+54.2%", total: "+104" }, mvp: { percent: "+18.2%", total: "+2" } },
     percentage: "72.5%",
@@ -198,6 +216,8 @@ const top9Players = [
     dorsal: "20",
     stats: { goals: 1220, assists: 426, saves: 314, mvp: 135 },
     marketValue: "25.000.000M",
+    valueChange: "+€1.000.000M",
+    rankChange: -1,
     position: "Right Back",
     statsIncrease: { goals: { percent: "+1.1%", total: "+3" }, assists: { percent: "+1.0%", total: "+1" }, saves: { percent: "+1.0%", total: "+2" }, mvp: { percent: "0%", total: "+0" } },
     percentage: "75.9%",
@@ -222,15 +242,22 @@ function PlayerCard({ player, onClick }: { player: typeof top9Players[0], onClic
       {/* Car Image Area - Top */}
       <div className="relative w-full h-24 border-b border-border/20 bg-secondary/20 flex items-center justify-center overflow-hidden z-10">
         {/* Rank Badge */}
-        <div className="absolute top-4 left-4 z-10">
+        <div className="absolute top-4 left-4 z-10 flex items-baseline gap-1">
           <span className={`text-4xl font-[family-name:var(--font-bebas)] ${
             player.rank === 1 ? "text-foreground" :
             player.rank === 2 ? "text-foreground/70" :
             player.rank === 3 ? "text-foreground/50" :
             "text-foreground/30"
-}`}>
+          }`}>
             #{player.rank}
           </span>
+          {player.rankChange !== 0 ? (
+            <div className={`flex items-center text-[10px] font-bold ${player.rankChange > 0 ? 'text-green-500' : 'text-red-500'}`}>
+              {player.rankChange > 0 ? '▲' : '▼'}{Math.abs(player.rankChange)}
+            </div>
+          ) : (
+            <span className="text-[10px] text-muted-foreground/40 font-bold">=</span>
+          )}
         </div>
         
         {/* Dorsal watermark */}
@@ -305,7 +332,10 @@ function PlayerCard({ player, onClick }: { player: typeof top9Players[0], onClic
         {/* Market Value - Bottom */}
         <div className="mt-auto pt-4 border-t border-border/10 flex items-center justify-between">
           <span className="text-[9px] tracking-[0.2em] text-muted-foreground">Net Worth €</span>
-          <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground">€{player.marketValue}</span>
+          <div className="flex flex-col items-end">
+            <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground">€{player.marketValue}</span>
+            <span className="text-[9px] font-mono text-green-500/70 font-bold leading-none">{player.valueChange}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -430,9 +460,12 @@ export function Top8Section() {
                       <div className="border border-border/10 bg-secondary/5 p-5 sm:p-6 relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-2 opacity-10 font-mono text-[8px]">VAL_REF_01</div>
                         <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground mb-3">Valor de Mercado</p>
-                        <p className="text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-foreground">
-                          €{selectedPlayer.marketValue}
-                        </p>
+                        <div className="flex items-baseline gap-3">
+                          <p className="text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-foreground">
+                            €{selectedPlayer.marketValue}
+                          </p>
+                          <span className="text-[11px] text-green-500 font-bold font-mono">{selectedPlayer.valueChange}</span>
+                        </div>
                       </div>
                       <div className="border border-border/10 bg-secondary/5 p-5 sm:p-6 relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-2 opacity-10 font-mono text-[8px]">PERF_IDX_A</div>
