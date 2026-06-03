@@ -8,14 +8,14 @@ import {
 } from '@/components/ui/dialog'
 
 const news = [
-  { id: 1, title: "ALTERGX SE ADAPTA AL ESQUEMA DE LA REAL", subtitle: "La Directiva piensa que fue una decision acertada", date: "10 JUN 2026", featured: true, icons: ["RA.png"], tag: "FICHAJE" },
-  { id: 2, title: "THEREALBRACHO FICHADO POR BARCHA FC", subtitle: "Barcha FC realiza el fichaje estrella del torneo con el Jugador Generacional", date: "19 ABR 2026", featured: true, icons: ["BF.png"], tag: "FICHAJE" },
-  { id: 3, title: "GANGSTA SE CONVIERTE EN EL MAXIMO GOLEADOR", subtitle: "Gangsta supera la cifra de los 10 mil goles", date: "5 JUN 2026", featured: false, icons: ["PX.png"], tag: "GOLEADOR" },
-  { id: 4, title: "DAN RECHAZA MASHINE CITY POR CHICORID", subtitle: "Dan1615 prioriza su fichaje por Chicorid", date: "3 JUN 2026", featured: false, icons: ["CD.png", "MC.png"], tag: "TRASPASO" },
-  { id: 5, title: "PAMTITA FICHA POR AJAJAX PERO CLUBES LO SIGUEN", subtitle: "Berserk Dortmund vigila y Pamtita está atento", date: "1 JUN 2026", featured: false, icons: ["AJ.png", "BD.png"], tag: "INCERTIDUMBRE" },
-  { id: 6, title: "The RL NATIONS 26 ESTA CERCA", subtitle: "El Torneo 2v2 más esperado está llegando", date: "28 MAY 2026", featured: false, icons: ["RL26Trophy.png"], tag: "MUNDIAL" },
-  { id: 7, title: "WILLICRAFT400 PUEDE FICHAR POR LA REAL EN EL FUTURO?", subtitle: "ReAl se ha interesado por sumar a sus filas a otro Jugador", date: "25 MAY 2026", featured: false, icons: ["RA.png", "AR.png"], tag: "RUMOR" },
-  { id: 8, title: "JOSUASCA CAIDA EN PICADA", subtitle: "Los números de JosuaSCA caen y con él su valor", date: "22 MAY 2026", featured: false, icons: ["MU.png"], tag: "RUMOR" },
+  { id: 1, title: "THE RL NATIONS 26: EL MUNDIAL ESTÁ LLEGANDO", subtitle: "El torneo 2v2 más esperado del año inicia sus preparativos globales para la gloria máxima", date: "15 JUN 2026", featured: true, icons: ["RL26Trophy.png"], tag: "MUNDIAL" },
+  { id: 2, title: "DAN1615 CIERRA SU TRASPASO AL MASHINE CITY", subtitle: "El club ciudadano revoluciona el mercado con la llegada del astro japonés tras dejar Chicorid", date: "14 JUN 2026", featured: true, icons: ["MC.png", "CD.png"], tag: "FICHAJE" },
+  { id: 3, title: "RENOVACIONES ÉPICAS EN LA ÉLITE", subtitle: "Alter, TheRealBracho y ElGangsta aseguran su futuro con contratos récord en sus respectivos clubes", date: "12 JUN 2026", featured: false, icons: ["RA.png", "BF.png", "PX.png"], tag: "RENOVACIÓN" },
+  { id: 4, title: "ZESTEBAN REFUERZA AL BASTARD MUNCHEN", subtitle: "La potencia alemana asegura el talento brasileño proveniente del Berserk para la próxima campaña", date: "10 JUN 2026", featured: false, icons: ["BM.png", "BD.png"], tag: "FICHAJE" },
+  { id: 5, title: "PAMTITA: EL AUMENTO DE VALOR ES OFICIAL", subtitle: "Su rendimiento defensivo en el Ajajax dispara su cotización y atrae miradas de toda Europa", date: "08 JUN 2026", featured: false, icons: ["AJ.png"], tag: "RENDIMIENTO" },
+  { id: 6, title: "SKART01: PREOCUPACIÓN POR SU CAÍDA", subtitle: "El defensor del Chelsky sufre un ajuste negativo en su valoración tras el último análisis de la IA", date: "06 JUN 2026", featured: false, icons: ["CH.png"], tag: "DEPRECIACIÓN" },
+  { id: 7, title: "DRAKKARD404 PIERDE TERRENO EN EL TOP", subtitle: "La volatilidad del mercado y un bajón estadístico afectan el valor del mediocampista de Ubers", date: "04 JUN 2026", featured: false, icons: ["UB.png"], tag: "CAÍDA" },
+  { id: 8, title: "JOSUASCA: UNA CAÍDA EN PICADA SIN PRECEDENTES", subtitle: "Los números de JosuaSCA en el Mashine United caen drásticamente afectando su estatus global", date: "02 JUN 2026", featured: false, icons: ["MU.png"], tag: "CAÍDA" },
 ]
 
 export function StadiumsSection() {
