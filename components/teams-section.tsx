@@ -22,7 +22,7 @@ const teams = [
   { id: 11, name: 'Marselie', abbr: 'MS', group: 'C', players: ['No Jugadores Por Ahora'], logo: 'MS.png', description: 'Calor mediterráneo y hinchada legendaria.', rival: {name: 'PXG', logo: 'PX.png'}, countryFlag: 'https://flagcdn.com/24x18/fr.png', leagueLogo: '/acces/ligue1.png', economicStatus: '€550.000.000M' },
   { id: 12, name: 'Berserk Dortmund', abbr: 'BD', group: 'C', players: ['ZEstebanPvP'], logo: 'BD.png', description: 'Muro amarillo y energía inagotable.', rival: {name: 'Bastard Munchen', logo: 'BM.png'}, countryFlag: 'https://flagcdn.com/24x18/de.png', leagueLogo: '/acces/bundesliga.jpg', economicStatus: '€750.000.000M' },
   { id: 13, name: 'Chicorid', abbr: 'CD', group: 'C',players: ['Dan1615'], logo: 'CD.png', description: 'Club modesto con espíritu combativo.', rival: {name: 'ReAl', logo: 'RA.png'}, countryFlag: 'https://flagcdn.com/24x18/es.png', leagueLogo: '/acces/laliga.png', economicStatus: '€450.000.000M' },
-  { id: 14, name: 'RBP', abbr: 'RBP', group: 'C', players: ['No Jugadores Por Ahora'], logo: 'RBP.png', description: 'Veteranos experimentados del circuito.', rival: {name: 'Ajajax', logo: 'AJ.png'}, countryFlag: 'https://flagcdn.com/24x18/nl.png', leagueLogo: '/acces/eredivisie.png', economicStatus: '€500.000.000M' },
+  { id: 14, name: 'Rubypool FC', abbr: 'RUB', group: 'C', players: ['No Jugadores Por Ahora'], logo: 'RUB.png', description: 'Club inglés con gran proyección en la escena competitiva.', rival: {name: 'Mashine United', logo: 'MU.png'}, countryFlag: 'https://flagcdn.com/24x18/gb.png', leagueLogo: '/acces/premier.png', economicStatus: '€500.000.000M' },
   { id: 15, name: 'Ajajax', abbr: 'AJ', group: 'C', players: ['Pamtita'], logo: 'AJ.png', description: 'Fábrica de talentos neerlandesa clásica.', rival: {name: 'RBP', logo: 'RBP.png'}, countryFlag: 'https://flagcdn.com/24x18/nl.png', leagueLogo: '/acces/eredivisie.png', economicStatus: '€600.000.000M' },
 ]
 
@@ -68,9 +68,6 @@ const teams = [
                 alt={`${team.name} logo`}
                 className="w-3/4 h-3/4 object-contain"
               />
-              <div className="absolute top-3 right-3 text-[9px] tracking-[0.2em] text-white drop-shadow-lg">
-                {team.group}
-              </div>
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                 <span className="text-3xl sm:text-4xl font-[family-name:var(--font-bebas)] text-white drop-shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 tracking-wider">
                   {team.abbr}

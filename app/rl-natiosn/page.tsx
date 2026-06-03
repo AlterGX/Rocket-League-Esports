@@ -32,11 +32,11 @@ function HeroTournament() {
         {/* Botón de retorno al inicio con estilo de logo */}
         <div className="mb-12 animate-reveal-up">
           <a href="/" className="inline-flex items-center gap-6 group">
-            <span className="text-2xl font-[family-name:var(--font-bebas)] tracking-[0.3em] text-foreground">
+            <span className="text-2xl font-[family-name:var(--font-bebas)] tracking-wider text-foreground">
               RL26®
             </span>
             <div className="h-px w-8 bg-foreground/20 group-hover:w-16 group-hover:bg-foreground/50 transition-all duration-500" />
-            <span className="text-[10px] tracking-[0.6em] text-muted-foreground uppercase group-hover:text-foreground transition-colors font-mono">
+            <span className="text-[10px] tracking-[0.6em] text-muted-foreground uppercase group-hover:text-foreground transition-colors">
               VOLVER AL INICIO
             </span>
           </a>
@@ -45,7 +45,7 @@ function HeroTournament() {
         <div className="grid lg:grid-cols-[1fr_450px] gap-12 items-center">
           <div className="max-w-3xl">
             <p className="text-[11px] sm:text-xs tracking-[0.5em] text-muted-foreground animate-reveal-up">
-              TORNEO PRINCIPAL
+              TORNEO PRINCIPAL OFICIAL
             </p>
             <h1 className="mt-6 text-[clamp(3.5rem,10vw,9.5rem)] font-[family-name:var(--font-bebas)] leading-[0.85] tracking-[-0.02em] text-foreground animate-reveal-up stagger-1">
               CHAMPIONS CUP 26®
@@ -67,7 +67,7 @@ function HeroTournament() {
                 href="#posiciones"
                 className="inline-flex items-center justify-center px-8 py-4 border border-blue-500/30 bg-blue-500/5 text-foreground text-[13px] tracking-[0.3em] transition-all duration-400 hover:border-blue-500/60"
               >
-                FASE DE GRUPOS
+                TABLA DE LIGA
               </a>
             </div>
           </div>
@@ -182,18 +182,15 @@ const stadiums = [
   { id: "8", name: "NEO TOKYO", type: "SECTOR CYBERPUNK", tag: "FUTURE", image: "NEO.png" },
 ]
 
-const standingsA = [
+const fullStandings = [
   { pos: 1, team: "ReAl", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
   { pos: 2, team: "Arsenali", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
   { pos: 3, team: "PXG", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
   { pos: 4, team: "Barcha FC", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
-]
-
-const standingsB = [
-  { pos: 1, team: "Mashine City", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
-  { pos: 2, team: "Bastard Munchen", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
-  { pos: 3, team: "Chicorid", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
-  { pos: 4, team: "Chelsky", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
+  { pos: 5, team: "Mashine City", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
+  { pos: 6, team: "Bastard Munchen", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
+  { pos: 7, team: "Chicorid", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
+  { pos: 8, team: "Chelsky", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
 ]
 
 const fixtures = [
@@ -258,7 +255,7 @@ function SelectionsGrid() {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="w-16 h-px bg-foreground/20" />
-          <span className="text-[10px] tracking-[0.6em] text-blue-400 font-mono">
+          <span className="text-[10px] tracking-[0.6em] text-blue-400">
             CLUBES PARTICIPANTES
           </span>
         </div>
@@ -267,14 +264,8 @@ function SelectionsGrid() {
           {selections.map((team) => (
             <div
               key={team.id}
-              className="group relative h-80 border border-blue-900/30 bg-blue-950/20 backdrop-blur-sm flex flex-col items-center justify-center hover:border-blue-400/50 transition-all duration-700 cursor-pointer overflow-hidden shadow-2xl"
+              className="group relative h-80 border border-blue-900/30 bg-[#002DFF]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:border-blue-400/50 transition-all duration-700 cursor-pointer overflow-hidden"
             >
-              {/* Technical background effect */}
-              <div 
-                className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity duration-1000"
-                style={{ backgroundImage: `radial-gradient(circle at center, rgba(30,58,138,0.5) 0%, transparent 70%)` }}
-              />
-              
               <img
                 src={`/acces/${team.logo}`}
                 alt={`${team.name} logo`}
@@ -286,8 +277,8 @@ function SelectionsGrid() {
                 <h3 className="text-2xl font-[family-name:var(--font-bebas)] tracking-[0.3em] text-foreground/90 group-hover:text-foreground transition-all group-hover:tracking-[0.4em]">
                   {team.name.toUpperCase()}
                 </h3>
-                <span className="text-[9px] tracking-[0.5em] text-blue-500/60 font-mono">
-                  ESTADO: ACTIVO // {team.abbr}
+                <span className="text-[9px] tracking-[0.5em] text-blue-400/60 uppercase">
+                  Club Oficial {team.abbr}
                 </span>
               </div>
             </div>
@@ -512,8 +503,8 @@ function TemplatesTwoPlayers() {
             {/* Header section */}
             <div className="bg-gradient-to-r from-blue-900/40 to-transparent p-6 sm:p-10 border-b border-blue-500/20">
               <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left relative">
-                <div>
-                  <span className="text-[10px] tracking-[0.6em] text-blue-400 mb-2 block font-mono uppercase">TECHNICAL_DOSSIER // CC_2026</span>
+                <div className="flex-1">
+                  <span className="text-[10px] tracking-[0.6em] text-blue-400 mb-2 block">PERFIL DEL JUGADOR // COPA 2026</span>
                   <h2 className="text-6xl font-[family-name:var(--font-bebas)] tracking-widest text-foreground leading-none animate-reveal-up">
                     {player.name}
                   </h2>
@@ -530,19 +521,19 @@ function TemplatesTwoPlayers() {
             {/* Data Grid */}
             <div className="grid grid-cols-3 gap-px bg-blue-500/10">
               <div className="bg-blue-950/40 p-6">
-                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2 uppercase">Club Actual</span>
+                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2">Club Actual</span>
                 <div className="flex items-center gap-2">
                   <img src={`/acces/${player.clubLogo}`} alt={player.team} className="w-4 h-4 object-contain" />
                   <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground">{player.team.toUpperCase()}</span>
                 </div>
               </div>
               <div className="bg-blue-950/40 p-6">
-                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2 uppercase">Dorsal</span>
+                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2">Dorsal</span>
                 <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground">#{player.dorsal}</span>
               </div>
               <div className="bg-blue-950/40 p-6">
-                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2 uppercase">Posición</span>
-                <span className="text-xs font-bold text-foreground">{player.position.toUpperCase().replace(' ', '_')}</span>
+                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2">Posición</span>
+                <span className="text-xs font-bold text-foreground">{player.position.toUpperCase()}</span>
               </div>
             </div>
 
@@ -555,11 +546,11 @@ function TemplatesTwoPlayers() {
                 { label: "MVP", value: player.stats.mvp, delta: player.statsIncrease.mvp },
               ].map((stat) => (
                 <div key={stat.label} className="bg-blue-950/20 p-5 group/stat">
-                  <span className="text-[8px] tracking-[0.4em] text-blue-400/60 block mb-2 uppercase font-mono">{stat.label}</span>
+                  <span className="text-[8px] tracking-[0.4em] text-blue-400/60 block mb-2">{stat.label}</span>
                   <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground block">{stat.value}</span>
                   <div className="mt-2 flex items-center justify-between">
-                    <span className="text-[10px] text-green-500 font-bold font-mono">{stat.delta.percent}</span>
-                    <span className="text-[9px] text-blue-400/40 font-mono">{stat.delta.total}</span>
+                    <span className="text-[10px] text-green-500 font-bold">{stat.delta.percent}</span>
+                    <span className="text-[9px] text-blue-400/40">{stat.delta.total}</span>
                   </div>
                 </div>
               ))}
@@ -569,7 +560,7 @@ function TemplatesTwoPlayers() {
             <div className="p-6 sm:p-10 space-y-6 bg-blue-950/40 backdrop-blur-md">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-px bg-blue-400/40" />
-                <span className="text-[9px] tracking-[0.6em] text-blue-400 uppercase font-mono">IA_PERFORMANCE_ANALYSIS</span>
+                <span className="text-[9px] tracking-[0.6em] text-blue-400">ANÁLISIS DE RENDIMIENTO IA</span>
               </div>
               <p className="text-sm text-blue-100/80 leading-relaxed italic animate-reveal-up stagger-1">
                 {player.analysis}
@@ -621,7 +612,7 @@ function TemplatesTwoPlayers() {
                     >
                       {p}
                     </span>
-                    <span className="text-[10px] text-foreground/30 font-mono">0{idx + 1}</span>
+                    <span className="text-[10px] text-foreground/30">JUGADOR 0{idx + 1}</span>
                   </div>
                 ))}
               </div>
@@ -645,71 +636,69 @@ function TemplatesTwoPlayers() {
 
 function StandingsTable() {
   return (
-    <section id="posiciones" className="py-20 px-6 lg:px-12 bg-[#050b24]">
+    <section id="posiciones" className="py-20 px-6 lg:px-12 bg-[#050b24] border-t border-blue-900/20">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="w-16 h-px bg-foreground/20" />
-          <span className="text-[10px] tracking-[0.6em] text-blue-400 font-mono">
-            STANDINGS // GROUP_STAGE
+          <span className="text-[10px] tracking-[0.6em] text-blue-400">
+            TABLA GENERAL // FASE DE LIGA
           </span>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {[ {name: "GRUPO A", data: standingsA}, {name: "GRUPO B", data: standingsB} ].map((group) => (
-            <div key={group.name} className="overflow-hidden border border-blue-900/20 bg-blue-950/10">
-              <div className="bg-blue-900/10 px-6 py-4 border-b border-blue-900/20">
-                <h3 className="text-xl font-[family-name:var(--font-bebas)] tracking-[0.2em] text-foreground">
-                  {group.name}
-                </h3>
-              </div>
-              <div className="grid grid-cols-6 gap-2 px-6 py-3 text-[10px] tracking-[0.2em] text-muted-foreground border-b border-border/5">
-                <div className="col-span-1">POS</div>
-                <div className="col-span-2">CLUB</div>
-                <div className="col-span-1 text-center">PJ</div>
-                <div className="col-span-1 text-center">V/E/D</div>
-                <div className="col-span-1 text-right">PTS</div>
-              </div>
-              <div className="divide-y divide-border/5">
-                {group.data.map((r) => (
-                  <div
-                    key={r.team}
-                    className={`grid grid-cols-6 gap-2 px-6 py-4 items-center transition-colors hover:bg-white/5 ${
-                      r.pos <= 2 ? "bg-blue-600/10 border-l-2 border-blue-400" : ""
-                    }`}
-                  >
-                    <div className="col-span-1">
-                      <p className={`text-xl font-[family-name:var(--font-bebas)] ${r.pos <= 2 ? 'text-blue-400' : 'text-foreground/30'}`}>
-                        {String(r.pos).padStart(2, "0")}
-                      </p>
-                    </div>
-                    <div className="col-span-2 flex items-center gap-3">
-                      <div className="w-5 h-5 flex items-center justify-center">
-                        <img
-                          src={`/acces/${selections.find((s) => s.name === r.team)?.logo ?? "default.png"}`}
-                          alt=""
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <span className="text-[11px] tracking-wider text-foreground font-medium">{r.team.toUpperCase()}</span>
-                    </div>
-                    <div className="col-span-1 text-center text-[11px] text-muted-foreground">{r.pj}</div>
-                    <div className="col-span-1 text-center text-[10px] text-muted-foreground">
-                      {r.pg}/{r.pe}/{r.pp}
-                    </div>
-                    <div className="col-span-1 text-right">
-                      <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground tracking-tight">
-                        {r.pts}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="p-[1px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 max-w-5xl mx-auto shadow-[0_0_40px_rgba(30,58,138,0.2)]">
+          <div className="overflow-hidden bg-[#020617] h-full">
+            <div className="bg-blue-900/10 px-6 py-4 border-b border-blue-900/20">
+              <h3 className="text-xl font-[family-name:var(--font-bebas)] tracking-[0.2em] text-foreground">
+                CLASIFICACIÓN GENERAL
+              </h3>
             </div>
-          ))}
+            <div className="grid grid-cols-6 gap-2 px-6 py-3 text-[10px] tracking-[0.2em] text-muted-foreground border-b border-border/5">
+              <div className="col-span-1">POS</div>
+              <div className="col-span-2">CLUB</div>
+              <div className="col-span-1 text-center">PJ</div>
+              <div className="col-span-1 text-center">V/E/D</div>
+              <div className="col-span-1 text-right">PTS</div>
+            </div>
+            <div className="divide-y divide-border/5">
+              {fullStandings.map((r) => (
+                <div
+                  key={r.team}
+                  className={`grid grid-cols-6 gap-2 px-6 py-4 items-center transition-colors hover:bg-white/5 ${
+                    r.pos <= 4 ? "bg-blue-600/10 border-l-2 border-blue-400" : ""
+                  }`}
+                >
+                  <div className="col-span-1">
+                    <p className={`text-xl font-[family-name:var(--font-bebas)] ${r.pos <= 4 ? 'text-blue-400' : 'text-foreground/30'}`}>
+                      {String(r.pos).padStart(2, "0")}
+                    </p>
+                  </div>
+                  <div className="col-span-2 flex items-center gap-3">
+                    <div className="w-5 h-5 flex items-center justify-center">
+                      <img
+                        src={`/acces/${selections.find((s) => s.name === r.team)?.logo ?? "default.png"}`}
+                        alt=""
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-[11px] tracking-wider text-foreground font-medium">{r.team.toUpperCase()}</span>
+                  </div>
+                  <div className="col-span-1 text-center text-[11px] text-muted-foreground">{r.pj}</div>
+                  <div className="col-span-1 text-center text-[10px] text-muted-foreground">
+                    {r.pg}/{r.pe}/{r.pp}
+                  </div>
+                  <div className="col-span-1 text-right">
+                    <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground tracking-tight">
+                      {r.pts}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <p className="mt-8 text-[10px] tracking-widest text-blue-400/50 font-mono uppercase text-center">
-          * EL TOP 2 DE CADA GRUPO CLASIFICA A LA FASE ELIMINATORIA DIRECTA
+        <p className="mt-8 text-[10px] tracking-widest text-blue-400/50 uppercase text-center">
+          * LOS CUATRO MEJORES DE LA TABLA CLASIFICAN A LAS SEMIFINALES
         </p>
       </div>
     </section>
@@ -772,70 +761,72 @@ function MatchSchedule() {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="w-16 h-px bg-foreground/20" />
-          <span className="text-[10px] tracking-[0.6em] text-blue-400 uppercase font-mono">
-            CALENDAR // GROUP_STAGE_FEED
+          <span className="text-[10px] tracking-[0.6em] text-blue-400">
+            CALENDARIO // PRÓXIMOS ENCUENTROS
           </span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {fixtures.map((day, idx) => (
-            <div key={idx} className="border border-blue-900/20 bg-blue-950/10 backdrop-blur-sm overflow-hidden group hover:border-blue-400/30 transition-all duration-500">
-              <div className="bg-secondary/10 px-6 py-4 border-b border-border/10 flex justify-between items-center">
-                <div>
-                  <h4 className="text-lg font-[family-name:var(--font-bebas)] tracking-wider text-foreground">{day.date.toUpperCase()}</h4>
-                  <p className="text-[9px] tracking-[0.3em] text-muted-foreground uppercase">{day.period}</p>
-                </div>
-                <div className="px-2 py-1 bg-foreground/5 border border-foreground/10 text-[9px] font-mono text-foreground/40">
-                  FECHA 0{idx + 1}
-                </div>
-              </div>
-              <div className="p-6 space-y-6">
-                {day.matches.map((match, mIdx) => (
-                  <div 
-                    key={mIdx} 
-                    className="relative cursor-pointer group/match hover:bg-white/[0.02] -mx-4 px-4 py-2 transition-colors duration-300"
-                    onClick={() => {
-                      setSelectedMatch({ ...match, date: day.date });
-                      setIsMatchDialogOpen(true);
-                    }}
-                  >
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] font-mono text-muted-foreground/60">{match.time} HRS</span>
-                      <span className="text-[9px] tracking-[0.2em] text-foreground/40 bg-foreground/5 px-2">GRUPO {match.group}</span>
-                    </div>
-                    <div className="flex items-center justify-between gap-4 mb-3">
-                      <div className="flex-1 text-right">
-                        <div className="inline-flex items-center gap-2">
-                          <img
-                            src={getSelectionLogo(match.home)}
-                            alt={`${match.home} logo`}
-                            className="w-5 h-5 object-contain"
-                          />
-                          <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{match.home.toUpperCase()}</span>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-center gap-1">
-                        <span className="text-[10px] font-mono text-foreground/20">VS</span>
-                        <span className="text-[8px] font-bold text-green-500/50 tracking-tighter">BO3</span>
-                      </div>
-                      <div className="flex-1 text-left">
-                        <div className="inline-flex items-center gap-2">
-                          <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{match.away.toUpperCase()}</span>
-                          <img
-                            src={getSelectionLogo(match.away)}
-                            alt={`${match.away} logo`}
-                            className="w-5 h-5 object-contain"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-center gap-2">
-                      <div className="w-1 h-1 bg-foreground/20 rounded-full" />
-                      <span className="text-[8px] tracking-[0.3em] text-muted-foreground uppercase">{match.stadium}</span>
-                    </div>
-                    {mIdx === 0 && <div className="mt-6 h-px bg-border/5" />}
+            <div key={idx} className="p-[1px] bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 group transition-all duration-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+              <div className="bg-[#020617] backdrop-blur-sm overflow-hidden h-full">
+                <div className="bg-secondary/10 px-6 py-4 border-b border-border/10 flex justify-between items-center">
+                  <div>
+                    <h4 className="text-lg font-[family-name:var(--font-bebas)] tracking-wider text-foreground">{day.date.toUpperCase()}</h4>
+                    <p className="text-[9px] tracking-[0.3em] text-muted-foreground uppercase">{day.period}</p>
                   </div>
-                ))}
+                  <div className="px-2 py-1 bg-foreground/5 border border-foreground/10 text-[9px] text-foreground/40">
+                    JORNADA 0{idx + 1}
+                  </div>
+                </div>
+                <div className="p-6 space-y-6">
+                  {day.matches.map((match, mIdx) => (
+                    <div 
+                      key={mIdx} 
+                      className="relative cursor-pointer group/match hover:bg-white/[0.02] -mx-4 px-4 py-2 transition-colors duration-300"
+                      onClick={() => {
+                        setSelectedMatch({ ...match, date: day.date });
+                        setIsMatchDialogOpen(true);
+                      }}
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[10px] text-muted-foreground/60">{match.time} HRS</span>
+                        <span className="text-[9px] tracking-[0.2em] text-foreground/40 bg-foreground/5 px-2">FASE DE LIGA</span>
+                      </div>
+                      <div className="flex items-center justify-between gap-4 mb-3">
+                        <div className="flex-1 text-right">
+                          <div className="inline-flex items-center gap-2">
+                            <img
+                              src={getSelectionLogo(match.home)}
+                              alt={`${match.home} logo`}
+                              className="w-5 h-5 object-contain"
+                            />
+                            <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{match.home.toUpperCase()}</span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-1">
+                          <span className="text-[10px] text-foreground/20">VS</span>
+                          <span className="text-[8px] font-bold text-green-500/50 tracking-tighter">BO3</span>
+                        </div>
+                        <div className="flex-1 text-left">
+                          <div className="inline-flex items-center gap-2">
+                            <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{match.away.toUpperCase()}</span>
+                            <img
+                              src={getSelectionLogo(match.away)}
+                              alt={`${match.away} logo`}
+                              className="w-5 h-5 object-contain"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-center gap-2">
+                        <div className="w-1 h-1 bg-foreground/20 rounded-full" />
+                        <span className="text-[8px] tracking-[0.3em] text-muted-foreground uppercase">{match.stadium}</span>
+                      </div>
+                      {mIdx === 0 && <div className="mt-6 h-px bg-border/5" />}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -852,10 +843,10 @@ function MatchSchedule() {
               <div className="relative z-10 border-b border-border/10 bg-secondary/10 px-8 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-[10px] tracking-[0.5em] text-muted-foreground font-mono">MATCH_BROADCAST // PREVIEW_OFFICIAL</span>
+                  <span className="text-[10px] tracking-[0.5em] text-muted-foreground">TRANSMISIÓN PARTIDO // PREVIA OFICIAL</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-[9px] tracking-[0.3em] text-muted-foreground font-mono uppercase font-bold">GRUPO {selectedMatch.group}</span>
+                  <span className="text-[9px] tracking-[0.3em] text-muted-foreground uppercase font-bold">JORNADA OFICIAL</span>
                   <button 
                     onClick={() => setIsMatchDialogOpen(false)}
                     className="w-6 h-6 flex items-center justify-center border border-border/20 hover:bg-foreground hover:text-background transition-colors"
@@ -917,7 +908,7 @@ function MatchSchedule() {
 
                   {/* Contador de Tiempo */}
                   <div className="pt-8 border-t border-border/10 w-full flex flex-col items-center">
-                    <span className="text-[10px] tracking-[0.5em] text-muted-foreground uppercase mb-6 font-mono">COUNTDOWN_T_START</span>
+                    <span className="text-[10px] tracking-[0.5em] text-muted-foreground uppercase mb-6">INICIO CUENTA REGRESIVA</span>
                     <CountdownTimer targetDate={selectedMatch.date} />
                   </div>
                 </div>
@@ -925,7 +916,7 @@ function MatchSchedule() {
 
               {/* Footer Técnico */}
               <div className="bg-secondary/5 p-4 border-t border-border/10 flex justify-center">
-                <span className="text-[9px] tracking-[0.2em] text-muted-foreground/40 font-mono">ID_RLN_M{selectedMatch.group}_{selectedMatch.time.replace(':', '')} // TRANSMISIÓN_VÍA_RL26_NET</span>
+                <span className="text-[9px] tracking-[0.2em] text-muted-foreground/40">TRANSMISIÓN EXCLUSIVA // RED RL26</span>
               </div>
             </div>
           )}
@@ -941,8 +932,8 @@ function TournamentBracket() {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="w-16 h-px bg-foreground/20" />
-          <span className="text-[10px] tracking-[0.6em] text-blue-400 font-mono">
-            KNOCKOUT_STAGE // ROAD_TO_GLORY
+          <span className="text-[10px] tracking-[0.6em] text-blue-400">
+            FASE ELIMINATORIA // CAMINO A LA GLORIA
           </span>
         </div>
 
@@ -950,15 +941,15 @@ function TournamentBracket() {
           {/* Semifinales */}
           <div className="flex flex-col gap-20 w-full max-w-[320px]">
             {[1, 2].map((i) => (
-              <div key={i} className="relative group">
-                <div className="text-[9px] tracking-[0.4em] text-muted-foreground mb-3 text-center uppercase">Semi-Final {i}</div>
+              <div key={i} className="relative">
+                <div className="text-[9px] tracking-[0.4em] text-muted-foreground mb-3 text-center">Semifinal {i}</div>
                 <div className="space-y-1">
                   <div className="border border-border/20 bg-card/20 p-4 flex items-center justify-between">
-                    <span className="text-[11px] tracking-[0.3em] text-muted-foreground/40 font-[family-name:var(--font-bebas)]">TBD</span>
+                    <span className="text-[11px] tracking-[0.3em] text-muted-foreground/40 font-[family-name:var(--font-bebas)]">POR DEFINIR</span>
                     <div className="w-4 h-4 bg-secondary/20 border border-border/10" />
                   </div>
                   <div className="border border-border/20 bg-card/20 p-4 flex items-center justify-between">
-                    <span className="text-[11px] tracking-[0.3em] text-muted-foreground/40 font-[family-name:var(--font-bebas)]">TBD</span>
+                    <span className="text-[11px] tracking-[0.3em] text-muted-foreground/40 font-[family-name:var(--font-bebas)]">POR DEFINIR</span>
                     <div className="w-4 h-4 bg-secondary/20 border border-border/10" />
                   </div>
                 </div>
@@ -1010,8 +1001,8 @@ function StadiumsGrid() {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="w-16 h-px bg-foreground/20" />
-          <span className="text-[10px] tracking-[0.6em] text-blue-400 uppercase font-mono">
-            CHAMPIONS_ARENAS // VENUES
+          <span className="text-[10px] tracking-[0.6em] text-blue-400">
+            ARENAS DE CAMPEONES // SEDES
           </span>
         </div>
 
@@ -1043,7 +1034,7 @@ function StadiumsGrid() {
               
               <div className="absolute inset-0 p-8 flex flex-col justify-between z-20">
                 <div className="flex justify-between items-start translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <span className="text-[10px] font-mono text-muted-foreground">ID_{s.id.padStart(3, '0')}</span>
+                  <span className="text-[10px] text-muted-foreground">SEDE {s.id.padStart(3, '0')}</span>
                   <div className="w-2 h-2 bg-foreground/30 rounded-full animate-pulse" />
                 </div>
                 
@@ -1073,7 +1064,7 @@ function StadiumsGrid() {
               <div className="relative z-10 border-b border-border/10 bg-secondary/10 px-8 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-foreground/40 animate-pulse" />
-                  <span className="text-[10px] tracking-[0.5em] text-muted-foreground font-mono uppercase">Info de Sede // ID_{selectedStadium.id.padStart(3, '0')}</span>
+                  <span className="text-[10px] tracking-[0.5em] text-muted-foreground">INFORMACIÓN DE SEDE // {selectedStadium.id.padStart(3, '0')}</span>
                 </div>
                 <button 
                   onClick={() => setIsOpen(false)}
@@ -1103,7 +1094,7 @@ function StadiumsGrid() {
                 <div className="p-8 lg:p-12 space-y-8 bg-secondary/5">
                   <div>
                     <div className="flex items-center gap-4 mb-8">
-                      <p className="text-[9px] uppercase tracking-[0.6em] text-blue-400 font-mono">Programación en Sede</p>
+                      <p className="text-[9px] uppercase tracking-[0.6em] text-blue-400">Programación en Sede</p>
                       <div className="flex-1 h-px bg-blue-500/20" />
                     </div>
                     
@@ -1112,7 +1103,7 @@ function StadiumsGrid() {
                         stadiumMatches.map((m, idx) => (
                           <div key={idx} className="border border-border/10 bg-background/40 p-4 transition-colors hover:bg-white/[0.02]">
                             <div className="flex justify-between items-center mb-3">
-                                <span className="text-[9px] font-mono text-muted-foreground/60">{m.date.toUpperCase()} — {m.time} HRS</span>
+                                <span className="text-[9px] text-muted-foreground/60">{m.date.toUpperCase()} — {m.time} HRS</span>
                                 <span className="text-[8px] tracking-[0.2em] text-foreground/40 bg-foreground/5 px-2">GRUPO {m.group}</span>
                             </div>
                             <div className="flex items-center justify-between gap-4">
@@ -1120,7 +1111,7 @@ function StadiumsGrid() {
                                 <img src={getSelectionLogo(m.home)} alt="" className="w-4 h-4 object-contain" />
                                 <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{m.home.toUpperCase()}</span>
                               </div>
-                              <span className="text-[10px] font-mono text-foreground/20">VS</span>
+                              <span className="text-[10px] text-foreground/20">VS</span>
                               <div className="flex items-center gap-2">
                                 <span className="text-sm font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{m.away.toUpperCase()}</span>
                                 <img src={getSelectionLogo(m.away)} alt="" className="w-4 h-4 object-contain" />
@@ -1130,15 +1121,15 @@ function StadiumsGrid() {
                         ))
                       ) : (
                         <div className="text-center py-12 border border-dashed border-border/20">
-                          <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-widest">Sin partidos programados</p>
+                          <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Sin partidos programados</p>
                         </div>
                       )}
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground font-mono">Detalles Técnicos</p>
-                    <div className="h-px bg-border/10 w-full" />
+                    <p className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground">Detalles Técnicos</p>
+                    <div className="h-px bg-border/10 w-full" /> {/* This is a visual separator, not text */}
                     <p className="text-xs text-muted-foreground leading-relaxed">Esta sede ha sido seleccionada por su infraestructura de vanguardia y capacidad para albergar partidos de alto rendimiento bajo estándares de la RL26_AI.</p>
                   </div>
                 </div>
@@ -1147,79 +1138,6 @@ function StadiumsGrid() {
           )}
         </DialogContent>
       </Dialog>
-    </section>
-  )
-}
-
-function WorldCupProbabilities() {
-  return (
-    <section id="probabilidades" className="py-24 px-6 lg:px-12 bg-[#050b24]">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex items-center gap-6 mb-12">
-          <div className="w-16 h-px bg-foreground/20" />
-          <span className="text-[10px] tracking-[0.6em] text-blue-400 uppercase font-mono">
-            PROBABILITY_MATRIX // CC_2026
-          </span>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-16 mb-20">
-          <div className="relative group">
-            <span className="absolute -top-12 -left-4 text-[100px] font-[family-name:var(--font-bebas)] text-foreground/[0.03] select-none whitespace-nowrap pointer-events-none hidden lg:block uppercase">
-              ANÁLISIS
-            </span>
-            <h2 className="relative text-6xl sm:text-7xl lg:text-8xl font-[family-name:var(--font-bebas)] tracking-tight text-foreground leading-[0.85]">
-              QUIÉN <br /><span className="text-foreground/40 italic">GANARÁ</span>
-            </h2>
-          </div>
-          <div className="flex items-end">
-            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed max-w-lg border-l border-border/20 pl-8">
-              Un análisis predictivo basado en el rendimiento histórico, la forma actual de los jugadores clave y la sinergia del equipo, para determinar las probabilidades de cada club de levantar la copa.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {selections.map((team) => (
-            <div
-              key={team.id}
-              className="group relative border border-blue-900/20 bg-blue-950/20 backdrop-blur-md overflow-hidden transition-all duration-500 hover:border-blue-400/40"
-            >
-              {/* Fondo decorativo con rejilla */}
-              <div
-                className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-700"
-                style={{ backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)`, backgroundSize: '30px 30px' }}
-              />
-
-              <div className="relative z-10 p-6 flex flex-col items-center text-center h-full">
-                <img
-                  src={`/acces/${team.logo}`}
-                  alt={`${team.name} logo`}
-                  className="w-24 h-24 object-contain mb-6 transition-transform duration-700 group-hover:scale-110"
-                />
-                <h3 className="text-xl font-[family-name:var(--font-bebas)] tracking-wide text-foreground mb-2">
-                  {team.name.toUpperCase()}
-                </h3>
-                <span className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase mb-6">
-                  {team.abbr}
-                </span>
-
-                <div className="w-full mt-auto">
-                  <p className="text-[10px] tracking-widest text-muted-foreground mb-3 font-mono">CHAMPION_PROBABILITY</p>
-                  <div className="w-full bg-blue-900/20 h-2 rounded-full overflow-hidden">
-                    <div
-                      className="bg-blue-400 h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(96,165,250,0.5)]"
-                      style={{ width: `${team.winProbability || 0}%` }}
-                    ></div>
-                  </div>
-                  <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground mt-4 block">
-                    {team.winProbability || 0}%
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }
@@ -1283,34 +1201,37 @@ function LiveTournamentTracker() {
         <div className="flex items-center gap-4 mb-12">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-            <span className="text-[10px] tracking-[0.6em] text-blue-400 font-mono uppercase">LIVE_BROADCAST // SIMULATION_ENGINE_v4.2</span>
+            <span className="text-[10px] tracking-[0.6em] text-blue-400">TRANSMISIÓN EN VIVO // ANÁLISIS EN TIEMPO REAL</span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {matches.map((match) => (
-            <div 
-              key={match.id} 
-              className={cn(
-                "bg-blue-950/30 backdrop-blur-md border p-8 relative overflow-hidden transition-all duration-500",
-                match.isGoal ? "border-blue-400 bg-blue-900/50 shadow-[0_0_40px_rgba(96,165,250,0.2)]" : "border-blue-900/40",
-                match.isFinished && "opacity-60 grayscale-[0.5]"
-              )}
-            >
+            <div key={match.id} className={cn(
+              "p-[1px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 transition-all duration-500",
+              match.isGoal && "animate-pulse shadow-[0_0_30px_rgba(79,70,229,0.4)]",
+              match.isFinished && "opacity-60 grayscale-[0.5] bg-none bg-blue-900/40"
+            )}>
+              <div 
+                className={cn(
+                  "bg-[#020617] p-8 relative overflow-hidden h-full",
+                  match.isGoal && "bg-blue-900/20"
+                )}
+              >
               {/* Goal Animation Inside Card */}
               {match.isGoal && (
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-600 to-blue-800 z-20 flex flex-col items-center justify-center animate-in fade-in zoom-in duration-300">
                   <span className="text-4xl font-[family-name:var(--font-bebas)] text-white italic animate-bounce tracking-tighter">¡GOL!</span>
-                  <span className="text-[9px] font-mono text-white/80 mt-1 uppercase tracking-[0.3em]">{match.lastScorer}</span>
+                  <span className="text-[9px] text-white/80 mt-1 uppercase tracking-[0.3em]">{match.lastScorer}</span>
                 </div>
               )}
 
               <div className="flex justify-between items-center mb-6">
-                <span className="text-[10px] font-mono text-blue-400">PARTIDO {match.id}</span>
+                <span className="text-[10px] text-blue-400">PARTIDO {match.id}</span>
                 {match.isFinished ? (
-                  <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[9px] font-mono tracking-[0.2em] border border-red-500/30">FINALIZADO</span>
+                  <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[9px] tracking-[0.2em]">FINALIZADO</span>
                 ) : (
-                  <span className="text-[10px] font-mono text-foreground/40">{match.time}</span>
+                  <span className="text-[10px] text-foreground/40">{match.time}</span>
                 )}
               </div>
               
@@ -1353,8 +1274,9 @@ function LiveTournamentTracker() {
               </div>
               
               <div className="mt-8 pt-4 border-t border-blue-500/10 flex justify-center">
-                <span className="text-[9px] font-mono text-blue-400/30 uppercase tracking-[0.4em]">UCL_STREAM_DATA // 54.2kbps</span>
+                <span className="text-[9px] text-blue-400/30 uppercase tracking-[0.4em]">DATOS DE TRANSMISIÓN RL26</span>
               </div>
+            </div>
             </div>
           ))}
         </div>
@@ -1372,6 +1294,7 @@ export default function RlNatiosnPage() {
 
       <LiveTournamentTracker />
 
+
       <SelectionsGrid />
 
       <TemplatesTwoPlayers />
@@ -1383,8 +1306,6 @@ export default function RlNatiosnPage() {
       <TournamentBracket />
 
       <StadiumsGrid />
-
-      <WorldCupProbabilities />
 
       <Footer />
     </main>
