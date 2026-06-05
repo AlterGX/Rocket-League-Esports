@@ -151,24 +151,6 @@ const selections: Selection[] = [
     group: "B",
     winProbability: 0,
   },
-  {
-    id: "7",
-    name: "Rubypool",
-    abbr: "RUB",
-    logo: "RUB.png",
-    players: ["Por definir", "Por definir"],
-    group: "B",
-    winProbability: 0,
-  },
-  {
-    id: "8",
-    name: "Chelsky",
-    abbr: "CH",
-    logo: "CH.png",
-    players: ["Skkart01", "Por definir"],
-    group: "B",
-    winProbability: 0,
-  },
 ]
 
 const stadiums = [
@@ -189,8 +171,6 @@ const fullStandings = [
   { pos: 4, team: "Barcha FC", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
   { pos: 5, team: "Mashine City", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
   { pos: 6, team: "Bastard Munchen", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
-  { pos: 7, team: "Rubypool", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
-  { pos: 8, team: "Chelsky", pj: 0, pg: 0, pe: 0, pp: 0, pts: 0 },
 ]
 
 const fixtures = [
@@ -198,48 +178,75 @@ const fixtures = [
     date: "Sábado 23 Mayo",
     period: "Noche",
     matches: [
-      { time: "20:00", home: "ReAl", away: "PXG", stadium: "DFH STADIUM", group: "A" },
-      { time: "21:30", home: "Mashine City", away: "Rubypool", stadium: "MANNFIELD", group: "B" },
+      { time: "20:00", home: "ReAl", away: "Bastard Munchen", stadium: "DFH STADIUM", group: "LIGA" },
+      { time: "21:30", home: "Arsenali", away: "Mashine City", stadium: "MANNFIELD", group: "LIGA" },
     ]
   },
   {
     date: "Domingo 24 Mayo",
     period: "Mañana",
     matches: [
-      { time: "10:00", home: "Arsenali", away: "Barcha FC", stadium: "CHAMPIONS FIELD", group: "A" },
-      { time: "11:30", home: "Bastard Munchen", away: "Chelsky", stadium: "PARC DE PARIS", group: "B" },
+      { time: "10:00", home: "PXG", away: "Barcha FC", stadium: "CHAMPIONS FIELD", group: "LIGA" },
     ]
   },
   {
     date: "Sábado 30 Mayo",
     period: "Noche",
     matches: [
-      { time: "20:00", home: "ReAl", away: "Arsenali", stadium: "NEO TOKYO", group: "A" },
-      { time: "21:30", home: "Mashine City", away: "Bastard Munchen", stadium: "BECKWITH PARK", group: "B" },
+      { time: "20:00", home: "ReAl", away: "Mashine City", stadium: "NEO TOKYO", group: "LIGA" },
+      { time: "21:30", home: "Bastard Munchen", away: "Barcha FC", stadium: "BECKWITH PARK", group: "LIGA" },
     ]
   },
   {
     date: "Domingo 31 Mayo",
     period: "Mañana",
     matches: [
-      { time: "10:00", home: "PXG", away: "Barcha FC", stadium: "VIVA LA VIDA", group: "A" },
-      { time: "11:30", home: "Rubypool", away: "Chelsky", stadium: "BOOSTFIELD MALL", group: "B" },
+      { time: "10:00", home: "Arsenali", away: "PXG", stadium: "VIVA LA VIDA", group: "LIGA" },
     ]
   },
   {
     date: "Sábado 6 Junio",
     period: "Noche",
     matches: [
-      { time: "20:00", home: "ReAl", away: "Barcha FC", stadium: "DFH STADIUM", group: "A" },
-      { time: "21:30", home: "Mashine City", away: "Chelsky", stadium: "MANNFIELD", group: "B" },
+      { time: "20:00", home: "ReAl", away: "Barcha FC", stadium: "PARC DE PARIS", group: "LIGA" },
+      { time: "21:30", home: "Mashine City", away: "PXG", stadium: "BOOSTFIELD MALL", group: "LIGA" },
     ]
   },
   {
     date: "Domingo 7 Junio",
     period: "Mañana",
     matches: [
-      { time: "10:00", home: "PXG", away: "Arsenali", stadium: "CHAMPIONS FIELD", group: "A" },
-      { time: "11:30", home: "Rubypool", away: "Bastard Munchen", stadium: "NEO TOKYO", group: "B" },
+      { time: "10:00", home: "Bastard Munchen", away: "Arsenali", stadium: "DFH STADIUM", group: "LIGA" },
+    ]
+  },
+  {
+    date: "Sábado 13 Junio",
+    period: "Noche",
+    matches: [
+      { time: "20:00", home: "ReAl", away: "PXG", stadium: "MANNFIELD", group: "LIGA" },
+      { time: "21:30", home: "Barcha FC", away: "Arsenali", stadium: "CHAMPIONS FIELD", group: "LIGA" },
+    ]
+  },
+  {
+    date: "Domingo 14 Junio",
+    period: "Mañana",
+    matches: [
+      { time: "10:00", home: "Mashine City", away: "Bastard Munchen", stadium: "NEO TOKYO", group: "LIGA" },
+    ]
+  },
+  {
+    date: "Sábado 20 Junio",
+    period: "Noche",
+    matches: [
+      { time: "20:00", home: "ReAl", away: "Arsenali", stadium: "BECKWITH PARK", group: "LIGA" },
+      { time: "21:30", home: "PXG", away: "Bastard Munchen", stadium: "VIVA LA VIDA", group: "LIGA" },
+    ]
+  },
+  {
+    date: "Domingo 21 Junio",
+    period: "Mañana",
+    matches: [
+      { time: "10:00", home: "Barcha FC", away: "Mashine City", stadium: "BOOSTFIELD MALL", group: "LIGA" },
     ]
   }
 ];
@@ -294,7 +301,6 @@ function TemplatesTwoPlayers() {
   const [isBrachoDialogOpen, setIsBrachoDialogOpen] = useState(false);
   const [isZestebanDialogOpen, setIsZestebanDialogOpen] = useState(false);
   const [isWillicraftDialogOpen, setIsWillicraftDialogOpen] = useState(false);
-  const [isSkkartDialogOpen, setIsSkkartDialogOpen] = useState(false);
   const [isDrakkardDialogOpen, setIsDrakkardDialogOpen] = useState(false);
   const [isDan1615DialogOpen, setIsDan1615DialogOpen] = useState(false);
   const [isJosuaSCADialogOpen, setIsJosuaSCADialogOpen] = useState(false);
@@ -393,25 +399,6 @@ function TemplatesTwoPlayers() {
     preferredFoot: "Izquierdo",
     playStyle: "Tactician / Box-to-Box",
     totalMatches: 7600,
-    leagueLogo: "/acces/premier.png",
-  };
-
-  const skkart01Data: Player = {
-    name: "Skkart01",
-    team: "Chelsky",
-    clubLogo: "CH.png",
-    dorsal: "8",
-    position: "Forward",
-    marketValue: "135.000.000M",
-    achievements: ["Campeón Major 2025", "MVP Final de Liga", "Top Sniper"],
-    stats: { goals: 2481, assists: 411, saves: 1327, mvp: 267 },
-    statsIncrease: { goals: { percent: "+11.8%", total: "+279" }, assists: { percent: "+7.6%", total: "+29" }, saves: { percent: "+19.4%", total: "+252" }, mvp: { percent: "+8.9%", total: "+19" } },
-    analysis: "Skkart01 es la definición de eficiencia frente a la portería. Su capacidad para encontrar huecos en defensas cerradas lo convierte en la principal amenaza ofensiva de Chelsky.",
-    mvpProbability: 80,
-    championshipProbability: 70,
-    preferredFoot: "Derecho",
-    playStyle: "Sniper / Agresivo",
-    totalMatches: 8150,
     leagueLogo: "/acces/premier.png",
   };
 
@@ -690,14 +677,13 @@ function TemplatesTwoPlayers() {
   );
 
   const hasProfile = (p: string) =>
-    ["AlterGX", "TheRealBracho", "ZestebanPvP", "Willicraft400", "Skkart01", "Drakkard", "Dan1615", "JosuaSCA", "ElGangsta_07", "Pamtita"].includes(p);
+    ["AlterGX", "TheRealBracho", "ZestebanPvP", "Willicraft400", "Drakkard", "Dan1615", "JosuaSCA", "ElGangsta_07", "Pamtita"].includes(p);
 
   const openDialog = (p: string) => {
     if (p === "AlterGX") setIsAlterGxDialogOpen(true);
     else if (p === "TheRealBracho") setIsBrachoDialogOpen(true);
     else if (p === "ZestebanPvP") setIsZestebanDialogOpen(true);
     else if (p === "Willicraft400") setIsWillicraftDialogOpen(true);
-    else if (p === "Skkart01") setIsSkkartDialogOpen(true);
     else if (p === "Drakkard") setIsDrakkardDialogOpen(true);
     else if (p === "Dan1615") setIsDan1615DialogOpen(true);
     else if (p === "JosuaSCA") setIsJosuaSCADialogOpen(true);
@@ -857,7 +843,6 @@ function TemplatesTwoPlayers() {
       <PlayerDetailDialog player={theRealBrachoData} isOpen={isBrachoDialogOpen} onOpenChange={setIsBrachoDialogOpen} />
       <PlayerDetailDialog player={zestebanPvPData} isOpen={isZestebanDialogOpen} onOpenChange={setIsZestebanDialogOpen} />
       <PlayerDetailDialog player={willicraft400Data} isOpen={isWillicraftDialogOpen} onOpenChange={setIsWillicraftDialogOpen} />
-      <PlayerDetailDialog player={skkart01Data} isOpen={isSkkartDialogOpen} onOpenChange={setIsSkkartDialogOpen} />
       <PlayerDetailDialog player={drakkardData} isOpen={isDrakkardDialogOpen} onOpenChange={setIsDrakkardDialogOpen} />
       <PlayerDetailDialog player={dan1615Data} isOpen={isDan1615DialogOpen} onOpenChange={setIsDan1615DialogOpen} />
       <PlayerDetailDialog player={josuaSCAData} isOpen={isJosuaSCADialogOpen} onOpenChange={setIsJosuaSCADialogOpen} />
@@ -868,13 +853,11 @@ function TemplatesTwoPlayers() {
 }
 
 function StandingsTable() {
-  const buildGroupStandings = (group: string) => {
-    // Usamos el orden fijo definido por `selections` (tu confirmación)
-    const groupSelections = selections.filter((s) => s.group === group)
-
-    // Mantener el mismo formato de filas que antes (con pj/v/e/d/pts desde fullStandings si coincide por nombre)
-    return groupSelections.map((team, idx) => {
+  const buildLeagueStandings = () => {
+    // Unificamos todos los equipos de selections en una sola lista
+    return selections.map((team, idx) => {
       const r = fullStandings.find((x) => x.team === team.name)
+      // Se mantiene el formato de datos para la tabla unificada
       return {
         pos: idx + 1,
         team: team.name,
@@ -887,15 +870,14 @@ function StandingsTable() {
     })
   }
 
-  const groupA = buildGroupStandings("A")
-  const groupB = buildGroupStandings("B")
+  const allStandings = buildLeagueStandings()
 
   const GroupTable = ({ title, rows }: { title: string; rows: typeof groupA }) => (
     <div className="p-[1px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 w-full shadow-[0_0_40px_rgba(30,58,138,0.2)]">
       <div className="overflow-hidden bg-[#020617] h-full">
         <div className="bg-blue-900/10 px-6 py-4 border-b border-blue-900/20">
           <h3 className="text-xl font-[family-name:var(--font-bebas)] tracking-[0.2em] text-foreground">
-            CLASIFICACIÓN {title}
+            {title}
           </h3>
         </div>
 
@@ -961,17 +943,16 @@ function StandingsTable() {
         <div className="flex items-center gap-6 mb-12">
           <div className="w-16 h-px bg-foreground/20" />
           <span className="text-[10px] tracking-[0.6em] text-blue-400">
-            TABLA PRINCIPAL // FASE DE GRUPOS
+            TABLA PRINCIPAL // LIGA GENERAL
           </span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <GroupTable title="GRUPO A" rows={groupA} />
-          <GroupTable title="GRUPO B" rows={groupB} />
+        <div className="max-w-4xl mx-auto">
+          <GroupTable title="CLASIFICACIÓN GENERAL" rows={allStandings} />
         </div>
 
         <p className="mt-8 text-[10px] tracking-widest text-blue-400/50 uppercase text-center">
-          * LOS CUATRO MEJORES DE LA FASE DE LIGA CLASIFICAN A LAS SEMIFINALES
+          * LOS CUATRO MEJORES DE LA TABLA CLASIFICAN A LAS SEMIFINALES
         </p>
       </div>
     </section>
@@ -1412,9 +1393,8 @@ function StadiumsGrid() {
 function LiveTournamentTracker() {
   const [matches, setMatches] = useState([
     { id: 1, home: "ReAl", away: "Barcha FC", homeScore: 1, awayScore: 2, time: "3:42", lastScorer: "", isGoal: false, isFinished: false },
-    { id: 2, home: "Arsenali", away: "PXG", homeScore: 3, awayScore: 0, time: "1:15", lastScorer: "", isGoal: false, isFinished: false },
-    { id: 3, home: "Mashine City", away: "Chelsky", homeScore: 1, awayScore: 1, time: "4:05", lastScorer: "", isGoal: false, isFinished: false },
-    { id: 4, home: "Bastard Munchen", away: "Rubypool", homeScore: 0, awayScore: 2, time: "2:58", lastScorer: "", isGoal: false, isFinished: false },
+    { id: 2, home: "Arsenali", away: "PXG", homeScore: 3, awayScore: 0, time: "1:15", lastScorer: "", isGoal: false, isFinished: false }, // Re-indexed
+    { id: 3, home: "Mashine City", away: "Bastard Munchen", homeScore: 1, awayScore: 1, time: "4:05", lastScorer: "", isGoal: false, isFinished: false }, // New match, re-indexed
   ]);
 
   useEffect(() => {
@@ -1554,32 +1534,30 @@ function LiveTournamentTracker() {
 
 const statLeaders = {
   goals: [
-    { rank: 1, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 11304 },
-    { rank: 2, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 8588 },
-    { rank: 3, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 6715 },
-    { rank: 4, player: "Dan1615", team: "Mashine City", logo: "MC.png", value: 6085 },
-    { rank: 5, player: "Skkart01", team: "Chelsky", logo: "CH.png", value: 2481 },
+    { rank: 1, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 0 },
+    { rank: 2, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 0 },
+    { rank: 3, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 0 },
+    { rank: 4, player: "Dan1615", team: "Mashine City", logo: "MC.png", value: 0 }, // Re-ranked
   ],
   assists: [
-    { rank: 1, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 3600 },
-    { rank: 2, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 2494 },
-    { rank: 3, player: "Dan1615", team: "Mashine City", logo: "MC.png", value: 1851 },
-    { rank: 4, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 1461 },
-    { rank: 5, player: "Willicraft400", team: "Arsenali", logo: "AR.png", value: 901 },
+    { rank: 1, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 0 },
+    { rank: 2, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 0 },
+    { rank: 3, player: "Dan1615", team: "Mashine City", logo: "MC.png", value: 0 },
+    { rank: 4, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 0 },
+    { rank: 5, player: "Willicraft400", team: "Arsenali", logo: "AR.png", value: 0 },
   ],
   saves: [
-    { rank: 1, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 4966 },
-    { rank: 2, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 4011 },
-    { rank: 3, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 3839 },
-    { rank: 4, player: "Willicraft400", team: "Arsenali", logo: "AR.png", value: 1410 },
-    { rank: 5, player: "Skkart01", team: "Chelsky", logo: "CH.png", value: 1327 },
+    { rank: 1, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 0 },
+    { rank: 2, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 0 },
+    { rank: 3, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 0 },
+    { rank: 4, player: "Willicraft400", team: "Arsenali", logo: "AR.png", value: 0 }, // Re-ranked
   ],
   mvp: [
-    { rank: 1, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 1677 },
-    { rank: 2, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 1224 },
-    { rank: 3, player: "Willicraft400", team: "Arsenali", logo: "AR.png", value: 615 },
-    { rank: 4, player: "Dan1615", team: "Mashine City", logo: "MC.png", value: 596 },
-    { rank: 5, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 603 },
+    { rank: 1, player: "AlterGX", team: "ReAl", logo: "RA.png", value: 0 },
+    { rank: 2, player: "TheRealBracho", team: "Barcha FC", logo: "BF.png", value: 0 },
+    { rank: 3, player: "Willicraft400", team: "Arsenali", logo: "AR.png", value: 0 },
+    { rank: 4, player: "Dan1615", team: "Mashine City", logo: "MC.png", value: 0 },
+    { rank: 5, player: "ElGangsta_07", team: "PXG", logo: "PX.png", value: 0 },
   ],
 };
 
