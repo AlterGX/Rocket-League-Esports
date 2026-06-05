@@ -48,10 +48,10 @@ function HeroTournament() {
               TORNEO PRINCIPAL OFICIAL
             </p>
             <h1 className="mt-6 text-[clamp(3.5rem,10vw,9.5rem)] font-[family-name:var(--font-bebas)] leading-[0.85] tracking-[-0.02em] text-foreground animate-reveal-up stagger-1">
-              CHAMPIONS CUP 26®
+              NEO CHAMPIONS LEAGUE 2026®
             </h1>
             <p className="mt-6 text-muted-foreground text-base sm:text-lg leading-relaxed animate-reveal-up stagger-2">
-              Formato moderno: todos contra todos para definir a los 4 mejores, luego
+              Torneo moderno: todos contra todos para definir a los 4 mejores, luego
               semifinales y final.
             </p>
 
@@ -305,8 +305,6 @@ function TemplatesTwoPlayers() {
     name: string;
     team: string;
     clubLogo: string;
-    country: string;
-    countryLogo: string;
     dorsal: string;
     position: string;
     marketValue: string;
@@ -316,14 +314,16 @@ function TemplatesTwoPlayers() {
     analysis: string;
     mvpProbability: number;
     championshipProbability: number;
+    preferredFoot: string;
+    playStyle: string;
+    totalMatches: number;
+    leagueLogo: string;
   };
 
   const alterGxData: Player = {
     name: "AlterGX",
     team: "ReAl",
     clubLogo: "RA.png",
-    country: "Inglaterra",
-    countryLogo: "EN.png",
     dorsal: "10",
     position: "Midfielder Offensive",
     marketValue: "310.000.000M",
@@ -333,14 +333,16 @@ function TemplatesTwoPlayers() {
     analysis: "AlterGX no es solo un jugador, es el motor táctico de ReAl. Con una precisión de pase del 94% y una lectura de juego que anticipa las rotaciones rivales en milisegundos, su impacto trasciende las estadísticas básicas. Es el arquitecto de la ofensiva y el primer bastión de la defensa en transiciones rápidas.",
     mvpProbability: 92,
     championshipProbability: 85,
+    preferredFoot: "Derecho",
+    playStyle: "Técnico / Creativo",
+    totalMatches: 12450,
+    leagueLogo: "/acces/laliga.png",
   };
 
   const theRealBrachoData: Player = {
     name: "TheRealBracho",
     team: "Barcha FC",
     clubLogo: "BF.png",
-    country: "Francia",
-    countryLogo: "FR.png",
     dorsal: "9",
     position: "Center Forward",
     marketValue: "300.000.000M",
@@ -350,14 +352,16 @@ function TemplatesTwoPlayers() {
     analysis: "TheRealBracho encarna la potencia pura de Barcha FC. Su habilidad para convertir ángulos imposibles en goles espectaculares lo convierte en el 'clutch player' por excelencia. Bajo presión, su rendimiento aumenta un 15%, siendo el jugador con más goles en los últimos 30 segundos de partido en la historia del torneo.",
     mvpProbability: 88,
     championshipProbability: 80,
+    preferredFoot: "Ambidiestro",
+    playStyle: "Finalizador / Potencia",
+    totalMatches: 9820,
+    leagueLogo: "/acces/laliga.png",
   };
 
   const zestebanPvPData: Player = {
     name: "ZestebanPvP",
     team: "Berserk Dortmund",
     clubLogo: "BD.png",
-    country: "Francia",
-    countryLogo: "FR.png",
     dorsal: "15",
     position: "Center Forward",
     marketValue: "50.000.000M",
@@ -367,14 +371,16 @@ function TemplatesTwoPlayers() {
     analysis: "ZestebanPvP es un Jugador de la nueva generación. Su capacidad de posicionamiento ofensivo es exacto, es uno de los jugadores con mayor efectividad en tiros al area.",
     mvpProbability: 75,
     championshipProbability: 80,
+    preferredFoot: "Derecho",
+    playStyle: "Posicional / Efectivo",
+    totalMatches: 4100,
+    leagueLogo: "/acces/bundesliga.jpg",
   };
 
   const willicraft400Data: Player = {
     name: "Willicraft400",
     team: "Arsenali",
     clubLogo: "AR.png",
-    country: "Inglaterra",
-    countryLogo: "EN.png",
     dorsal: "40",
     position: "Midfielder Defensive",
     marketValue: "170.000.000M",
@@ -384,14 +390,16 @@ function TemplatesTwoPlayers() {
     analysis: "Willicraft400 es el nexo perfecto entre defensa y ataque. Su inteligencia táctica le permite estar siempre en el lugar correcto. Arsenali depende de su visión de juego para mantener la presión constante sobre el rival.",
     mvpProbability: 82,
     championshipProbability: 85,
+    preferredFoot: "Izquierdo",
+    playStyle: "Tactician / Box-to-Box",
+    totalMatches: 7600,
+    leagueLogo: "/acces/premier.png",
   };
 
   const skkart01Data: Player = {
     name: "Skkart01",
     team: "Chelsky",
     clubLogo: "CH.png",
-    country: "Brasil",
-    countryLogo: "BR.png",
     dorsal: "8",
     position: "Forward",
     marketValue: "155.000.000M",
@@ -401,14 +409,16 @@ function TemplatesTwoPlayers() {
     analysis: "Skkart01 es la definición de eficiencia frente a la portería. Su capacidad para encontrar huecos en defensas cerradas lo convierte en la principal amenaza ofensiva de Chelsky.",
     mvpProbability: 80,
     championshipProbability: 70,
+    preferredFoot: "Derecho",
+    playStyle: "Sniper / Agresivo",
+    totalMatches: 8150,
+    leagueLogo: "/acces/premier.png",
   };
 
   const dan1615Data: Player = {
     name: "Dan1615",
     team: "Chicorid",
     clubLogo: "CD.png",
-    country: "Japon",
-    countryLogo: "JP.png",
     dorsal: "11",
     position: "Right Winger",
     marketValue: "220.000.000M",
@@ -418,14 +428,16 @@ function TemplatesTwoPlayers() {
     analysis: "Dan1615 es el pilar de la ofensiva de Chicorid. Su dominio del juego y su precisión en el remate lo sitúan como uno de los jugadores más temidos. Su capacidad para generar peligro de la nada sera vital para las aspiraciones de su equipo.",
     mvpProbability: 85,
     championshipProbability: 40,
+    preferredFoot: "Derecho",
+    playStyle: "Velocidad / Aéreo",
+    totalMatches: 9200,
+    leagueLogo: "/acces/laliga.png",
   };
 
   const drakkardData: Player = {
     name: "Drakkard",
     team: "Bastard Munchen",
     clubLogo: "BM.png",
-    country: "Japon",
-    countryLogo: "JP.png",
     dorsal: "6",
     position: "Midfielder Box To Box",
     marketValue: "125.000.000M",
@@ -435,14 +447,16 @@ function TemplatesTwoPlayers() {
     analysis: "Drakkard aporta versatilidad fundamental para Bastard Munchen. Su equilibrio sera fundamental para esta Champions Cup 26®.",
     mvpProbability: 72,
     championshipProbability: 40,
+    preferredFoot: "Derecho",
+    playStyle: "Equilibrado / Soporte",
+    totalMatches: 5400,
+    leagueLogo: "/acces/bundesliga.jpg",
   };
 
   const josuaSCAData: Player = {
     name: "JosuaSCA",
     team: "Mashine United",
     clubLogo: "MU.png",
-    country: "Brasil",
-    countryLogo: "BR.png",
     dorsal: "20",
     position: "Right Back",
     marketValue: "45.000.000M",
@@ -452,14 +466,16 @@ function TemplatesTwoPlayers() {
     analysis: "JosuaSCA se basa en la defensa proactiva. Su habilidad para defender ha sido clave en algunos momentos a pesar de su caida en rendimiento general, ahora busca redimirse en el torneo.",
     mvpProbability: 78,
     championshipProbability: 70,
+    preferredFoot: "Derecho",
+    playStyle: "Defensivo / Recuperador",
+    totalMatches: 6800,
+    leagueLogo: "/acces/premier.png",
   };
 
   const pamtitaData: Player = {
     name: "Pamtita",
     team: "Ajajax",
     clubLogo: "AJ.png", // Assuming Chicorid uses the same logo as Chelsky for now, or you can provide a new one
-    country: "Alemania",
-    countryLogo: "GR.png",
     dorsal: "4",
     position: "Center Back",
     marketValue: "35.000.000M",
@@ -469,14 +485,16 @@ function TemplatesTwoPlayers() {
     analysis: "Pamtita actuara como el baluarte defensivo de Ajajax, con su capacidad para leer y detener jugadas. Su presencia será clave para el rendimiento del equipo.",
     mvpProbability: 85,
     championshipProbability: 85,
+    preferredFoot: "Izquierdo",
+    playStyle: "Muro / Distribuidor",
+    totalMatches: 11200,
+    leagueLogo: "/acces/eredivisie.png",
   };
 
   const elGangstaData: Player = {
     name: "ElGangsta",
     team: "PXG",
     clubLogo: "PX.png",
-    country: "Alemania",
-    countryLogo: "GR.png",
     dorsal: "7",
     position: "Left Winger",
     marketValue: "255.000.000M",
@@ -486,86 +504,180 @@ function TemplatesTwoPlayers() {
     analysis: "ElGangsta es el finalizador por excelencia de PXG. Su instinto goleador y su habilidad para definir en situaciones de alta presión lo convierten en una amenaza constante para cualquier defensa.",
     mvpProbability: 88,
     championshipProbability: 85,
+    preferredFoot: "Ambidiestro",
+    playStyle: "Goleador / Eléctrico",
+    totalMatches: 10500,
+    leagueLogo: "/acces/ligue1.png",
+  };
+
+  // Componente visual del campo
+  const PitchPosition = ({ position }: { position: string }) => {
+    const isForward = position.toLowerCase().includes('forward') || position.toLowerCase().includes('winger') || position.toLowerCase().includes('offensive');
+    const isMid = position.toLowerCase().includes('midfielder') && !isForward;
+    
+    return (
+      <div className="relative w-24 h-32 border border-indigo-500/30 bg-indigo-950/5 rounded-sm overflow-hidden">
+        <div className="absolute top-1/2 left-0 w-full h-px bg-indigo-500/30" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 border border-indigo-500/30 rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-4 border-b border-x border-indigo-500/30" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-4 border-t border-x border-indigo-500/30" />
+        {/* Indicador de posición con glow morado/azul */}
+        <div className={cn(
+          "absolute w-2.5 h-2.5 bg-blue-400 rounded-full shadow-[0_0_12px_#818cf8] z-10 transition-all duration-700",
+          isForward ? "top-4 left-1/2 -translate-x-1/2" : 
+          isMid ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" :
+          "bottom-4 left-1/2 -translate-x-1/2"
+        )} />
+      </div>
+    );
   };
 
   const PlayerDetailDialog = ({ player, isOpen, onOpenChange }: { player: Player, isOpen: boolean, onOpenChange: (open: boolean) => void }) => (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl w-[95vw] sm:w-full border border-blue-500/30 bg-[#020617] p-0 overflow-y-auto max-h-[90vh] rounded-none shadow-[0_0_100px_rgba(30,58,138,0.3)]">
+      <DialogContent className="max-w-3xl w-[95vw] sm:w-full p-[2px] bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 border-none overflow-hidden rounded-none shadow-[0_0_80px_rgba(30,58,138,0.4)]">
         <DialogTitle className="sr-only">Perfil de {player.name}</DialogTitle>
-        <div className="relative">
-          {/* Technical Background */}
+        <div 
+          className="relative bg-[#020617] h-full overflow-y-auto max-h-[90vh] custom-scrollbar"
+          style={{
+            scrollbarWidth: 'thin',
+            scrollbarColor: '#2563eb #020617'
+          }}
+        >
+          <style jsx global>{`
+            .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+            .custom-scrollbar::-webkit-scrollbar-track { background: #020617; }
+            .custom-scrollbar::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 10px; }
+          `}</style>
+          {/* Technical Background Pattern */}
           <div
-            className="absolute inset-0 opacity-[0.03] pointer-events-none"
-            style={{ backgroundImage: `linear-gradient(rgba(30,58,138,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,138,0.2) 1px, transparent 1px)`, backgroundSize: '30px 30px' }}
+            className="absolute inset-0 opacity-[0.05] pointer-events-none"
+            style={{ backgroundImage: `linear-gradient(rgba(30,58,138,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,138,0.5) 1px, transparent 1px)`, backgroundSize: '20px 20px' }}
           />
 
-          <div className="relative">
-            {/* Header section */}
-            <div className="bg-gradient-to-r from-blue-900/40 to-transparent p-6 sm:p-10 border-b border-blue-500/20">
-              <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left relative">
-                <div className="flex-1">
-                  <span className="text-[10px] tracking-[0.6em] text-blue-400 mb-2 block">PERFIL DEL JUGADOR // COPA 2026</span>
-                  <h2 className="text-6xl font-[family-name:var(--font-bebas)] tracking-widest text-foreground leading-none animate-reveal-up">
-                    {player.name}
-                  </h2>
-                </div>
+          <div className="relative border-b border-blue-500/20">
+            {/* Background Club Logo Decor */}
+            <img src={`/acces/${player.clubLogo}`} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 object-contain opacity-[0.03] pointer-events-none" alt="" />
+            
+            <div className="relative z-10 p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-8">
+              <div className="flex flex-col items-center sm:items-start gap-6">
+              <div className="flex items-center gap-4">
                 <button 
                   onClick={() => onOpenChange(false)}
-                  className="absolute -top-2 -right-2 sm:top-0 sm:right-0 w-8 h-8 flex items-center justify-center border border-blue-900/30 bg-[#020617] hover:bg-blue-600 hover:text-white transition-colors z-50"
+                  className="ml-auto sm:absolute sm:top-8 sm:right-8 w-8 h-8 flex items-center justify-center border border-blue-900/30 bg-[#020617] hover:bg-blue-600 hover:text-white transition-colors z-50"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
               </div>
-            </div>
-
-            {/* Data Grid */}
-            <div className="grid grid-cols-3 gap-px bg-blue-500/10">
-              <div className="bg-blue-950/40 p-6">
-                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2">Club Actual</span>
-                <div className="flex items-center gap-2">
-                  <img src={`/acces/${player.clubLogo}`} alt={player.team} className="w-4 h-4 object-contain" />
-                  <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground">{player.team.toUpperCase()}</span>
+              
+              <h2 className="text-7xl sm:text-8xl font-[family-name:var(--font-bebas)] tracking-tighter text-foreground leading-[0.8] animate-reveal-up">
+                {player.name}
+              </h2>
+              
+              <div className="flex items-center gap-4 mt-2">
+                <div className="w-6 h-6 flex items-center justify-center bg-white/5 rounded-sm p-1 border border-white/10">
+                  <img src={`/acces/${player.clubLogo}`} alt="" className="w-full h-full object-contain" />
                 </div>
+                <div className="w-6 h-6 flex items-center justify-center bg-white/5 rounded-sm p-1 border border-white/10">
+                  <img src={player.leagueLogo} alt="" className="w-full h-full object-contain" />
+                </div>
+                <span className="text-[11px] tracking-[0.3em] text-muted-foreground font-bold uppercase">{player.team}</span>
               </div>
-              <div className="bg-blue-950/40 p-6">
-                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2">Dorsal</span>
-                <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground">#{player.dorsal}</span>
+              
+              <div className="flex items-center gap-4 mt-2">
+                <span className="text-[11px] tracking-[0.3em] text-muted-foreground font-bold uppercase">{player.position}</span>
               </div>
-              <div className="bg-blue-950/40 p-6">
-                <span className="text-[8px] tracking-[0.4em] text-blue-400/70 block mb-2">Posición</span>
-                <span className="text-xs font-bold text-foreground">{player.position.toUpperCase()}</span>
+              </div>
+              {/* Mini Campo Visual */}
+              <div className="hidden sm:flex flex-col items-center gap-2">
+                <PitchPosition position={player.position} />
+                <span className="text-[8px] tracking-[0.2em] text-blue-400/50 uppercase mt-1">Posición</span>
               </div>
             </div>
+          </div>
 
-            {/* Stats Grid con Aumentos */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-blue-500/10 border-y border-blue-500/20">
+          {/* Info Horizontal Blocks */}
+          <div className="grid grid-cols-2 md:grid-cols-4 border-b border-blue-500/20">
+            <div className="p-8 border-r border-blue-500/10 flex flex-col items-center">
+              <span className="text-[9px] tracking-[0.4em] text-blue-400/60 mb-2 uppercase">Dorsal</span>
+              <span className="text-4xl font-[family-name:var(--font-bebas)] text-foreground">#{player.dorsal}</span>
+            </div>
+            <div className="p-8 border-r border-blue-500/10 flex flex-col items-center col-span-2 bg-blue-500/5">
+              <span className="text-[9px] tracking-[0.4em] text-blue-400/60 mb-2 uppercase">Valor de Mercado</span>
+              <span className="text-4xl font-[family-name:var(--font-bebas)] text-blue-400">{player.marketValue}</span>
+            </div>
+            <div className="p-8 flex flex-col items-center">
+              <span className="text-[9px] tracking-[0.4em] text-blue-400/60 mb-2 uppercase">Trofeos</span>
+              <span className="text-4xl font-[family-name:var(--font-bebas)] text-foreground">{player.achievements.length}</span>
+            </div>
+          </div>
+
+          {/* Extra Tech Data Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 bg-blue-500/5 border-b border-blue-500/20">
+            <div className="p-6 border-r border-blue-500/10 flex flex-col">
+              <span className="text-[8px] tracking-[0.3em] text-blue-400/40 uppercase mb-1">Pie Dominante</span>
+              <span className="text-xs font-bold text-foreground uppercase tracking-widest">{player.preferredFoot}</span>
+            </div>
+            <div className="p-6 border-r border-blue-500/10 flex flex-col">
+              <span className="text-[8px] tracking-[0.3em] text-blue-400/40 uppercase mb-1">Estilo de Juego</span>
+              <span className="text-xs font-bold text-foreground uppercase tracking-widest">{player.playStyle}</span>
+            </div>
+            <div className="p-6 flex flex-col">
+              <span className="text-[8px] tracking-[0.3em] text-blue-400/40 uppercase mb-1">Partidos Totales</span>
+              <span className="text-xs font-bold text-foreground uppercase tracking-widest">{player.totalMatches.toLocaleString()}</span>
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="p-8 sm:p-12 border-b border-blue-500/20">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {[
-                { label: "Goles", value: player.stats.goals, delta: player.statsIncrease.goals },
-                { label: "Asistencias", value: player.stats.assists, delta: player.statsIncrease.assists },
-                { label: "Salvadas", value: player.stats.saves, delta: player.statsIncrease.saves },
+                { label: "GOLES", value: player.stats.goals, delta: player.statsIncrease.goals },
+                { label: "ASIST", value: player.stats.assists, delta: player.statsIncrease.assists },
+                { label: "SALVAS", value: player.stats.saves, delta: player.statsIncrease.saves },
                 { label: "MVP", value: player.stats.mvp, delta: player.statsIncrease.mvp },
               ].map((stat) => (
-                <div key={stat.label} className="bg-blue-950/20 p-5 group/stat">
-                  <span className="text-[8px] tracking-[0.4em] text-blue-400/60 block mb-2">{stat.label}</span>
-                  <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground block">{stat.value}</span>
-                  <div className="mt-2 flex items-center justify-between">
+                <div key={stat.label} className="relative group/stat">
+                  <span className="text-[8px] tracking-[0.4em] text-blue-400/60 block mb-1">{stat.label}</span>
+                  <span className="text-3xl font-[family-name:var(--font-bebas)] text-foreground block">{stat.value}</span>
+                  <div className="flex items-center gap-2">
                     <span className="text-[10px] text-green-500 font-bold">{stat.delta.percent}</span>
-                    <span className="text-[9px] text-blue-400/40">{stat.delta.total}</span>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Analysis Section */}
-            <div className="p-6 sm:p-10 space-y-6 bg-blue-950/40 backdrop-blur-md">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-px bg-blue-400/40" />
-                <span className="text-[9px] tracking-[0.6em] text-blue-400">ANÁLISIS DE RENDIMIENTO IA</span>
+          {/* Visual Probabilities */}
+          <div className="px-8 sm:px-12 py-10 grid sm:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <div className="flex justify-between items-end">
+                <span className="text-[10px] tracking-[0.4em] text-blue-400/60">PROB. MVP TORNEO</span>
+                <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground">{player.mvpProbability}%</span>
               </div>
-              <p className="text-sm text-blue-100/80 leading-relaxed italic animate-reveal-up stagger-1">
-                {player.analysis}
-              </p>
+              <div className="h-1.5 bg-blue-900/20 w-full rounded-full overflow-hidden">
+                <div className="h-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.6)]" style={{ width: `${player.mvpProbability}%` }} />
+              </div>
             </div>
+            <div className="space-y-4">
+              <div className="flex justify-between items-end">
+                <span className="text-[10px] tracking-[0.4em] text-blue-400/60">PROB. CAMPEÓN</span>
+                <span className="text-2xl font-[family-name:var(--font-bebas)] text-foreground">{player.championshipProbability}%</span>
+              </div>
+              <div className="h-1.5 bg-blue-900/20 w-full rounded-full overflow-hidden">
+                <div className="h-full bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.6)]" style={{ width: `${player.championshipProbability}%` }} />
+              </div>
+            </div>
+          </div>
+
+          {/* Analysis Footer */}
+          <div className="bg-blue-900/10 p-8 sm:p-12 border-t border-blue-500/20">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+              <span className="text-[9px] tracking-[0.6em] text-blue-400 font-bold uppercase">Análisis Predictivo Gemini AI</span>
+            </div>
+            <p className="text-sm text-blue-100/70 leading-relaxed font-light italic">
+              "{player.analysis}"
+            </p>
           </div>
         </div>
       </DialogContent>
@@ -635,70 +747,112 @@ function TemplatesTwoPlayers() {
 }
 
 function StandingsTable() {
+  const buildGroupStandings = (group: string) => {
+    // Usamos el orden fijo definido por `selections` (tu confirmación)
+    const groupSelections = selections.filter((s) => s.group === group)
+
+    // Mantener el mismo formato de filas que antes (con pj/v/e/d/pts desde fullStandings si coincide por nombre)
+    return groupSelections.map((team, idx) => {
+      const r = fullStandings.find((x) => x.team === team.name)
+      return {
+        pos: idx + 1,
+        team: team.name,
+        pj: r?.pj ?? 0,
+        pg: r?.pg ?? 0,
+        pe: r?.pe ?? 0,
+        pp: r?.pp ?? 0,
+        pts: r?.pts ?? 0,
+      }
+    })
+  }
+
+  const groupA = buildGroupStandings("A")
+  const groupB = buildGroupStandings("B")
+
+  const GroupTable = ({ title, rows }: { title: string; rows: typeof groupA }) => (
+    <div className="p-[1px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 w-full shadow-[0_0_40px_rgba(30,58,138,0.2)]">
+      <div className="overflow-hidden bg-[#020617] h-full">
+        <div className="bg-blue-900/10 px-6 py-4 border-b border-blue-900/20">
+          <h3 className="text-xl font-[family-name:var(--font-bebas)] tracking-[0.2em] text-foreground">
+            CLASIFICACIÓN {title}
+          </h3>
+        </div>
+
+        <div className="grid grid-cols-8 gap-2 px-6 py-3 text-[10px] tracking-[0.2em] text-muted-foreground border-b border-border/5">
+          <div className="col-span-1">POS</div>
+          <div className="col-span-3">CLUB</div>
+          <div className="col-span-1 text-center">PJ</div>
+          <div className="col-span-2 text-center">V/E/D</div>
+          <div className="col-span-1 text-right">PTS</div>
+        </div>
+
+        <div className="divide-y divide-border/5">
+          {rows.map((r) => (
+            <div
+              key={r.team}
+              className={`grid grid-cols-8 gap-2 px-6 py-4 items-center transition-colors hover:bg-white/5 ${
+                r.pos === 1 ? "bg-blue-600/10 border-l-2 border-blue-400" : ""
+              }`}
+            >
+              <div className="col-span-1">
+                <p
+                  className={`text-xl font-[family-name:var(--font-bebas)] ${
+                    r.pos === 1 ? "text-blue-400" : "text-foreground/30"
+                  }`}
+                >
+                  {String(r.pos).padStart(2, "0")}
+                </p>
+              </div>
+
+              <div className="col-span-3 flex items-center gap-3">
+                <div className="w-5 h-5 flex items-center justify-center">
+                  <img
+                    src={
+                      `/acces/${selections.find((s) => s.name === r.team)?.logo ?? "default.png"}`
+                    }
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="text-[11px] tracking-wider text-foreground font-medium">
+                  {r.team.toUpperCase()}
+                </span>
+              </div>
+
+              <div className="col-span-1 text-center text-[11px] text-muted-foreground">{r.pj}</div>
+              <div className="col-span-2 text-center text-[10px] text-muted-foreground">
+                {r.pg}/{r.pe}/{r.pp}
+              </div>
+
+              <div className="col-span-1 text-right">
+                <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground tracking-tight">
+                  {r.pts}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <section id="posiciones" className="py-20 px-6 lg:px-12 bg-[#050b24] border-t border-blue-900/20">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="w-16 h-px bg-foreground/20" />
           <span className="text-[10px] tracking-[0.6em] text-blue-400">
-            TABLA GENERAL // FASE DE LIGA
+            TABLA PRINCIPAL // FASE DE GRUPOS
           </span>
         </div>
 
-        <div className="p-[1px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 max-w-5xl mx-auto shadow-[0_0_40px_rgba(30,58,138,0.2)]">
-          <div className="overflow-hidden bg-[#020617] h-full">
-            <div className="bg-blue-900/10 px-6 py-4 border-b border-blue-900/20">
-              <h3 className="text-xl font-[family-name:var(--font-bebas)] tracking-[0.2em] text-foreground">
-                CLASIFICACIÓN GENERAL
-              </h3>
-            </div>
-            <div className="grid grid-cols-6 gap-2 px-6 py-3 text-[10px] tracking-[0.2em] text-muted-foreground border-b border-border/5">
-              <div className="col-span-1">POS</div>
-              <div className="col-span-2">CLUB</div>
-              <div className="col-span-1 text-center">PJ</div>
-              <div className="col-span-1 text-center">V/E/D</div>
-              <div className="col-span-1 text-right">PTS</div>
-            </div>
-            <div className="divide-y divide-border/5">
-              {fullStandings.map((r) => (
-                <div
-                  key={r.team}
-                  className={`grid grid-cols-6 gap-2 px-6 py-4 items-center transition-colors hover:bg-white/5 ${
-                    r.pos <= 4 ? "bg-blue-600/10 border-l-2 border-blue-400" : ""
-                  }`}
-                >
-                  <div className="col-span-1">
-                    <p className={`text-xl font-[family-name:var(--font-bebas)] ${r.pos <= 4 ? 'text-blue-400' : 'text-foreground/30'}`}>
-                      {String(r.pos).padStart(2, "0")}
-                    </p>
-                  </div>
-                  <div className="col-span-2 flex items-center gap-3">
-                    <div className="w-5 h-5 flex items-center justify-center">
-                      <img
-                        src={`/acces/${selections.find((s) => s.name === r.team)?.logo ?? "default.png"}`}
-                        alt=""
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="text-[11px] tracking-wider text-foreground font-medium">{r.team.toUpperCase()}</span>
-                  </div>
-                  <div className="col-span-1 text-center text-[11px] text-muted-foreground">{r.pj}</div>
-                  <div className="col-span-1 text-center text-[10px] text-muted-foreground">
-                    {r.pg}/{r.pe}/{r.pp}
-                  </div>
-                  <div className="col-span-1 text-right">
-                    <span className="text-lg font-[family-name:var(--font-bebas)] text-foreground tracking-tight">
-                      {r.pts}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <GroupTable title="GRUPO A" rows={groupA} />
+          <GroupTable title="GRUPO B" rows={groupB} />
         </div>
 
         <p className="mt-8 text-[10px] tracking-widest text-blue-400/50 uppercase text-center">
-          * LOS CUATRO MEJORES DE LA TABLA CLASIFICAN A LAS SEMIFINALES
+          * LOS CUATRO MEJORES DE LA FASE DE LIGA CLASIFICAN A LAS SEMIFINALES
         </p>
       </div>
     </section>
@@ -835,15 +989,15 @@ function MatchSchedule() {
 
       {/* Modal de Detalle de Partido */}
       <Dialog open={isMatchDialogOpen} onOpenChange={setIsMatchDialogOpen}>
-        <DialogContent className="max-w-2xl border border-border/20 bg-background/95 backdrop-blur-xl p-0 overflow-hidden shadow-2xl rounded-none">
+        <DialogContent className="max-w-2xl p-[1px] bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 border-none overflow-hidden shadow-[0_0_50px_rgba(30,58,138,0.4)] rounded-none">
           <DialogTitle className="sr-only">Previa del Partido</DialogTitle>
           {selectedMatch && (
-            <div className="relative">
+            <div className="relative bg-[#020617] h-full">
               {/* Header Técnico */}
-              <div className="relative z-10 border-b border-border/10 bg-secondary/10 px-8 py-4 flex items-center justify-between">
+              <div className="relative z-10 border-b border-blue-500/20 bg-blue-900/10 px-8 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-[10px] tracking-[0.5em] text-muted-foreground">TRANSMISIÓN PARTIDO // PREVIA OFICIAL</span>
+                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                  <span className="text-[10px] tracking-[0.5em] text-blue-400">TRANSMISIÓN PARTIDO // PREVIA OFICIAL</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="text-[9px] tracking-[0.3em] text-muted-foreground uppercase font-bold">JORNADA OFICIAL</span>
@@ -869,7 +1023,7 @@ function MatchSchedule() {
                     <h3 className="text-3xl font-[family-name:var(--font-bebas)] tracking-[0.4em] text-foreground mb-2">
                       {selectedMatch.date}
                     </h3>
-                    <p className="text-[11px] tracking-[0.5em] text-muted-foreground uppercase">{selectedMatch.time} HORAS — {selectedMatch.stadium}</p>
+                    <p className="text-[11px] tracking-[0.5em] text-blue-400/60 uppercase">{selectedMatch.time} HORAS — {selectedMatch.stadium}</p>
                   </div>
 
                   {/* Visual Principal: Equipos y Estadio */}
@@ -905,18 +1059,12 @@ function MatchSchedule() {
                       <span className="text-xl font-[family-name:var(--font-bebas)] tracking-widest text-foreground">{selectedMatch.away.toUpperCase()}</span>
                     </div>
                   </div>
-
-                  {/* Contador de Tiempo */}
-                  <div className="pt-8 border-t border-border/10 w-full flex flex-col items-center">
-                    <span className="text-[10px] tracking-[0.5em] text-muted-foreground uppercase mb-6">INICIO CUENTA REGRESIVA</span>
-                    <CountdownTimer targetDate={selectedMatch.date} />
-                  </div>
                 </div>
               </div>
 
               {/* Footer Técnico */}
-              <div className="bg-secondary/5 p-4 border-t border-border/10 flex justify-center">
-                <span className="text-[9px] tracking-[0.2em] text-muted-foreground/40">TRANSMISIÓN EXCLUSIVA // RED RL26</span>
+              <div className="bg-blue-950/20 p-4 border-t border-blue-500/10 flex justify-center">
+                <span className="text-[9px] tracking-[0.2em] text-blue-400/40">TRANSMISIÓN EXCLUSIVA // RED RL26</span>
               </div>
             </div>
           )}
