@@ -1,11 +1,10 @@
-# TODO
+# TODO - RL NATIOSN Clubs (sección moderna interactiva)
 
-- [x] Mover el acceso a RL-Nations al Hero Banner principal en lugar del botón "Jugadores".
-- [ ] Crear la sub-ruta en Next.js: `app/rl-natiosn/page.tsx` (página de torneo con el estilo existente).
-- [ ] Implementar secciones en la página del torneo:
-  - [ ] Hero banner al inicio.
-  - [ ] Lista de 5 selecciones participantes.
-  - [ ] Tabla de posiciones moderna.
-  - [ ] Formato de semifinales (4 primeros) luego de todos contra todos.
-  - [ ] Plantillas: 2 jugadores por selección.
-- [ ] Ejecutar build/lint (si aplica) y verificar que el enlace del navbar navega correctamente.
+- [x] Crear modal avanzado para cada club al hacer click desde `SelectionsGrid`.
+- [x] Hacer tarjetas de clubes con animación y estado activo (hover + click).
+- [x] Implementar contenido del modal: header técnico + equipo + grupo + highlight animado (por ejemplo barras/ratings) + CTA.
+- [x] Conectar el modal con los datos existentes (`selections`) y mantener estilo consistente con el resto de la página.
+
+- [ ] Validar TypeScript/Next.js (compila) y revisar que no rompa la página.
+
+
