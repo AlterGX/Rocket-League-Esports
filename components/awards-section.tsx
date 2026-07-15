@@ -28,7 +28,7 @@ const awards = [
     award: 'Goleador Del Mes',
     player: 'ElGangsta_07',
     team: 'PXG',
-    logo: 'PXG.png',
+    logo: 'PX.png',
     dorsal: '#7',
     position: 'CENTER FORWARD',
     stat: 'GOLES',
