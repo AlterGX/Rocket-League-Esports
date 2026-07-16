@@ -3,15 +3,19 @@
 const awards = [
   {
     award: 'Mejor Jugador Del Mes',
-    player: 'ZEstebanPvP',
-    team: 'Bastard Munchen',
-    logo: 'BM.png',
-    dorsal: '#15',
+    player: 'DAN1615',
+    team: 'Mashine City',
+    logo: 'MC.png',
+    dorsal: '#11',
     position: 'CENTER FORWARD',
     stat: 'RENDIMIENTO',
-    percentage: '+65.0%',
-    value: '90.2',
+    percentage: '+68.5%',
+    value: '94.5',
     isBestPlayer: true,
+    runnersUp: [
+      { player: 'ZEstebanPVP', value: '92.6', team: 'Bastard Munchen' },
+      { player: 'AlterGX', value: '91.1', team: 'Re Al' },
+    ],
   },
   {
     award: 'Asistidor Del Mes',
@@ -23,17 +27,25 @@ const awards = [
     stat: 'ASISTENCIAS',
     percentage: '+6.78%',
     value: '244',
+    runnersUp: [
+      { player: 'ZEstebanPVP', value: '227', team: 'Bastard Munchen' },
+      { player: 'Willicraft400', value: '149', team: 'Arsenali' },
+    ],
   },
   {
     award: 'Goleador Del Mes',
-    player: 'ElGangsta_07',
-    team: 'PXG',
-    logo: 'PX.png',
+    player: 'Dan1615',
+    team: 'Mashine City',
+    logo: 'MC.png',
     dorsal: '#7',
     position: 'CENTER FORWARD',
     stat: 'GOLES',
-    percentage: '+5,49%',
-    value: '621',
+    percentage: '+12.11%',
+    value: '737',
+    runnersUp: [
+      { player: 'ElGangsta_07', value: '621', team: 'PXG' },
+      { player: 'ZEstebanPVP', value: '567', team: 'Bastard Munchen' },
+    ],
   },
   {
     award: 'Salvador Del Mes',
@@ -41,10 +53,14 @@ const awards = [
     team: 'Re Al',
     logo: 'RA.png',
     dorsal: '#10',
-    position: 'Midfielder Offensive',
+    position: 'Midfielder Defensive',
     stat: 'SALVADAS',
     percentage: '+6.30%',
     value: '313',
+    runnersUp: [
+      { player: 'Dan1615', value: '291', team: 'Mashine City' },
+      { player: 'ElGangsta_07', value: '248', team: 'PXG' },
+    ],
   },
   {
     award: 'Mayor MVP´s Del Mes',
@@ -56,12 +72,16 @@ const awards = [
     stat: 'MVP',
     percentage: '+18.54%',
     value: '114',
+    runnersUp: [
+      { player: 'AlterGX', value: '101', team: 'Re Al' },
+      { player: 'ZEstebanPVP', value: '84', team: 'Bastard Munchen' },
+    ],
   },
 ]
 
 function AwardCard({ award, isWide = false }: { award: typeof awards[0], isWide?: boolean }) {
   return (
-    <div className={`group relative w-full overflow-hidden border transition-all duration-500 flex flex-col ${isWide ? 'lg:col-span-2 lg:min-h-[32rem]' : 'lg:min-h-[30rem]'}`}
+    <div className={`group relative w-full overflow-hidden border transition-all duration-500 flex flex-col ${isWide ? 'lg:col-span-2 lg:min-h-[34rem]' : 'lg:min-h-[32rem]'}`}
       style={{ 
         borderColor: award.isBestPlayer ? 'rgba(210, 180, 140, 0.4)' : 'rgba(255, 255, 255, 0.08)',
         backgroundColor: award.isBestPlayer ? 'rgba(210, 180, 140, 0.05)' : 'rgba(255, 255, 255, 0.02)'
@@ -106,22 +126,22 @@ function AwardCard({ award, isWide = false }: { award: typeof awards[0], isWide?
         }}
       />
 
-      <div className={`relative z-10 p-6 flex flex-col h-full ${isWide ? 'lg:p-10' : 'lg:p-8'}`}>
+      <div className={`relative z-10 p-8 flex flex-col h-full ${isWide ? 'lg:p-12' : 'lg:p-10'}`}>
         {/* Header Metadata */}
-        <div className="flex items-center justify-between mb-6 lg:mb-8">
+        <div className="flex items-center justify-between mb-8 lg:mb-10">
           <div className="flex items-center gap-3">
             <div className="w-1.5 h-1.5 bg-[#D2B48C] rounded-full animate-pulse" />
-            <span className="text-[10px] tracking-[0.5em] text-[#D2B48C]/80 uppercase font-mono">
+            <span className="text-[11px] tracking-[0.5em] text-[#D2B48C]/80 uppercase font-mono">
               CAFALA_METRICS
             </span>
           </div>
           {award.isBestPlayer && (
-            <span className="text-[9px] tracking-[0.3em] text-[#D2B48C] font-mono border border-[#D2B48C]/30 px-2 py-0.5 bg-[#D2B48C]/5 whitespace-nowrap">
+            <span className="text-[10px] tracking-[0.3em] text-[#D2B48C] font-mono border border-[#D2B48C]/30 px-3 py-1 bg-[#D2B48C]/5 whitespace-nowrap">
               ★ PLAYER OF THE MONTH
             </span>
           )}
           {!award.isBestPlayer && (
-            <span className="text-[9px] tracking-[0.3em] text-[#D2B48C]/50 font-mono">
+            <span className="text-[10px] tracking-[0.3em] text-[#D2B48C]/50 font-mono">
               REF_M01_AWARD
             </span>
           )}
@@ -130,10 +150,10 @@ function AwardCard({ award, isWide = false }: { award: typeof awards[0], isWide?
         {/* Main Content */}
         {isWide ? (
           // Layout para card ancha (Mejor Jugador)
-          <div className="flex-1 flex flex-col lg:flex-row lg:items-center lg:gap-8">
+          <div className="flex-1 flex flex-col lg:flex-row lg:items-center lg:gap-12">
             {/* Info del jugador */}
-            <div className="lg:w-[55%] mb-6 lg:mb-0">
-              <span className="inline-block border px-3 py-1 text-[9px] uppercase tracking-[0.4em] mb-6 transition-transform group-hover:-translate-y-1"
+            <div className="lg:w-[55%] mb-8 lg:mb-0">
+              <span className="inline-block border px-4 py-1.5 text-[10px] uppercase tracking-[0.4em] mb-8 transition-transform group-hover:-translate-y-1"
                 style={{
                   borderColor: 'rgba(210, 180, 140, 0.5)',
                   backgroundColor: 'rgba(210, 180, 140, 0.15)',
@@ -142,44 +162,77 @@ function AwardCard({ award, isWide = false }: { award: typeof awards[0], isWide?
               >
                 {award.award}
               </span>
-              <h3 className="text-6xl lg:text-[7rem] xl:text-[8rem] font-[family-name:var(--font-bebas)] tracking-tight leading-[0.85] mb-4 transition-transform duration-500 group-hover:translate-x-2 text-[#D2B48C]">
+              <h3 className="text-7xl lg:text-[8rem] xl:text-[9rem] font-[family-name:var(--font-bebas)] tracking-tight leading-[0.85] mb-6 transition-transform duration-500 group-hover:translate-x-2 text-[#D2B48C]">
                 {award.player}
               </h3>
-              <p className="text-[10px] lg:text-xs tracking-[0.5em] uppercase opacity-60 text-white/70">
+              <p className="text-[11px] lg:text-sm tracking-[0.5em] uppercase opacity-60 text-white/70">
                 {award.position}
               </p>
             </div>
 
-            {/* Stats - Layout vertical */}
-            <div className="lg:w-[45%] flex flex-col gap-3">
-              <div className="border p-5 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20"
+            {/* Stats y Runners Up - Layout vertical */}
+            <div className="lg:w-[45%] flex flex-col gap-4">
+              {/* Stats principales */}
+              <div className="border p-6 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20"
                 style={{ borderColor: 'rgba(210, 180, 140, 0.2)' }}>
                 <div className="flex items-center justify-between">
-                  <span className="text-[8px] tracking-[0.4em] text-[#D2B48C]/70 uppercase">Dorsal</span>
-                  <span className="text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-white/90">{award.dorsal}</span>
+                  <span className="text-[9px] tracking-[0.4em] text-[#D2B48C]/70 uppercase">Dorsal</span>
+                  <span className="text-4xl lg:text-5xl font-[family-name:var(--font-bebas)] text-white/90">{award.dorsal}</span>
                 </div>
               </div>
-              <div className="border p-5 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20"
+              <div className="border p-6 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20"
                 style={{ borderColor: 'rgba(210, 180, 140, 0.2)' }}>
                 <div className="flex items-center justify-between">
-                  <span className="text-[8px] tracking-[0.4em] text-[#D2B48C]/70 uppercase">{award.stat}</span>
-                  <span className="text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-white/90">{award.value}</span>
+                  <span className="text-[9px] tracking-[0.4em] text-[#D2B48C]/70 uppercase">{award.stat}</span>
+                  <span className="text-4xl lg:text-5xl font-[family-name:var(--font-bebas)] text-white/90">{award.value}</span>
                 </div>
               </div>
-              <div className="border p-5 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20"
+              <div className="border p-6 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20"
                 style={{ borderColor: 'rgba(210, 180, 140, 0.2)' }}>
                 <div className="flex items-center justify-between">
-                  <span className="text-[8px] tracking-[0.4em] text-[#D2B48C]/70 uppercase">Porcentaje %</span>
-                  <span className="text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-[#D2B48C]">{award.percentage}</span>
+                  <span className="text-[9px] tracking-[0.4em] text-[#D2B48C]/70 uppercase">Delta %</span>
+                  <span className="text-4xl lg:text-5xl font-[family-name:var(--font-bebas)] text-[#D2B48C]">{award.percentage}</span>
                 </div>
               </div>
+              
+              {/* Runners Up - Top 2 y Top 3 */}
+              {award.runnersUp && (
+                <div className="border p-5 transition-colors bg-black/10"
+                  style={{ borderColor: 'rgba(210, 180, 140, 0.15)' }}>
+                  <span className="text-[8px] tracking-[0.3em] text-[#D2B48C]/50 uppercase block mb-4">
+                    Runners Up
+                  </span>
+                  <div className="space-y-3">
+                    {award.runnersUp.map((runner, idx) => (
+                      <div key={idx} className="flex items-center justify-between group/runner">
+                        <div className="flex items-center gap-3 min-w-0">
+                          <span className="text-[10px] font-mono text-[#D2B48C]/40 w-5 flex-shrink-0">
+                            {idx === 0 ? '#2' : '#3'}
+                          </span>
+                          <span className="text-xs lg:text-sm text-white/60 truncate group-hover/runner:text-white/80 transition-colors">
+                            {runner.player}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 flex-shrink-0 ml-3">
+                          <span className="text-[10px] text-[#D2B48C]/30 font-mono">
+                            {runner.team}
+                          </span>
+                          <span className="text-sm lg:text-base font-[family-name:var(--font-bebas)] text-white/40 group-hover/runner:text-white/60 transition-colors tabular-nums">
+                            {runner.value}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         ) : (
           // Layout para cards normales
           <div className="flex-1 flex flex-col">
-            <div className="mb-6 lg:mb-8">
-              <span className="inline-block border px-3 py-1 text-[9px] uppercase tracking-[0.4em] mb-6 transition-transform group-hover:-translate-y-1"
+            <div className="mb-8 lg:mb-10">
+              <span className="inline-block border px-4 py-1.5 text-[10px] uppercase tracking-[0.4em] mb-8 transition-transform group-hover:-translate-y-1"
                 style={{
                   borderColor: 'rgba(255, 255, 255, 0.2)',
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
@@ -188,44 +241,78 @@ function AwardCard({ award, isWide = false }: { award: typeof awards[0], isWide?
               >
                 {award.award}
               </span>
-              <h3 className="text-5xl lg:text-6xl xl:text-7xl font-[family-name:var(--font-bebas)] tracking-tight leading-[0.85] mb-4 transition-transform duration-500 group-hover:translate-x-2 text-white">
+              <h3 className="text-6xl lg:text-7xl xl:text-8xl font-[family-name:var(--font-bebas)] tracking-tight leading-[0.85] mb-6 transition-transform duration-500 group-hover:translate-x-2 text-white">
                 {award.player}
               </h3>
-              <p className="text-[10px] tracking-[0.5em] uppercase opacity-60 text-white/70">
+              <p className="text-[11px] tracking-[0.5em] uppercase opacity-60 text-white/70">
                 {award.position}
               </p>
             </div>
 
-            {/* Stats Grid - 3 columnas */}
-            <div className="grid grid-cols-3 gap-px border mt-auto"
-              style={{ 
-                borderColor: 'rgba(255, 255, 255, 0.08)',
-                backgroundColor: 'rgba(210, 180, 140, 0.05)'
-              }}
-            >
-              <div className="p-4 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20">
-                <span className="text-[8px] tracking-[0.4em] text-[#D2B48C]/70 block mb-2 uppercase">Dorsal</span>
-                <span className="text-2xl lg:text-3xl font-[family-name:var(--font-bebas)] text-white/90">{award.dorsal}</span>
+            <div className="mt-auto space-y-5">
+              {/* Stats Grid - 3 columnas */}
+              <div className="grid grid-cols-3 gap-px border"
+                style={{ 
+                  borderColor: 'rgba(255, 255, 255, 0.08)',
+                  backgroundColor: 'rgba(210, 180, 140, 0.05)'
+                }}
+              >
+                <div className="p-5 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20">
+                  <span className="text-[9px] tracking-[0.4em] text-[#D2B48C]/70 block mb-2 uppercase">Dorsal</span>
+                  <span className="text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-white/90">{award.dorsal}</span>
+                </div>
+                <div className="p-5 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20">
+                  <span className="text-[9px] tracking-[0.4em] text-[#D2B48C]/70 block mb-2 uppercase">{award.stat}</span>
+                  <span className="text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-white/90">{award.value}</span>
+                </div>
+                <div className="p-5 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20">
+                  <span className="text-[9px] tracking-[0.4em] text-[#D2B48C]/70 block mb-2 uppercase">Delta %</span>
+                  <span className="text-3xl lg:text-4xl font-[family-name:var(--font-bebas)] text-green-500/80">{award.percentage}</span>
+                </div>
               </div>
-              <div className="p-4 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20">
-                <span className="text-[8px] tracking-[0.4em] text-[#D2B48C]/70 block mb-2 uppercase">{award.stat}</span>
-                <span className="text-2xl lg:text-3xl font-[family-name:var(--font-bebas)] text-white/90">{award.value}</span>
-              </div>
-              <div className="p-4 transition-colors group-hover:bg-[#D2B48C]/[0.05] bg-black/20">
-                <span className="text-[8px] tracking-[0.4em] text-[#D2B48C]/70 block mb-2 uppercase">Delta %</span>
-                <span className="text-2xl lg:text-3xl font-[family-name:var(--font-bebas)] text-green-500/80">{award.percentage}</span>
-              </div>
+
+              {/* Runners Up - Top 2 y Top 3 */}
+              {award.runnersUp && (
+                <div className="border p-4 transition-colors bg-black/10"
+                  style={{ borderColor: 'rgba(210, 180, 140, 0.15)' }}>
+                  <span className="text-[8px] tracking-[0.3em] text-[#D2B48C]/50 uppercase block mb-3">
+                    Runners Up
+                  </span>
+                  <div className="space-y-2.5">
+                    {award.runnersUp.map((runner, idx) => (
+                      <div key={idx} className="flex items-center justify-between group/runner">
+                        <div className="flex items-center gap-3 min-w-0">
+                          <span className="text-[10px] font-mono text-[#D2B48C]/40 w-5 flex-shrink-0">
+                            {idx === 0 ? '#2' : '#3'}
+                          </span>
+                          <span className="text-xs text-white/60 truncate group-hover/runner:text-white/80 transition-colors">
+                            {runner.player}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 flex-shrink-0 ml-3">
+                          <span className="text-[10px] text-[#D2B48C]/30 font-mono">
+                            {runner.team}
+                          </span>
+                          <span className="text-sm font-[family-name:var(--font-bebas)] text-white/40 group-hover/runner:text-white/60 transition-colors tabular-nums">
+                            {runner.value}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
 
-        {/* Footer Info - Siempre visible y espaciado */}
-        <div className="mt-8 lg:mt-10 pt-5 lg:pt-6 border-t flex items-center justify-between"
+        {/* Footer Info */}
+        <div className="mt-8 lg:mt-10 pt-6 lg:pt-8 border-t flex items-center justify-between"
           style={{ borderColor: 'rgba(210, 180, 140, 0.15)' }}
         >
-          <div className="flex items-center gap-3 lg:gap-4 min-w-0">
+          <div className="flex items-center gap-4 lg:gap-5 min-w-0">
             <div className={`flex-shrink-0 border bg-secondary/10 flex items-center justify-center transition-transform group-hover:scale-110 overflow-hidden
-              ${isWide ? 'w-12 h-12 lg:w-14 lg:h-14' : 'w-10 h-10 lg:w-12 lg:h-12'}`}
+              ${isWide ? 'w-14 h-14 lg:w-16 lg:h-16' : 'w-12 h-12 lg:w-14 lg:h-14'}`}
               style={{ borderColor: 'rgba(210, 180, 140, 0.2)' }}
             >
               <img
@@ -235,18 +322,18 @@ function AwardCard({ award, isWide = false }: { award: typeof awards[0], isWide?
               />
             </div>
             <div className="min-w-0">
-              <p className="text-[8px] tracking-[0.3em] text-[#D2B48C]/70 uppercase mb-0.5">Club Oficial</p>
+              <p className="text-[9px] tracking-[0.3em] text-[#D2B48C]/70 uppercase mb-1">Club Oficial</p>
               <p className={`font-[family-name:var(--font-bebas)] tracking-widest text-white truncate
-                ${isWide ? 'text-sm lg:text-base' : 'text-xs lg:text-sm'}`}>
+                ${isWide ? 'text-base lg:text-lg' : 'text-sm lg:text-base'}`}>
                 {award.team}
               </p>
             </div>
           </div>
           <div className="flex flex-col items-end flex-shrink-0 ml-4">
-            <div className="h-px w-8 mb-2 group-hover:w-12 transition-all duration-500"
+            <div className="h-px w-10 mb-2 group-hover:w-14 transition-all duration-500"
               style={{ backgroundColor: 'rgba(210, 180, 140, 0.2)' }}
             />
-            <span className="text-[8px] tracking-[0.4em] uppercase text-[#D2B48C]/70 whitespace-nowrap">
+            <span className="text-[9px] tracking-[0.4em] uppercase text-[#D2B48C]/70 whitespace-nowrap">
               Verified By CAFALA_AI
             </span>
           </div>
@@ -266,15 +353,15 @@ export function AwardsSection() {
         background: 'linear-gradient(180deg, rgba(139, 90, 43, 0.05) 0%, rgba(0, 0, 0, 0.95) 15%, rgba(0, 0, 0, 0.95) 85%, rgba(139, 90, 43, 0.05) 100%)'
       }}
     >
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1600px] mx-auto">
         {/* Header */}
         <div className="flex items-center gap-6 mb-8 pb-8 border-b"
           style={{ borderColor: 'rgba(210, 180, 140, 0.15)' }}
         >
-          <div className="w-20 md:w-24 h-px"
+          <div className="w-24 md:w-28 h-px"
             style={{ background: 'linear-gradient(90deg, rgba(210, 180, 140, 0.4), transparent)' }}
           />
-          <span className="text-[10px] md:text-xs tracking-[0.5em] text-[#D2B48C]/80 uppercase font-medium">
+          <span className="text-[11px] md:text-sm tracking-[0.5em] text-[#D2B48C]/80 uppercase font-medium">
             PREMIOS DEL MES
           </span>
           <div className="flex-1 h-px"
@@ -284,7 +371,7 @@ export function AwardsSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20 lg:mb-24">
           <div>
-            <h2 className="text-[3.5rem] md:text-5xl lg:text-[6rem] xl:text-7xl font-[family-name:var(--font-bebas)] tracking-tight leading-[0.85] md:leading-[0.9]"
+            <h2 className="text-[4rem] md:text-6xl lg:text-[7rem] xl:text-8xl font-[family-name:var(--font-bebas)] tracking-tight leading-[0.85] md:leading-[0.9]"
               style={{ 
                 background: 'linear-gradient(90deg, #FFFFFF 0%, #D2B48C 50%, #FFFFFF 100%)',
                 WebkitBackgroundClip: 'text',
@@ -310,7 +397,7 @@ export function AwardsSection() {
             <div className="w-full border-t-2" style={{ borderColor: 'rgba(210, 180, 140, 0.3)' }} />
           </div>
           <div className="relative flex justify-center">
-            <div className="px-8 lg:px-12 py-4 lg:py-6 flex flex-col items-center gap-3"
+            <div className="px-10 lg:px-14 py-5 lg:py-7 flex flex-col items-center gap-4"
               style={{ 
                 backgroundColor: '#F5F0E8',
                 border: '2px solid rgba(210, 180, 140, 0.4)',
@@ -320,13 +407,13 @@ export function AwardsSection() {
               <img 
                 src="/acces/cafala-logo.png" 
                 alt="Cafala Café" 
-                className="h-10 lg:h-12 w-auto object-contain"
+                className="h-12 lg:h-14 w-auto object-contain"
               />
               <div className="text-center">
-                <p className="text-[10px] lg:text-xs tracking-[0.4em] uppercase font-medium text-[#8B5A2B]/80">
+                <p className="text-[11px] lg:text-sm tracking-[0.4em] uppercase font-medium text-[#8B5A2B]/80">
                   Cafala Players
                 </p>
-                <p className="text-[14px] lg:text-base font-[family-name:var(--font-bebas)] tracking-[0.3em] text-[#5C3A1E] uppercase">
+                <p className="text-[16px] lg:text-lg font-[family-name:var(--font-bebas)] tracking-[0.3em] text-[#5C3A1E] uppercase">
                   Of The Month
                 </p>
               </div>
@@ -334,8 +421,8 @@ export function AwardsSection() {
           </div>
         </div>
 
-        {/* Awards Grid */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8 max-w-6xl mx-auto">
+        {/* Awards Grid - Más ancho */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10 max-w-7xl mx-auto">
           {/* Mejor Jugador del Mes - Card ancha */}
           {bestPlayer && (
             <AwardCard award={bestPlayer} isWide={true} />
@@ -348,8 +435,8 @@ export function AwardsSection() {
         </div>
 
         {/* Nota de patrocinio */}
-        <div className="mt-12 text-center">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-[#D2B48C]/50">
+        <div className="mt-16 text-center">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-[#D2B48C]/50">
             Powered by <span className="text-[#D2B48C]/70 font-medium">Cafala Café</span>
           </p>
         </div>

@@ -19,77 +19,32 @@ const formatPriceDisplay = (priceNum: number): string => {
 const liveOffers = [
   {
     id: 1,
-    player: "Chicorid | Dan1615",
-    club: "Chicorid",
-    clubLogo: "CD.png",
-    dorsal: "#11",
-    position: "Right Winger",
-    price: "€170.000.000M",
-    offeringTeam: "Mashine City",
-    offeringLogo: "MC.png",
+    player: "ElGangsta_07",
+    club: "PXG",
+    clubLogo: "PX.png",
+    dorsal: "#9",
+    position: "Center Forward",
+    price: "€220.000.000M",
+    offeringTeam: "Mashine United",
+    offeringLogo: "MU.png",
     biddingHistory: [
-      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€165.000.000M" },
-      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€160.000.000M" },
+      { teamName: "ReAl", teamLogo: "RA.png", bidAmount: "€200.000.000M" },
+      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€185.000.000M" },
     ]
   },
   {
     id: 2,
-    player: "Berserk | ZEsteban",
-    club: "Berserk",
-    clubLogo: "BD.png",
-    dorsal: "#15",
-    position: "Center Forward",
-    price: "€100.000.000M",
-    offeringTeam: "Bastard Munchen",
-    offeringLogo: "BM.png",
-    biddingHistory: [
-      { teamName: "Bastard Munchen", teamLogo: "BM.png", bidAmount: "€95.000.000M" },
-      { teamName: "Ubers", teamLogo: "UB.png", bidAmount: "€90.000.000M" },
-    ]
-  },
-  {
-    id: 3,
-    player: "Bastard | Drakkard",
-    club: "Bastard",
-    clubLogo: "BM.png",
+    player: "Drakkard",
+    club: "Ubers",
+    clubLogo: "UB.png",
     dorsal: "#6",
     position: "Midfielder Box-to-Box",
-    price: "€70.000.000M",
-    offeringTeam: "Ubers",
-    offeringLogo: "UB.png",
+    price: "€75.000.000M",
+    offeringTeam: "Berserk Dortmund",
+    offeringLogo: "BD.png",
     biddingHistory: [
-      { teamName: "Ubers", teamLogo: "UB.png", bidAmount: "€65.000.000M" },
-      { teamName: "Mashine City", teamLogo: "MC.png", bidAmount: "€60.000.000M" },
-    ]
-  },
-  {
-    id: 4,
-    player: "Ajajax | Pamtita",
-    club: "Ajajax",
-    clubLogo: "AJ.png",
-    dorsal: "#4",
-    position: "Center Back",
-    price: "€50.000.000M",
-    offeringTeam: "Mashine United",
-    offeringLogo: "MU.png",
-    biddingHistory: [
-      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€45.000.000M" },
-      { teamName: "Arsenali", teamLogo: "AR.png", bidAmount: "€40.000.000M" },
-    ]
-  },
-  {
-    id: 5,
-    player: "Mashine U | Josua",
-    club: "Mashine U",
-    clubLogo: "MU.png",
-    dorsal: "#20",
-    position: "Right Back",
-    price: "€10.000.000M",
-    offeringTeam: "Marseille",
-    offeringLogo: "MS.png",
-    biddingHistory: [
-      { teamName: "Marseille", teamLogo: "MS.png", bidAmount: "€8.000.000M" },
-      { teamName: "PXG", teamLogo: "PX.png", bidAmount: "€5.000.000M" },
+      { teamName: "Ajajax", teamLogo: "AJ.png", bidAmount: "€68.000.000M" },
+      { teamName: "Mashine United", teamLogo: "MU.png", bidAmount: "€60.000.000M" },
     ]
   }
 ];
